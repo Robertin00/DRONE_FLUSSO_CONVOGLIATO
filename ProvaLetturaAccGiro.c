@@ -172,9 +172,9 @@ int main(void)
   while (1)
   {
 
-	  //MPU6050_LettoreAccelerazione();
-	  //sprintf(msg,"Accelerazione  X: %f g, Y: %f g, Z: %f g  \n\r",AX,AY,AZ);
-	//  HAL_UART_Transmit(&huart3,(uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+	  MPU6050_LettoreAccelerazione();
+	  sprintf(msg,"Accelerazione  X: %f g, Y: %f g, Z: %f g  \n\r",AX,AY,AZ);
+	  HAL_UART_Transmit(&huart3,(uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 	  MPU6050_LettoreVelAngolare();
 	  sprintf(msg,"VeloAng  X: %f °/s, Y: %f °/s, Z: %f °/s \n\r",Gx,Gy,Gz);
 	  HAL_UART_Transmit(&huart3,(uint8_t*)msg,strlen(msg), HAL_MAX_DELAY);
