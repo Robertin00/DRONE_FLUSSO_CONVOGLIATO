@@ -1,0 +1,24 @@
+INIZIAMO CON IL RICAVARE UN TITOLO SIGNIFICATIVO :
+per capire che titolo inserire prima di tutto capiamo che cosa abbiamo fatto 
+Abbiamo integrato il sesnore MPU6050 Iven Sense e VL53L1X e magnetometro in modo che possano funzionare 
+tramite NUCLEO H745ZI-Q per l'MPU6050 ho costruito una libreria apposita ottimizzata per poter funzionare direttamente con STCubeIDE
+e le funzioni HAL diminuedo lo sforzo di implementazione per le persone future che useranno questo microcontrollore
+invece per il VL53L1X sensore Time Of Fligth abbiamo optato per la libreria di gestione direttamente offerta da STM anche perché 
+non si trova la relativa documentazione, come la register map o altro, per il magnetometro ci ha pensato vitullo 
+
+Integrazione dei sensori MPU6050 Iven Sense,  VL53L1X STM e HMC5983 Honeywell su NUCLEO H745ZI-Q ST per sviluppo di un drone "The Double Propeller Ducted-Fan"
+
+INTRODUZIONE : 
+Il compito, preannunciato dal titolo di questo scrittro, è stato assegnato con il fine di integrare : un'unità di misura inerziale "IMU" dotato di accelerometro, giroscopio e magnetometro e un sensore a tempo di volo "Time Of Fligth (ToF)" sul microcontrollore di STMicroelettronics appartenende alla gamma NUCLEO H745ZI-Q. 
+Il modulo GY-86 è stato scelto come unità di misura inerziale per il progetto. Questo presenta due sensori provenienti da produttori differenti. Il primo, MPU6050 IvenSense, è un sensore MEMS(Micro-Electro-Mechanical Systems) che incorpora un accelerometro e giroscopio, ciascuno a tre assi. Disponde anche di un sensore di temperatura. 
+Il secondo, HMC5983 Honeywell, è un magnetometro a circuito integrato a tre assi compensato per la temperatura.(PARTE DI MATTEO)
+Con il fine di ottenere misurazioni sulla distanza da terra, si è optato per il dispositivo di misura VL53L1X prodotto da ST il cui principio di misura è basato sulla tecnologia Time-of-fligth.
+Per raggiungere l'obiettivo prefissato è stato utilizzato il software di programmazione STCubeIDE fornita da ST, il produttore del microcontrollore. La versione del software che ha accompagnato tutto lo sviluppo è stata la 1.16.
+
+ STM32CubeIDE è l’ambiente di sviluppo integrato (IDE) ufficiale di STMicroelectronics per la programmazione dei microcontrollori STM32. È basato su Eclipse e integra in modo nativo STM32CubeMX, che consente la configurazione grafica dell’hardware (clock, periferiche, pinout), e utilizza le librerie HAL (Hardware Abstraction Layer) per facilitare lo sviluppo software.
+
+
+
+
+Per riuscire ad integrare correttamente l'MPU6050 IvenSense e dimuire lo sforzo per futuri miglioramenti, si è preferito sviluppare una sua libreria di funzioni 
+
