@@ -631,15 +631,14 @@ HAL_StatusTypeDef MPU6050_LetturaDatiGiroscopio__TrasformazioneDati(MPU6050_disp
 
 		intervallo_Tempo_Discreto_sec = (1/frequenza_Di_Campionamento_Hz);
 
-		if(MPU6050_AspettaMisure(disp)){
-
+	
 			status_vecchio_dato = MPU6050_LetturaDatoGrezzoGiroscopio(disp);
 
 			controllore_dato.vecchio_DatoX = disp->datiGiroscopio.datoVelAngGiro.velocitaaAngolare_X;
 			controllore_dato.vecchio_DatoY = disp->datiGiroscopio.datoVelAngGiro.velocitaaAngolare_Y;
 			controllore_dato.vecchio_DatoZ = disp->datiGiroscopio.datoVelAngGiro.velocitaaAngolare_Z;
 
-		}
+		
 
 			if(MPU6050_AspettaMisure(disp)){
 
