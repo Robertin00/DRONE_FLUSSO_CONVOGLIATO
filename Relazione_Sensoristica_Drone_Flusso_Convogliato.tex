@@ -172,7 +172,7 @@
 {\Large Robert Laurentiu Mincu}
 \hfill
 {\Large Andrea Bonci}\\
-\raggedright{\Large Nome cognoome\\}
+\raggedright{\Large Nome Cognome\\}
 \raggedleft{\Large Dottorando:}\\
 {\Large Nome Cognome\\[1cm]}
 \centering{
@@ -190,28 +190,28 @@
 \pagestyle{plain}
 
 \section*{Introduzione}
-Il compito, preannunciato dal titolo di questo scritto, è stato assegnato con il fine di integrare un'unità di misura inerziale (IMU), dotata di accelerometro, giroscopio e magnetometro, e un sensore a tempo di volo (Time Of Fligth-ToF) sul microcontrollore  NUCLEO-H745ZIQ di STMicroelettronics.\\
-La finalità ultima dell'integrazione dei dispositivi sulla scheda, è parte di un più grande progetto: "Lo sviluppo di un firmware per il controllo efficiente di un \textit{Double Propeller Ducted-Fan}". Un drone a flusso convogliato.\\
-Dunque tutto ciò che è stato realizzato per completare la task, è parte di un progetto ben più grande.\\
+Il compito, preannunciato dal titolo di questo scritto, è stato assegnato con il fine di integrare un'unità di misura inerziale (IMU), dotata di accelerometro, giroscopio e magnetometro, e un sensore a tempo di volo (Time Of Flight-ToF) sul microcontrollore  NUCLEO-H745ZIQ di STMicroelectronics.\\
+La finalità ultima dell'integrazione dei dispositivi sulla scheda è parte di un più grande progetto: "Lo sviluppo di un firmware per il controllo efficiente di un \textit{Double Propeller Ducted-Fan}". Un drone a flusso convogliato.\\
+Dunque, tutto ciò che è stato realizzato per completare la task, è parte di un progetto ben più grande.\\
 Il modulo GY-86 è stato scelto come unità di misura inerziale per il progetto. Questo presenta due sensori provenienti da produttori differenti. 
 \begin{itemize}
-    \item Il primo, MPU6050 InvenSense, è un sensore MEMS(Micro-Electro-Mechanical Systems) che incorpora un accelerometro e giroscopio, ciascuno a tre assi. Disponde anche di un sensore di temperatura.\\
-    \item Il secondo, HMC5983 Honeywell, è un magnetometro a circuito integrato a tre assi compensato per la temperatura.(PARTE DI MATTEO)
+    \item Il primo, MPU6050 InvenSense, è un sensore MEMS(Micro-Electro-Mechanical Systems) che incorpora un accelerometro e giroscopio, ciascuno a tre assi. Dispone anche di un sensore di temperatura.\\
+    \item Il secondo, HMC5883L Honeywell, è un magnetometro a circuito integrato a tre assi compensato per la temperatura. 
 \end{itemize}
 Per ottenere misurazioni sulla distanza da terra, si è optato per il dispositivo di misura VL53L1X prodotto da ST il cui principio di funzionamento è basato sulla tecnologia \\Time-of-Flight.\\
-Al fine di soddisfare l'obiettivo cardine, è stato utilizzato STM32CubeIDE, l'ambiente di sviluppo integrato (IDE) ufficiale di STMicroelectronics per la programmazione dei microcontrollori STM32, tra cui rientra il modello  NUCLEO-H745ZI-Q. 
-Basato su Eclipse, STMCubeIDE integra nativamente STM32CubeMX, un'interfaccia grafica di programmazione che consente la configurazione hardware dell'elaboratore.\\
+Al fine di soddisfare l'obiettivo cardine  è stato utilizzato STM32CubeIDE, l'ambiente di sviluppo integrato (IDE) ufficiale di STMicroelectronics per la programmazione dei microcontrollori STM32, tra cui rientra il modello  NUCLEO-H745ZI-Q. 
+Basato su Eclipse, STM32ubeIDE integra nativamente STM32CubeMX, un'interfaccia grafica di programmazione che consente la configurazione hardware dell'elaboratore.\\
 STM32CubeIDE consente la scrittura di codice in linguaggio C o in C++. Per il progetto è stato scelto il linguaggio di programmazione C.
-L'ambiente, inoltre, mette a disposizione del programmatore le librerie H.A.L, "Hardware Abstraction Layer", per facilitare lo sviluppo di firmware.\\
-Al il fine di dimunire lo sforzo di programmazione e in vista di futuri miglioramenti del firmware dedicato, l'integrazione dell'MPU6050 InvenSense è avvenuta mediante la creazione di una libreria di funzioni dedicata, basata sull'Hardware Abstraction Layer. Necessità più che strategia, dal momento che l'azienda produttrice non fornisce alcun software ufficiale per l'implementazione del dispositivo.\\
-Diversa è stata l'integrazione del dispositivo di misura VL53L1X ST, dal momento che, questo, dispone già di una libreria di funzioni dedicata alla corretta operatività del sensore, disposibile sul sito di STMicroelectronics e completa di documentazione. 
+L'ambiente, inoltre, mette a disposizione del programmatore le librerie HAL, "Hardware Abstraction Layer", per facilitare lo sviluppo di firmware.\\
+Al fine di dimunire lo sforzo di programmazione e in vista di futuri miglioramenti del firmware dedicato, l'integrazione dell'MPU6050 InvenSense è avvenuta mediante la creazione di una libreria di funzioni dedicata, basata sull'Hardware Abstraction Layer. Necessità più che strategia, dal momento che l'azienda produttrice non fornisce alcun software ufficiale per l'implementazione del dispositivo.\\
+Diversa è stata l'integrazione del dispositivo di misura VL53L1X ST, dal momento che questo, dispone già di una libreria di funzioni dedicata alla corretta operatività del sensore, disponibile sul sito di STMicroelectronics e completa di documentazione. 
 L'unico impegno richiesto è stato quello di adattare il software alla piattaforma.
-INTRODUZIONE AL SENSORE HMC5883L HONEYWELL.
+INTRODUZIONE AL SENSORE HMC5883L HONEYWELL. 
 \newpage
 \chapter{Hardware}
 \label{Hardware}
-Di seguito verrano descritte tutte le componenti hardware che sono servite al compimento della \textit{task}.\\
-Il modulo GY-86, e il dispositivo di misura della distanza VL53L1X, sono stati implementati alla scheda STM32H745ZIQ, sulla quale, prima del \textit{merge} finale delle componenti fisiche, ogni componente è stato testato singolarmente.
+Di seguito verranno descritte tutte le componenti hardware che sono servite al compimento della \textit{task}.\\
+Il modulo GY-86, e il dispositivo di misura della distanza VL53L1X sono stati implementati sulla scheda STM32H745ZIQ, sulla quale, prima del \textit{merge} finale delle componenti fisiche, ogni componente è stata testata singolarmente.
 \section{STM32 NUCLEO-H745ZI-Q}
 L'STM32 NUCLEO-H745ZI-Q è una scheda di sviluppo prodotta da STMicroelectronics, basata sul microcontrollore STM32H745ZI-TQ6, 
 appartenente alla famiglia ad alte prestazioni STM32H7. È progettata per facilitare lo sviluppo, il \textit{debug}, e la prototipazione di applicazioni 
@@ -230,9 +230,10 @@ Su di essa sono state caricate tutte le librerie software sviluppate con l'ausil
     \item Memoria
     \begin{itemize}
         \item 2 [Mb] di memoria \textit{Flash}.
-        \item 1 [Mb] di memoria RAM, di cui 864 [KB] TCM SRAM (approfonfimento disponibile nell'appendice A).
+        \item 1 [Mb] di memoria RAM, di cui 864 [KB] TCM SRAM (approfondimento disponibile nell'appendice A).
     \end{itemize}
-    \item FPU, DSP, unità di protezione della memoria (MPU).
+    \item FPU, DSP, unità di protezione della memoria (MPU).  
+%HMC5983
     \item Acceleratore grafico Chrom-ART (DMA2D).
     \item Possibilità di gestire \textit{interrupt ed eccezioni} di ogni genere efficientemente grazie alla presenza di un'unità di gestione dedicata, il NVIC (Nested Vector Interrupt Controller).\\
 \end{itemize}
@@ -240,8 +241,8 @@ Su di essa sono state caricate tutte le librerie software sviluppate con l'ausil
 \begin{itemize}
     \item Connettore ST Zio e Arduino Uno R3 per compatibilità \textit{shield}.
     \item Interfacce multiple di comunicazione seriale : USART, UART, I2C e SPI.
-    \item Possibilità di creare applicazioni e eseguire attività direttamente legate allo scorrere del tempo reale tramite l'uso di una serie di \textit{timer} integrati. Questi ultimi, forniscono anche altre  \textit{features}, tra cui : \textit{input capture mode}, \textit{output compare mode}, generazione di impulsi singoli con larghezza e \textit{delay} programmabili, generazione di segnali ad impulso con modulazione della larghezza (PWM), generazione di accessi periodici alla memoria dinamica (DMA), contatore di eventi.
-    \item \textit{Debugger} integrato ST-LINK/V3E via USB. Driver per il \textit{debug}, caricamento del \textit{firmware} nel microcontrollore e possibilità di comunicazione \textit{virtual COM}.
+    \item Possibilità di creare applicazioni e eseguire attività direttamente legate allo scorrere del tempo reale tramite l'uso di una serie di \textit{timer} integrati. Questi ultimi, forniscono anche altre  \textit{features}, tra cui: \textit{input capture mode}, \textit{output compare mode}, generazione di impulsi singoli con larghezza e \textit{delay} programmabili, generazione di segnali ad impulso con modulazione della larghezza (PWM), generazione di accessi periodici alla memoria dinamica (DMA), contatore di eventi.
+    \item \textit{Debugger} integrato ST-LINK/V3E via USB, con driver per il \textit{debug}, caricamento del \textit{firmware} nel microcontrollore e possibilità di comunicazione \textit{virtual COM}.
     \item Connettore USB Micro-B per programmazione e \textit{debug}.
     \item Alimentazione flessibile :
     \begin{itemize}
@@ -251,16 +252,16 @@ Su di essa sono state caricate tutte le librerie software sviluppate con l'ausil
     \end{itemize}
     \item Capacità di eseguire sistemi operativi \textit{real-time} separatamente sui due core.
 \end{itemize}
-Nella seguente attività di sviluppo, al fine di comunicare con i dispositivi di misura, sono state utlizzate le perifieriche di comunicazione seriale basate sul protocollo
+Nella seguente attività di sviluppo, al fine di comunicare con i dispositivi di misura, sono state utilizzate le periferiche di comunicazione seriale basate sul protocollo 
 I2C fornite dal STM32H745ZIQ. \\
-La verifica delle informazioni estrapolate dai sensori è avvenuta, come nel precedente caso, con comunicazione seriale, diverso però è stato il
-protocollo di comunicazione utilizzato, UART. La periferica di comunicaizone UART è stata gestita per poter visualizzare, tramite stampa video, controllata da un software di 
-terze parti di nome \textit{Putty}, le informazioni estrapolate dai sensori.\\
+La verifica delle informazioni estrapolate dai sensori è avvenuta, come nel precedente caso, con comunicazione seriale, diverso è stato, però, il
+protocollo di comunicazione utilizzato, UART. La periferica di comunicazione UART è stata gestita per poter visualizzare, tramite stampa video, controllata da un software di 
+terze parti di nome \textit{Putty}, le informazioni estrapolate dai sensori.\\  
 Al fine di manipolare le informazioni ottenute dai dispositivi di misura, è stato necessario utilizzare il \textit{timer} di sistema SysTick, System-Tick-Timer. Il timer
-in questione viene configurato automaticamente dal CMSIS+HAL. Il suo utilizzo è ristretto alle funzioni HAL, che però, offrono al programmatore, una scorcitoia per lo sviluppo di applicazioni che hanno a che fare con il tempo reale.\\
-L'alimentazione dei sensori è stata, anche essa, affidata alla STM32H745ZIQ. La scheda, mediate i connettori presenti su di essa, riesce ad alimentare dispositivi la cui tensione di funzionamento rientra nei 5[V]. Presenta, di fatti, due uscite di alimentazione, una da 3.3[V] e una da 5[V]. L'unica utilizzata ai fini del progetto è stata l'uscita di alimentazione a 3.3[V]. Tutti i dispositivi possiedono una tale escursione di operatività.\\
-Dopo lo sviluppo e la fase di testing, è stata raggiunta la tolleranza di funzionamento desiderata dai dispositivi di misura. Con il concludersi del progetto, sono stati montati sul "Double Propeller Ducted-Fan" per gestire il funzionamento dei servomotori e motori.
-
+in questione viene configurato automaticamente dal CMSIS+HAL. Il suo utilizzo è ristretto alle funzioni HAL, che però, offrono al programmatore, una scorciatoia per lo sviluppo di applicazioni che hanno a che fare con il tempo reale.\\
+L'alimentazione dei sensori è stata, anche'essa, affidata alla STM32H745ZIQ. La scheda, mediante i connettori presenti su di essa, riesce ad alimentare dispositivi la cui tensione di funzionamento rientra nei 5[V]. Presenta, di fatti, due uscite di alimentazione, una da 3.3[V] e una da 5[V]. L'unica utilizzata ai fini del progetto è stata l'uscita di alimentazione a 3.3[V]. Tutti i dispositivi supportano tale intervallo operativo.\\
+Dopo lo sviluppo e la fase di testing, è stata raggiunto il livello di tolleranza di funzionamento desiderata dai dispositivi di misura. Con il concludersi del progetto, sono stati montati sul "Double Propeller Ducted-Fan" per gestire il funzionamento dei servomotori e motori.
+ 
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.6\textwidth]{images/Immagine_1_relazione__IMMAGINE_STM32H745ZIQ.jpg}
@@ -270,29 +271,29 @@ Dopo lo sviluppo e la fase di testing, è stata raggiunta la tolleranza di funzi
 Per un controllo efficiente del Double Propeller Ducted-Fan, è necessaria la conoscenza della cinematica del sistema istante per istante.
 L'effettiva conoscenza della cinematica, passa attraverso l'estrapolazione di informazioni da dispositivi capaci di percepire: accelerazione, velocità, posizione e orientamento del sistema interessato.
 Per realizzare quest'ultimo interesse, si è optato per l'unità di misura inerziale GY-86, e il sensore di misura della distanza VL53L1X.\\
-Nei paragrafi a venire, verrano descritte le caratteristiche dei dispositivi, utilizzate per adempiere all'obiettivo primale.
-
+Nei paragrafi a venire, verranno descritte le caratteristiche dei dispositivi, utilizzate per adempiere all'obiettivo primario.
+%fino a qui corretttti gli errori  HMC5983
 \section{Modulo GY-86. Unità di misura inerziale}
 Al fine di ottenere una struttura compatta, è necessaria la ricerca di un circuito integrato che contiene, sia un accelerometro che un giroscopio, e anche un magnetometro. Per rispettare tale descrizione, si è optato per il modulo GY-86, contenente l'MPU6050 InvenSense e l'HMC5983 Honeywell.
 In seguito, un listato delle caratteristiche di funzionamento sfruttate ai fini del progetto.\\\\
-\textbf{Caratteristiche pricipali:}
+\textbf{Caratteristiche principali:}
 \begin{itemize}
 \item Alimentazione da 3-5 [V].
 \item dimensioni : 22 x 17 [mm].
 \item Protocollo di comunicazione standard I2C. Supporta una comunicazione I2C fino a\\400 [kHz], "Fast-mode".
 \item Un LED di colore verde è utilizzato per segnalare l'avvenuta alimentazione del sistema.
 \end{itemize}
-Le caratteristiche elencate nel listato precedente, sono comuni a tutti i dispositivi appartenenti al modulo. Pertanto non verrano ripetute nelle descrizioni a seguire.
+Le caratteristiche elencate nel listato precedente, sono comuni a tutti i dispositivi appartenenti al modulo. Pertanto non verranno ripetute nelle descrizioni a seguire. 
     \section{MPU6050 InvenSense}
     L'MPU6050 InvenSense è il primo dispositivo di misura inerziale al mondo a sei assi. Combina un accelerometro a tre assi e un giroscopio a tre assi.\\
-    In seguito, un elenco delle caratteristiche dell'oggetto, che sono state sfruttate nel progetto.\\
+    In seguito un elenco delle caratteristiche dell'oggetto che sono state sfruttate nel progetto.\\
     \textbf{Caratteristiche:}
     \begin{itemize}
     \item Alimentazione da 2.375-3.46 [V]. L'alimentazione è gestita dal modulo.
     \item Dimensioni : 4 x 4 x 0.9 [mm].
     \item Possiede un \textit{bus} I2C interamente dedicato all'accettare \textit{input} da una bussola esterna a  tre assi.  
-    \item Possiede tre convertitori analogici-digitali per componente (ADCs). La risoluzione di questi è a 16 [bit]. Ottenendo così la digitalizzazione del segnale di uscita del giroscipio e accelerometro.
-    \item Tolleranza agli \textit{shock} fino a 10.000 [g].
+    \item Possiede tre convertitori analogici-digitali per componente (ADCs). La risoluzione di questi è a 16 [bit]. Ottenendo così la digitalizzazione del segnale di uscita del giroscopio e accelerometro.
+    \item Tolleranza agli \textit{shock} fino a 10.000 [g]. % convertitore analogico-digital a 16 bit
     \item \textit{Digital Low-Pass Filter} programmabile sia per l'accelerometro che per il giroscopio.
     \end{itemize}
 Nel paragrafo seguente verranno descritte le caratteristiche specifiche dell'accelerometro e del giroscopio. Prima però, è opportuna una spiegazione di come questi sensori acquisiscono le misure.
@@ -305,8 +306,8 @@ In condizioni di quiete, la massa è in equilibrio e la capacità tra le \textbf
 Quando il dispositivo è sottoposto ad un'accelerazione lungo uno degli assi sensibili, la massa inerziale si sposta in direzione opposta a quella dell'accelerazione, generando una variazione differenziale 
 della capacità tra le piastre.\\
 La variazione di capacità viene rilevata da un circuito integrato, che la converte in un segnale elettrico, proporzionale alla velocità applicata.\\
-Il segnale analogico prodotto, viene successivamente digitalizzato da un convertitore analogico-digital a 16 bit, integrato nel chip.
-
+Il segnale analogico prodotto, viene successivamente digitalizzato da un convertitore analogico-digitale a 16 bit, integrato nel chip.
+%riprendi controllo da qui 
 \subsubsection{Giroscopio}
 Il giroscopio integrato nel dispositivo MPU6050 InvenSense è un sensore MEMS di tipo vibrante, \textit{vibrating structure gyroscope}, e consente la misura della velocità angolare lungo i tre assi cartesiani.\\
 Il principio di funzionamento si basa sull'effetto Coriolis, che si manifesta quando una massa in moto oscillatorio subisce una rotazione rispetto ad un sistema di riferimento inerziale.\\
@@ -347,16 +348,16 @@ In seguito, un listato descrivente le specifiche caratteristiche, sfruttate ai f
         \hline
         $\pm 8[g]$ & Attività dinamiche. (Corsa, Robotica mobile) & Bassa : 4096 [LSB]/g & Ampio range & minore precisione\\
         \hline
-        $\pm 16[g]$ & Urti, vibrazioni inense, cadute & Molto bassa : 2048 [LSB]/g & Bassa saturazione & precisione scarsa\\
+        $\pm 16[g]$ & Urti, vibrazioni intense, cadute & Molto bassa : 2048 [LSB]/g & Bassa saturazione & precisione scarsa\\
         \hline
     \end{tabular}
     }
     \caption{Full Scale Range Accelerometro}
     \label{tab: tabella}
 \end{table}
-
+% peridita
 \subsection{Giroscopio a tre assi}
-MPU6050 InvenSense include anche un giroscopio a tre assi. Il giroscopio, anch'esso costruito sul disegno della tecnoglia MEMS, fornisce misure sulla velocità angolare lungo i tre assi cartesiani.\\
+MPU6050 InvenSense include anche un giroscopio a tre assi. Il giroscopio, anch'esso costruito sul disegno della tecnologia MEMS, fornisce misure sulla velocità angolare lungo i tre assi cartesiani.\\
 Nel nostro caso, la velocità angolare è espressa in [°/s] (gradi al secondo).\\
 A seguire, un elenco descrivente le caratteristiche specifiche, sfruttate ai fini del progetto.\\\\
 \textbf{Caratteristiche specifiche:}
@@ -369,7 +370,7 @@ A seguire, un elenco descrivente le caratteristiche specifiche, sfruttate ai fin
 \item \textit{"Digital Low-Pass Filter"} programmabile.
 \item Frequenza di acquisizione delle misure : 8 [kHz].
 \item Possibilità di frazionare la frequenza standard di acquisizione delle misure.
-\item Possibiità di effettuare \textit{Self-Test}.
+\item Possibilità di effettuare \textit{Self-Test}.
 \end{itemize}
 
 \begin{table}[H]
@@ -383,7 +384,7 @@ A seguire, un elenco descrivente le caratteristiche specifiche, sfruttate ai fin
         \hline
         $\pm 500[°/s]$ & Movimenti moderati(droni a bassa velocità) & Media : 65.5 [LSB]/[°/s] & Buon compromesso & /\\
         \hline
-        $\pm 1000[°/s]$ & Moviementi rapidi  & Bassa : 32.8 [LSB]/[°/s] & Ampio range & peridita di dettaglio\\
+        $\pm 1000[°/s]$ & Movimenti rapidi  & Bassa : 32.8 [LSB]/[°/s] & Ampio range & perdita di dettaglio\\
         \hline
         $\pm 2000[°/s]$ & Rotazioni veloci, urti angolari & Molto bassa : 16.84 [LSB]/[°/s] & Bassa saturazione & precisione scarsa\\
         \hline
@@ -394,7 +395,7 @@ A seguire, un elenco descrivente le caratteristiche specifiche, sfruttate ai fin
 \end{table}
 L'obiettivo finale dei test è quello di verificare il corretto funzionamento del sensore e delle librerie sviluppate per gestirlo. La verifica è avvenuta per ogni \textit{Full Scale Range}.
 
-\section{HMC5983 Honeywell}
+\section{HMC5883L Honeywell}
 Lavoro attribuito a Matteo Vitullo
 
 \begin{figure}[H]
@@ -405,15 +406,15 @@ Lavoro attribuito a Matteo Vitullo
 \end{figure}
 
 \section{VL53L1X ST. Sensore Time-of-Flight per la misurazione a lunga distanza}
-Per il desiderato comportamento del \textit{Ducted-Fan}, è necessario conoscere la distanza da terra mentre questo'utlimo è in volo. Bisogna, dunque, includere un senore apposito.\\
-Il VL53L1X di STMicroelectronics è pinamente coerente con i requisiti precedentemente espressi.\\
+Per il desiderato comportamento del \textit{Ducted-Fan}, è necessario conoscere la distanza da terra mentre quest'ultimo è in volo. Bisogna, dunque, includere un sensore apposito.\\
+Il VL53L1X di STMicroelectronics è pienamente coerente con i requisiti precedentemente espressi.\\
 Tuttavia, non si è optato per l'integrazione diretta del sensore della casa STMicroelectronics, si è preferito acquistare il modulo \textit{"iris11a 0J9776"} prodotto da \textit{Pololu}.
 Il modulo \textit{breakout} di Pololu, contenente il sensore VL53L1X di STMicroelectronics, è stato scelto per semplificare la fase di configurazione elettronica del sensore.\\
 Per comprendere il suo principio di misura, è opportuno dedicare un'intera sezione alla sua descrizione.
 
 \subsection{Il principio di misura \textit{Time-of-Flight}, ToF}
 Il principio di misura \textit{Time-of-Flight} si basa sulla determinazione del tempo impiegato da un segnale, generalmente un impulso luminoso nella banda dell'infrarosso, per compiere
-un viaggio di andata e ritorno tra un emettitore e un bersaglio riflettente. In particolare, per il nostro dispostivo di misura VL53L1X, la sorgente di emissione luminosa è costituita da
+un viaggio di andata e ritorno tra un emettitore e un bersaglio riflettente. In particolare, per il nostro dispositivo di misura VL53L1X, la sorgente di emissione luminosa è costituita da
 un laser a cavità verticale (VCSEL), che emette brevi impulsi di luce modulata.
 Il segnale emesso si propaga nell'ambiente fino ad incontrare un oggetto. Parte della radiazione viene riflessa e raccolta da un rilevatore sensibile alla luce, in genere un array SPAD,
 \textit{"Single-Photon Avalanche Diode"}. Questo rilevatore è in grado di registrare l'arrivo anche di singoli fotoni, consentendo una misura estremamente sensibile del tempo di volo.\\
@@ -425,14 +426,14 @@ dove \textit{d} è la distanza dell'oggetto dalla superficie, \textit{c} è la v
 che il segnale percorre il tragitto due volte, andata e ritorno.\\
 I ToF moderni possono utilizzare tecniche avanzate di correlazione temporale o modulazione di fase per migliorare la precisione e la resistenza al rumore ambientale.\\
 Nel caso in esame,  il VL53L1X di ST utilizza la tecnologia base ToF o dTof, \textit{"Direct Time-of-Flight"}.\\
-\subsection{VL53L1X STMicroelectronics. Caratterisitche}
+\subsection{VL53L1X STMicroelectronics. Caratteristiche}
 In seguito, un listato delle principali caratteristiche tecniche del VL53L1X di ST, sfruttante per il progetto.\\
-\paragraph{Caratterisitche}
+\paragraph{Caratteristiche}
 \begin{itemize}
 \item Dimensioni : 4.9 x 1.25 x 1.56 [mm]
 \item Valore della tensione di alimentazione : 2.6-3.5 [V].
 \item Escursione di temperatura per la corretta operatività : da -20 a 85 [°C].
-\item Emettirore ad infrarossi di classe [1], di lunghezza d'onda : 940 [nm]. \\Un Laser di classe [1] è un emettitore di onde elettromagnetiche, le cui condizioni operative normali, sono considerate sicure per l'occhio umano e la pelle.
+\item Emettitore ad infrarossi di classe [1], di lunghezza d'onda : 940 [nm]. \\Un Laser di classe [1] è un emettitore di onde elettromagnetiche, le cui condizioni operative normali, sono considerate sicure per l'occhio umano e la pelle.
 \item Misurazione accurata e veloce. Il dispositivo riesce a misurare distanze fino ai 4 [m] ad una frequenza di acquisizione di 50 [Hz].
 \item \textit{Full Field-of-view} standard di 27 [°].
 \item \textit{Region-of-interest} (ROI) programmabile. Questa \textit{feature} permette di ridurre il FoV.
@@ -474,11 +475,11 @@ Il VL53L1X, come MPU6050, possiede diversi intervalli a piena scala da sfruttare
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/Immagine_4_Pololu.png}
-        \caption{Modulo iris11a 0J9776 Pololu contente il VL53L1X STMicroelectronics}
+        \caption{Modulo iris11a 0J9776 Pololu contenente il VL53L1X STMicroelectronics}
         \label{fig:img2}
     \end{minipage}
 \end{figure}
-
+%qui
 \section{Schema dei collegamenti}
 Nel sottostante schema è possibile visualizzare lo schema dei collegamenti.
 \subsubsection{Modulo GY-86}
@@ -490,16 +491,14 @@ Per il GY-86 è stata utilizzata la periferica di comunicazione "I2C1" offerta d
 \item SDA del GY-86 collegato al CN10 pin 16 della NUCLEO-H745ZI-Q. (PB7).
 \end{itemize}
 \subsubsection{Modulo iris11a 0J9776 Pololu}
-Diversamente, per il modulo in questione, è stata utilizzata la periferica di comunicazione "I2C2" offerta dalla NUCLO-H745ZI-Q.
+Diversamente, per il modulo in questione, è stata utilizzata la periferica di comunicazione "I2C2" offerta dalla NUCELO-H745ZI-Q.
 \begin{itemize}
 \item VIN del Pololu collegato al CN7 pin 7   della NUCLEO-H745ZI-Q (PB12).
 \item GND del Pololu collegato al CN8 pin 13  della NUCLEO-H745ZI-Q (GND).
 \item SCL del Pololu collegato al CN10 pin 32 della NUCLEO-H745ZI-Q(PB10).
 \item SDA del Pololu collegato al CN10 pin 34 della NUCLEO-H745ZI-Q.(PB11)
-\item XSHOUT del Pololu collegato CN9 pin 29 della NUCLEO-H745ZI-Q (PB14).
+\item XSHOUT del Pololu collegato al CN9 pin 29 della NUCLEO-H745ZI-Q (PB14).
 \end{itemize}
-Inserire uno schema dei collegamenti analogo a quello in Figura \ref{fig:schema}. Si suggerisce per lo scopo di usare il software "draw.io". Nello schema riportare tutti i collegamenti tra i componenti, specificando quale pin di un componente1 si collega con quale pin di un componente2 (per la maggior parte dei collegamenti dovete cioè avere una linea con 2 label). \\
-Inserire anche una descrizione testuale dello schema.
 
 \begin{figure}[H]
     \centering
@@ -508,27 +507,28 @@ Inserire anche una descrizione testuale dello schema.
     \label{fig:schema}
     \end{figure}
 
-
+% stutture
 \chapter{Software}
 Al fine di integrare i dispositivi di misura, precedentemente descritti, alla NUCLEO-H745ZI-Q, è stato sviluppato un \textit{firmware} specifico per la gestione della sensoristica.\\
 Per quanto riguarda il sensore MPU6050 InvenSense, il firmware di gestione è stato sviluppato interamente da zero. Come detto in precedenza, la scelta è stata necessità più che strategia, dal momento che, per questo dispositivo, non esiste ancora un firmware completo, reperibile dalla rete e adattabile velocemente alla NUCLEO-H745ZI-Q.\\
 Diversa è stata l'integrazione del sensore VL53L1X STMicroelectronics. L'azienda produttrice fornisce un firmware ufficiale disponibile sul suo sito internet. Il firmware non è completo quindi è stato modificato per poter operare tramite funzioni HAL ed interfacciarsi correttamente alla NUCLO-H745ZI-Q.\\
 Il firmware di gestione dei dispositivi è stato completamente sviluppato utilizzando il linguaggio di programmazione C.\\
 Come detto precedentemente l'ambiente di sviluppo integrato (IDE) utilizzato per costruire il \textit{firmware} è stato STCubeIDE fornito da STMicroelectronics. La versione dell'IDE che ha accompagnato tutto lo sviluppo è stata la [1.16.1].\\
-Per il \textit{setting} delle periferiche della NUCLO-H745ZI-Q è stata utilizzata l'interfaccia di programmazione grafica presente in STCubeIDE, STCubeMX.\\
+Per il \textit{setting} delle periferiche della NUCLEO-H745ZI-Q è stata utilizzata l'interfaccia di programmazione grafica presente in STCubeIDE, STCubeMX.\\
 Lo sviluppo è stato completato usando la versione [6.12.1] del STCubeMX.\\
-INTRODUZIONE SOFTWARE HMC5983 HONEYWELL.
-
+INTRODUZIONE SOFTWARE HMC5883L HONEYWELL.
+Nel presente elaborato, i termini procedura e funzione saranno utilizzati come sinonimi, in quanto indicano la medesima entità.
+%HMC5983
 \section{Diagrammi di flusso}
 \subsection{Diagramma di flusso del \textit{firmware} \\dell'MPU6050 InvenSense}
 Il seguente \textit{flowchart} descrive la logica di funzionamento del firmware di gestione dell'MPU6050 InvenSense.\\
 Nel dettaglio, il diagramma di flusso in analisi presenta graficamente la sequenza di operazioni, decisioni e \textit{loop} del \textit{main flow} del \textit{firmware}.\\
 Il diagramma è stato concepito con la finalità di specificare la sequenza di istruzioni da eseguire per la corretta configurazione del dispositivo ed estrazione dell'informazione utile.\\
 Le prime due istruzioni ordinano la creazione della struttura di pilotaggio e successivamente la sintesi di un suo puntatore. Punto principale di accesso alla struttura di pilotaggio da parte delle funzioni.\\
-Successivamente alle due istruzioni poc anzi descritte, viene ordinata l'invocazione della  funzione \textit{MPU6050\_InizializzazioneDispositivo}, il cui compito è quello configurare il sensore nella maniera desiderata.\\
+Successivamente alle due istruzioni poc'anzi descritte, viene ordinata l'invocazione della  funzione \textit{MPU6050\_InizializzazioneDispositivo}, il cui compito è quello configurare il sensore nella maniera desiderata.\\
 Nell' \textit{infinite loop} sono state inserite le funzioni di estrazione e manipolazione dell'informazione legate, rispettivamente, all'accelerometro e al giroscopio.
 Tramite un costrutto condizionale e la funzione \textit{MPU6050\_AspettaMisure}, viene gestito il \textit{timing} di estrazione dell'informazione, con il fine di prevedere l'errore di \textit{data overrun}.
-Le informazioni estrapolate verrano poi trasferite alla struttura di pilotaggio da cui sarà possibile efefttuarne la lettura.
+Le informazioni estrapolate  poi trasferite alla struttura di pilotaggio da cui sarà possibile effettuarne la lettura.
 
 \begin{figure}[H]
     \centering
@@ -547,7 +547,7 @@ Quest'ultimo, è stato riportato nello scritto, evidenziando però l'utilizzo de
 Il "flusso", inizia con l'invocazione della funzione \textit{VL53L1\_WaitDeviceBooted} che restituirà il \textit{flow} al \textit{main} una volta completato il boot interno del dispositivo.\\
 Segue l'istruzione di invocazione, \textit{VL53L1\_DataInit}, procedura che esegue l'inizializzazione dei parametri di \textit{default} interni del sensore, deducendo così una configurazione minima necessaria per iniziare a misurare.\\
 Dopo l'inizializzazione primaria, il VL53L1X necessita di una configurazione statica tramite la funzione \textit{VL53L1\_StaticInit}. Questa fase ha il compito di impostare i parametri fondamentali invarianti durante il normale funzionamento del sensore.\\
-Durante la \textit{static initialization}, vengono configurate le stutture interne del sensore, tra cui il valore di calibrazione dei tempi, i parametri ottici relativi alla gestione del campo visivo e la gestione delle finestre di misura.\\
+Durante la \textit{static initialization}, vengono configurate le strutture interne del sensore, tra cui il valore di calibrazione dei tempi, i parametri ottici relativi alla gestione del campo visivo e la gestione delle finestre di misura.\\
 Avviene l'impostazione della \textit{distance mode} che determina il comportamento del sensore rispetto alla distanza massima rilevabile e alle condizioni ambientali.\\
 Definite le modalità di misura, viene configurato il \textit{Timing Budget}, il tempo massimo che il sensore può dedicare all'esecuzione di una singola misura. Un suo aumento corrisponde all'aumento dell'accuratezza del sensore, a discapito della frequenza di aggiornamento della misura\\
 Infine viene definito l'\textit{Inter-Measurement Period}, che stabilisce l'intervallo minimo tra due misure successive.\\
@@ -573,9 +573,9 @@ Il \textit{firmware} di gestione dell'MPU6050 InvenSense conta la creazione di q
 Il \textit{firmware} possiede tre file \textit{header} C, e un unico \textit{source file} in cui sono definite le funzioni principali di gestione del dispositivo di misura.
 \subsection{\textit{Header files}}
 \subsection{\textit{MPU6050\_register\_map.h}}
-Il sudetto file, è stato il primo ad essere sviluppato.\\
+Il suddetto file, è stato il primo ad essere sviluppato.\\
 Contiene direttive di preprocessore che specificano gli indirizzi, in esadecimale, dei registri dell'MPU6050 InvenSense.\\
-Il file è stato creato con il fine di aumentare la leggibilità del codice e semplificarne il successivo sviluppo, sopratutto per tutto ciò che riguarda la comunicazione I2C.\\
+Il file è stato creato con il fine di aumentare la leggibilità del codice e semplificarne il successivo sviluppo, soprattutto per tutto ciò che riguarda la comunicazione I2C.\\
 Ogni direttiva ha annesso un commento. Questo specifica:
 \begin{itemize}
 \item Di cosa si occupa il registro indagato e come deve essere programmato.
@@ -602,7 +602,7 @@ Per una comprensione repentina, il file è stato suddiviso in:
 \paragraph{Enumerazioni}
 Nella prima sezione, sono disposte le quattro enumerazioni del file.\\
 La prima enumerazione, \textit{MPU6050\_valoreDLPF}, è utile nell'impostazione del \textit{"Digital Low-Pass Filter"} del dispositivo.\\
-Gli enumeratori definiti al suo interno, hanno una doppia funzione. Aumentare la capibilità del codice e contenere
+Gli enumeratori definiti al suo interno, hanno una doppia funzione. Aumentare la comprensibilità del codice e contenere
 il valore, in esadecimale, che deve essere scritto nel registro CONFIG (registro 26), del dispositivo, per impostare il desiderato \textit{Digital Low-Pass Filter}.\\
 A seguire, L'enumerazione.\\
 %codice ver 2
@@ -615,7 +615,7 @@ A seguire, le due enumerazioni estratte dal file.
 %codice ver 3
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=294, lastline=322, caption="Estratto di codice C dal file \textit{MPU6050\_platform\_user\_data\_and\_defines}"]{codefiles/MPU6050_platform_user_data_and_defines.h}
 L'ultima enumerazione del file è stata creata solo per specificare le modalità di funzionamento dell'MPU6050.\\
-A suguire. L'enumerazione.\\
+A seguire. L'enumerazione.\\
 %codice ver 4
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=324, lastline=336, caption="Estratto di codice C dal file \textit{MPU6050\_platform\_user\_data\_and\_defines}"]{codefiles/MPU6050_platform_user_data_and_defines.h}
 
@@ -623,11 +623,11 @@ A suguire. L'enumerazione.\\
 Nella seconda sezione del file, sono state sviluppate le strutture dati protagoniste nella gestione dell'informazione acquisita dall'accelerometro e dal giroscopio.\\
 Per quanto riguarda l'accelerometro, sono state create tre strutture dati.\\
 \textbf{MPU6050\_datoGrezzoAccelerometro\_treAssi}, è stata pensata per contenere il segnale grezzo prelevato direttamente dai sei registri: ACCEL\_XOUT\_H, ACCEL\_XOUT\_L,\\ACCEL\_YOUT\_H, ACCEL\_YOUT\_L, ACCEL\_ZOUT\_H, ACCEL\_ZOUT\_L. Questi sono i registri che contengono l'informazione grezza dell'accelerazione lungo i tre assi 
-cartesiani.\\
+cartesiani.\\  
 Ognuno dei registri precedentemente citati presenta memoria ad 8 [bit] nonostante l'informazione finale per ogni asse sia a 16 [bit]. Questo si traduce in una suddivisione  dell'informazione in due parti, la parte alta e la parte bassa. Lo si può, anche, intuire dal nome attribuito a ciascun registro. Se nella parte finale del nome si trova H, questa sta per HIGH e vuol dire che in quel registro troviamo la parte alta dell'informazione. Esatto contrario se troviamo L nella parte finale del nome, questa sta per LOW, e specifica che il registro contiene la parte bassa dell'informazione.\\
 Al fine di contenere l'informazione finale è dunque necessario riservare 16 [bit] di memoria, l'effetto ottenuto è una struttura dati composta da tre dati di tipo \textit{uint16\_t}.\\
 \textbf{MPU6050\_datoInGAccelerometro\_treAssi} contiene il valore dell'accelerazione in [g] lungo i tre assi cartesiani. Questa è ottenuta dalla lavorazione del dato grezzo estratto da una funzione nel \textit{source file}. I membri della struttura dati sono tutti \textit{float}\\
-Infine \textbf{MPU6050\_datoMisuraInternazionaleAccelerometro\_treAssi} è casa del valore dell'acclerazione in [$\frac{m}{s^2}$]. Anche qui troviamo tutti \textit{float}.
+Infine \textbf{MPU6050\_datoMisuraInternazionaleAccelerometro\_treAssi} è casa del valore dell'accelerazione in [$\frac{m}{s^2}$]. Anche qui troviamo tutti \textit{float}.
 
 \newpage
 %codice ver 5
@@ -646,7 +646,7 @@ Questa particolare struttura è il risultato dell'impostazione del calcolo della
 In questa sezione sono state inserite due strutture dati aggregatrici.\\
 Tali strutture sono state adottate al fine di rendere il codice più leggibile e manutenibile.\\
 \textbf{MPU6050\_StrutturaDatiAccelerometro\_treAssi} contiene le strutture dati della sezione del file dedicata alle \textit{struct} elementari dell'accelerometro.\\In completa analogia
-\textbf{MPU6050\_StrutturaDatiGiroscopi\_treAssi} gestiste la sezione del file dedicata alle strutture del giroscopio.
+\textbf{MPU6050\_StrutturaDatiGiroscopi\_treAssi} gestisce la sezione del file dedicata alle strutture del giroscopio.
 %codice ver 7
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=433, lastline=455, caption="Estratto di codice C dal file \textit{MPU6050\_platform\_user\_data\_and\_defines}"]{codefiles/MPU6050_platform_user_data_and_defines.h}
 
@@ -654,12 +654,12 @@ Tali strutture sono state adottate al fine di rendere il codice più leggibile e
 In questa sezione del file è definita un'unica struttura dati.\\
 \textbf{assistenza\_MPU6050\_PosizioneAngolareDispositivo} è il risultato di un adattamento. La presenza della struttura ha semplificato lo sviluppo della funzione\\
 MPU6050\_LetturaDatiGiroscopio\_\_TrasformazioneDati.
-%codice ver 8
+%codice ver 8 
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=459, lastline=474, caption="Estratto di codice C dal file \textit{MPU6050\_platform\_user\_data\_and\_defines}"]{codefiles/MPU6050_platform_user_data_and_defines.h}
 
 \paragraph{Struttura dati aggregata per il controllo dell'MPU6050 InvenSense}
 L'ultima sezione del file è stata dedicata interamente alla struttura dati aggregatrice principale. Eccetto per la struttura dati definita nella sezione di assistenza delle funzioni, la protagonista aggrega tutte le \textit{struct} trattate in precedenza.\\
-Con il fine di semplficare il \textit{main flow} del firmware, i primi due membri della struttura sono tipi di dato definiti nel pacchetto di librerie HAL. Per la corretta compilazione, oltre ad altri file standard,  è stato incluso il file orginale HAL: \textbf{stm32h7xx\_hal.h}.\\
+Con il fine di semplificare il \textit{main flow} del firmware, i primi due membri della struttura sono tipi di dato definiti nel pacchetto di librerie HAL. Per la corretta compilazione, oltre ad altri file standard,  è stato incluso il file orginale HAL: \textbf{stm32h7xx\_hal.h}.\\
 In seguito, un estratto di tutte le inclusioni che troviamo nel file.
 %codice ver 9
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=9, lastline=13, caption="Estratto di codice C dal file \textit{MPU6050\_platform\_user\_data\_and\_defines} direttive di inclusione"]{codefiles/MPU6050_platform_user_data_and_defines.h}
@@ -669,17 +669,17 @@ che incarna la periferica scelta. Questa, dovrà essere passata alla struttura d
 Analoghe considerazioni per quanto riguarda il secondo membro della struttura, \textbf{UART\_HandleTypeDef perifericaComunicazioneHost}. 
 \\Il fine dell'utilizzo della periferica in questione, nasce dalla necessità di verificare il corretto funzionamento del dispositivo.\\
 Il protocollo di comunicazione \textbf{UART} è stato accoppiato ad un software esterno, \textit{PuTTy}, per lo scambio di informazioni.\\
-La verifica della corretta operatività è stata effettuata tramite \textit{flag} e visualizzazione dati, stampati a video nel terminale offerto dal software di terze parti. Inoltre, questa configurazione è stata sfruttata per poter verificare anche la coretta operatività della sezione del firmware, dedicata alla gestione delle eccezioni.\\
+La verifica della corretta operatività è stata effettuata tramite \textit{flag} e visualizzazione dati, stampati a video nel terminale offerto dal software di terze parti. Inoltre, questa configurazione è stata sfruttata per poter verificare anche la corretta operatività della sezione del firmware, dedicata alla gestione delle eccezioni.\\
 Il terzo membro della struttura contiene l'indirizzo del dispositivo MPU6050, utile al protocollo di comunicazione I2C. Al fine di ottenere la corretta operatività delle funzioni del \textit{core code} si raccomanda l'utilizzo dell'inidirizzo a 8 [bit].\\
 In vista di futuri miglioramenti è stato aggiunto anche un membro di tipo \textit{float}, pensato per contenere l'informazione relativa alla temperatura ambientale.\\
 A concludere la struttura dati, troviamo un membro incaricato a specificare l'attuale modalità di funzionamento del sensore.\\
 Infine, come conclusione del file, è stato definito un nuovo tipo di dato tramite \textit{typedef}. \textbf{MPU6050\_disp} è un puntatore alla struttura dati precedentemente descritta. È stato pensato per essere il principale accesso alla \textit{struct} di pilotaggio. Nel \textit{main flow} dovrà essere definito e inizializzato.\\
-In seguito, un estratto raffigurante l'utltima sezione del file.\\\\
+In seguito, un estratto raffigurante l'ultima sezione del file.\\\\
 %codice ver 10
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=480, lastline=505, caption="Estratto di codice C dal file \textit{MPU6050\_platform\_user\_data\_and\_defines} direttive di inclusione"]{codefiles/MPU6050_platform_user_data_and_defines.h}
-
+%inizio  
 \subsection{\textit{MPU6050\_platform.h}}
-Il file sopra citato è stato pensato e sviluppato al fine di : aumentare l'efficienza di sviluppo, potenziare la leggibilità del codice e disporre di un "navigatore" per spostarsi nel firmware con precisione e all'occorenza.\\
+Il file sopra citato è stato pensato e sviluppato al fine di : aumentare l'efficienza di sviluppo, potenziare la leggibilità del codice e disporre di un "navigatore" per spostarsi nel firmware con precisione e all'occorrenza.\\
 Il documento di programmazione contiene le dichiarazioni delle funzioni \textbf{core} del firmware, e gli annessi commenti esplicativi del ruolo di queste e del loro funzionamento.\\
 Il codice qui sotto presentato offre un primo esempio di organizzazione modulare attraverso l'impiego corretto delle direttive di inclusione, al fine di prevenire eccessive ripetizioni o disorganizzazione nel preprocessore, e favorire una struttura più scalabile e facilmente manutentibile nel tempo.
 %codice ver 11
@@ -687,13 +687,13 @@ Il codice qui sotto presentato offre un primo esempio di organizzazione modulare
 Il frammento di codice riportato di seguito, è rappresentativo della struttura riccorente del file \textit{header}.
 
 \newpage
-%codice ver 12
+%codice ver 12 
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=138, lastline=166, caption="Estratto di codice C dal file \textit{MPU6050\_platform.h} esempio con funzione e commento"]{codefiles/MPU6050_platform.h}
 \newpage
 
 \subsection{MPU6050\_platform.c. Il \textit{source file} contenente il \textit{core code}.}
 \textbf{MPU6050\_platform.c} è stato sviluppato nella considerazione di \textit{file} centrale del firmware. Contiene tutte le definizioni delle funzioni dichiarate nel \textit{file} precedentemente descritto.\\
-Le funzioni del \textit{file} sono state create con il fine di soddisfare le richieste del progetto utlimo.\\
+Le funzioni del \textit{file} sono state create con il fine di soddisfare le richieste del progetto ultimo.\\
 Per questioni di navigabilità e leggibilità, anche questo file è stato suddiviso in sezioni.\\
 \begin{enumerate}
     \item Direttive di inclusione e variabili \textit{extern}.
@@ -701,12 +701,12 @@ Per questioni di navigabilità e leggibilità, anche questo file è stato suddiv
     \item Verifica della corretta operatività della comunicazione tramite protocollo I2C.
     \item Funzioni di gestione della configurazione dell'MPU6050 InvenSense.
     \item Funzione di \textit{timing}.
-    \item Funzioni di lettura e manipolazione delle informazioni.
+    \item Funzioni di lettura e manipolazione delle informazioni.  
 \end{enumerate}
 È già stato prefissato l'obiettivo futuro di creare una funzione di \textit{Self-Test} per verificare il corretto funzionamento del comparto elettronico del sensore.
 
 \paragraph{Elementi strutturali riccorenti nelle procedure del file}
-Lo sviluppo del \textit{source file} è stato guidato dai principi di: semplicità, chiarezza e ripetitività strutturale, con particolare attenzione allo sfruttamento delle risorse messe a disposzione dall'\textbf{\textit{Hardware Abstraction Layer}}.
+Lo sviluppo del \textit{source file} è stato guidato dai principi di: semplicità, chiarezza e ripetitività strutturale, con particolare attenzione allo sfruttamento delle risorse messe a disposizione dall'\textbf{\textit{Hardware Abstraction Layer}}.
 Al fine di rispettare le linee guida precedentemente elencate, si è scelto di mantenere una struttura ricorrente in tutte le procedure del file.\\
 L'enumerazione, \textit{HAL\_StatusTypeDef} è stata scelta come valore di ritorno di ogni funzione del \textit{file}, eccetto per \textit{MPU6050\_PlatformInit} e \textit{MPU6050\_AspettaMisure}.
 La ragione della scelta di questo valore di ritorno, nasce dalla necessità di individuare un sistema per la verifica della corretta operatività delle funzioni sviluppate. Il sistema in indagine è stato trovato dando uno sguardo alle librerie dell'HAL.
@@ -722,13 +722,13 @@ A seguite, l'estratto di codice contenente la definizione dell'enumerazione inte
 Per una corretta gestione dell'MPU6050 InvenSense, è necessaria la giusta conduzione di scambi di informazione. Al fine di ottenere quest'ultimo risultato, sono state utilizzate procedure definite nell'HAL.\\
 Le funzioni HAL, centrali per lo sviluppo di questo \textit{source file} sono:
 \begin{itemize}
-\item \textbf{\textit{HAL\_UART\_Transmit}}. Gestisce la tramissione delle informazioni scambiate attraverso protollo di comunicazione UART.
+\item \textbf{\textit{HAL\_UART\_Transmit}}. Gestisce la trasmissione delle informazioni scambiate attraverso protollo di comunicazione UART.
 \item \textbf{\textit{HAL\_I2C\_Mem\_Read}}. Utilizza il protocollo di comunicazione I2C per leggere un numero di byte prefissato, dal registro desiderato.
 \item \textbf{\textit{HAL\_I2C\_Mem\_Write}}. Funzione inversa di quella precedentemente descritta. Utilizza il protocollo di comunicazione I2C per scrivere un numero di byte prefissato nel registro desiderato.
 \end{itemize}
 Al fine di una corretta operatività della libreria di gestione, sono state utilizzate altre funzioni del mondo HAL, ma l'utilizzo è limitato alle sole funzioni invocanti e non costituiscono un elemento strutturale ricorrente del \textit{file}.
-Per cui veranno analizzate singolarmente in seguito.
-La logica adottata per la gestione delle eccezioni e degli errori, ricalca i principi citati poc anzi. In particolare, ogni funzione è stata sviluppata contenendo il proprio messaggio di errore, che specificherà : la funzione in cui è avvenuta l'eccezione, il tipo di errore e lo stato restituito dalle funzioni HAL invocate nella procedura interessata.\\
+Per cui verranno analizzate singolarmente in seguito.
+La logica adottata per la gestione delle eccezioni e degli errori, ricalca i principi citati poc'anzi. In particolare, ogni funzione è stata sviluppata contenendo il proprio messaggio di errore, che specificherà : la funzione in cui è avvenuta l'eccezione, il tipo di errore e lo stato restituito dalle funzioni HAL invocate nella procedura interessata.\\
 La visualizzazione del messaggio di errore avviene per stampa video utilizzando\\\textit{HAL\_UART\_Transmit} e il terminale \textit{PuTTy}.\\
 Solo un unico valore di ritorno non verrà mai verificato tramite la procedura precedentemente descritta. Quest'ultimo è il ritorno della funzione \textit{HAL\_UART\_Transmit}, il quale dovrà essere controllato, all'occorenza, usando la funzione di \textit{debugging} offerta da STCubeIDE.
 In seguito, la ricorrenza di programmazione circa la gestione delle eccezioni nel \textit{source file}.\\
@@ -745,23 +745,25 @@ Nel seguente frammento, è possibile verificare quanto sia radicata questa ricor
 %volevo dire che qua si può vedere il risultato delle operazioni effettuate per ottenere una buna organizzazione modulare 
 Il risultato dell'organizzazione modulare attraverso il corretto impiego delle direttive di inclusione, è percepibibile in questa prima sezione del file.\\
 Al fine di una corretta compilazione del codice, le variabili, rappresentative della comunicazione I2C e UART, sono state dichiarate tramite la direttiva di preprocessore \textit{extern}.
-Si è selezionata la modalalità descritta nella riga sovrastante per evitare di ridichiarare o ridefinire le due variabili legate alla comunicazione seriale.
+Si è selezionata la modalità descritta nella riga sovrastante per evitare di ridichiarare o ridefinire le due variabili legate alla comunicazione seriale.
 In seguito, il frammento di codice raffigurante le inclusioni e le direttive \textit{extern}.
 %codice ver 16
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=11, lastline=14, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: direttive di inclusione e \textit{extern}"]{codefiles/MPU6050_platform.c}
 
+
+
 \paragraph{Funzione pseudo-contestuale di prima inizializzazione della struttura dati di pilotaggio. \textit{MPU6050\_PlatformInit}}
 La funzione è stata pensata per essere invocata da un'altra procedura.\\
-Saltando, all'utlima funzione della sezione: \textit{"funzioni di gestione della configurazione\\dell'MPU6050 InvenSense"} troviamo la funzione
+Saltando all'ultima funzione della sezione: \textit{"funzioni di gestione della configurazione\\dell'MPU6050 InvenSense"} troviamo la funzione
 \textbf{MPU6050\_InizializzazioneDispositivo}, questa richiama al suo interno tutte le procedure che appartengono alla sezione del file precedente citata e la funzione sotto descrizione.
-In questo primo esempio di funzione del \textit{core file}, si può notare, quanto la definizione della struttura di pilotaggio principale semplifichi lo sviluppo del firmware.\\
+In questo primo esempio di funzione del \textit{core file}, si può notare quanto la definizione della struttura di pilotaggio principale semplifichi lo sviluppo del firmware.\\
 Infatti, questa richiede un solo parametro, un puntatore alla struttura citata.\\ 
 L'organizzazione parametrica delle procedure del file seguirà quella poc anzi descritta.\\
-La procedura inizializza tutti i membri della struttura di pilotaggio. Le singole inizializzazioni sono state pensate per gestire, all'occorenza,l'errore legato ad un'incorretta inizializzazione del dispostivo. 
-Se per qualche motivo, le funzioni incaricate di comunicare con il dispositivo non dovessero funzionare, in aggiunta ai messagi di errore di queste, si ha, come strumento di identificazione dell'errore, il controllo dei valori 
+La procedura inizializza tutti i membri della struttura di pilotaggio. Le singole inizializzazioni sono state pensate per gestire, all'occorrenza, l'errore legato ad un'incorretta inizializzazione del dispositivo. 
+Se per qualche motivo, le funzioni incaricate di comunicare con il dispositivo non dovessero funzionare, in aggiunta ai messaggi di errore di queste, si ha, come strumento di identificazione dell'errore, il controllo dei valori 
 assegnati alla struttura di pilotaggio. Le informazioni acquisite dai sensori incorporati non saranno mai pari a zero, dal momento che abbiamo \textit{bias/offset}. Inoltre la modalità di funzionamento del sensore non può essere impostata a [-1].
-Tutto quello che è stato esplicato precedentemente vale per tutti i membri della struttura, eccetto i primi tre. Le prime tre assegnazioni hanno un grado di importanza maggiore, dal momento che, definiscono: l'indirizzo del dispositivo MPU6050 come \textit{slave} nella comunicazione I2C, quale perficarica di comunicazione, offerta dalla NUCLEO-H745ZI-Q, viene usata per comunicare con il sensore, e la periferica di comunicazione UART con l'\textit{host}.
-Di default si assegna la periferica di comunicazione \textbf{hi2c1} e la \textbf{huart3} rispettivamente per il protocollo I2C e UART. Nel caso in cui si avesse la necessità di gestire il dispositivo tramite altre periferiche, bisogna metter mano alla funzione e modificarne i valori interessati.
+Tutto quello che è stato esplicato precedentemente vale per tutti i membri della struttura, eccetto i primi tre. Le prime tre assegnazioni hanno un grado di importanza maggiore, dal momento che, definiscono: l'indirizzo del dispositivo MPU6050 come \textit{slave} nella comunicazione I2C, quale periferica di comunicazione, offerta dalla NUCLEO-H745ZI-Q, viene usata per comunicare con il sensore, e la periferica di comunicazione UART con l'\textit{host}.
+Di default si assegna la periferica di comunicazione \textbf{hi2c1} e la \textbf{huart3} rispettivamente per il protocollo I2C e UART. Nel caso in cui si avesse la necessità di gestire il dispositivo tramite altre periferiche, bisogna mettere mano alla funzione e modificarne i valori interessati.
 A seconda della piattaforma di programmazione utilizzata, è necessario verificare se lo \textit{slave address} del protocollo I2C deve essere a 7[bit] o 8[bit]. Post verifica bisogna modificare il valore dell'indirizzo manualmente. 
 In seguito, il frammento rappresentativo del codice.
 %codice ver 17
@@ -769,24 +771,24 @@ In seguito, il frammento rappresentativo del codice.
 
 \paragraph{Verifica della corretta operatività della comunicazione tramite protocollo I2C. \textit{MPU6050\_VerificaComunicazioni}}
 Nella sezione interessata, è stata inserita solamente una procedura. \textit{MPU6050\_VerificaComunicazioni} è stata creata con il fine di verificare l'operatività della periferica di comunicazione I2C scelta, oltre che testare lo scambio di informazioni con il dispositivo tramite medesimo protocollo.\\
-Nel paragrafo, \textit{Elementi strutturali riccorenti nelle procedure del file} si specifica che in alcune procedure della libreria, sono state invocate altre funzioni appartenenti al panorama HAL, oltre a quelle comuni nel file.\\
+Nel paragrafo, \textit{Elementi strutturali riccorrenti nelle procedure del file} si specifica che in alcune procedure della libreria, sono state invocate altre funzioni appartenenti al panorama HAL, oltre a quelle comuni nel file.\\
 Questo è uno dei casi in esame.\\
 La procedura è stata suddivisa in due sezioni.\\
-La prima richiede lo stato della periferica di comunicazione I2C scelta, e attende un intervallo di tempo pari a \textit{STANDARD\_TIMEOUT\_MILLISEC} prima di restituire un errore di \textit{time out}. La temporizzazione è gestita manipolando il dato restiuito dalla funzione HAL, \textit{HAL\_GetTick}, che utilizza il timer di sistema \textit{SysTickTimer} per scandire correttamente la temporizzazione.\\
+La prima richiede lo stato della periferica di comunicazione I2C scelta, e attende un intervallo di tempo pari a \textit{STANDARD\_TIMEOUT\_MILLISEC} prima di restituire un errore di \textit{time out}. La temporizzazione è gestita manipolando il dato restituito dalla funzione HAL, \textit{HAL\_GetTick}, che utilizza il timer di sistema \textit{SysTickTimer} per scandire correttamente la temporizzazione.\\
 La "richiesta di stato" è gestita da un'altra funzione HAL, \textit{HAL\_I2C\_GetState}, che restituisce un dato di tipo enumerato definito sempre nello stesso panorama, \textit{HAL\_I2C\_StateTypeDef}.\\
 Se, nei tempi pattuiti, viene restituito il valore \textit{HAL\_I2C\_STATE\_READY}, allora la periferica di comunicazione è pronta per condurre informazioni.\\
-Alla seconda sezione, ci si accede solamente se il valore restituito dalla funzione HAL precedente è \textit{HAL\_I2C\_STATE\_READY}. Se questo è il caso, si ha l'invocazione della funzione \textit{HAL\_I2C\_IsDeviceReady}. Quest'ultima verifica, per un certo numero di tentativi prefissabile, se il dispositivo è pronto per lo scambio di informazioni. Se la funzione HAL, non riesce a comunicare con il dispositivo entro il numero di tetativi prefissato o scade il tempo di attessa definito, allora verrà restituito errore, e questo verrà segnalato dal gestore delle eccezioni e lo stato verrà trasmesso come uscita della funzione sviluppata.\\
-Se l'operatività corrente è quella prevista, allora si ha la certezza di accuratezza della comunciazione con l'MPU6050 InvenSense.
+Alla seconda sezione, ci si accede solamente se il valore restituito dalla funzione HAL precedente è \textit{HAL\_I2C\_STATE\_READY}. Se questo è il caso, si ha l'invocazione della funzione \textit{HAL\_I2C\_IsDeviceReady}. Quest'ultima verifica, per un certo numero di tentativi prefissabile, se il dispositivo è pronto per lo scambio di informazioni. Se la funzione HAL, non riesce a comunicare con il dispositivo entro il numero di tentativi prefissato o scade il tempo di attesa definito, allora verrà restituito errore, e questo verrà segnalato dal gestore delle eccezioni e lo stato verrà trasmesso come uscita della funzione sviluppata.\\
+Se l'operatività corrente è quella prevista, allora si ha la certezza di accuratezza della comunicazione con l'MPU6050 InvenSense.
 A seguire, il frammento di codice che riporta la funzione interessata.
 %codice ver 18
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=59, lastline=113, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_VerificaComunicazioni}"]{codefiles/MPU6050_platform.c}
 
 \paragraph{Funzioni configuratrici dell'MPU6050 InvenSense}
 La logica adottata dalle procedure sviluppate in questa sezione, nasce dalla necessità di interagire con i registri interni dell'MPU6050 per modificarne i valori.\\
-Come discusso nel paragrafo: "Elementi strutturali ricorrenti nelle procedure del file", le procedure hanno un'archiettura risonante. Le funzioni di questa sezione adempiono ai loro diversi scopi rispettando \textit{la ricorrenza} più volte citata.
+Come discusso nel paragrafo: "Elementi strutturali ricorrenti nelle procedure del file", le procedure hanno un'architettura risonante. Le funzioni di questa sezione adempiono ai loro diversi scopi rispettando \textit{la ricorrenza} più volte citata.
 Utilizzano \text{HAL\_I2C\_Mem\_Write} per modificare i valori nei registri interessati e \textit{HAL\_I2C\_Mem\_Read} per leggere i valori di questi.\\
-L'archiettura di gestione dell'errore è presente come da manuale.
-Alla luce del fatto che, la logica di funzionamento è comune a tutte le procedure del file. Verrà puntualizzato solamente il compito che deve essere svolto dalla procedura, e all'occorenza le "anomalie" rispetto alla \textit{ricorrenza}.
+L'architettura di gestione dell'errore è presente come da manuale.
+Alla luce del fatto che, la logica di funzionamento è comune a tutte le procedure del file. Verrà puntualizzato solamente il compito che deve essere svolto dalla procedura, e all'occorrenza le "anomalie" rispetto alla \textit{ricorrenza}.
 \subparagraph{MPU6050\_ImpostaModFunzionamento}
 è la prima funzione della sezione. Quest'ultima imposta la modalità di funzionamento desiderata dell'MPU6050. La procedura, inoltre, gestisce l'errore di impostazione legato ad un valore invalido del parametro: "modFunzionamento".\\
 Descrizione delle modalità di funzionamento del sensore.
@@ -796,11 +798,12 @@ Descrizione delle modalità di funzionamento del sensore.
     \item CYCLE. Se impostata, l'MPU6050 entra periodicamente in modalità di rilevamento, alla frequenza del \textit{Low Power Accelerometer Output Rate}, e acquisisce una misura dall'accelerometro/giroscopio. Tornando poi in \textit{sleep mode} fino al ciclo successivo.
 \end{itemize}
 La funzione, inoltre, offre la possibilità di effettuare il reset dell'MPU6050 InvenSense. Se opzionato il \textit{Soft-Reset}, i valori nei registri, precedentemente modificati, tornano al loro valore di \textit{default}.\\
-Dopo il \textit{Soft Reset}, la procedura reinvoca se stessa, impostando la modalità di funzionamento di \textit{default}, ACQUISIZIONE\_CONTINUA.\\
+Dopo il \textit{Soft Reset}, la procedura si reinvoca, impostando la modalità di funzionamento di \textit{default}, ACQUISIZIONE\_CONTINUA.\\
 In seguito, la definizione della funzione presa in esame.
 %codice ver 19
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=117, lastline=226, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_ImpostaModFunzionamento}"]{codefiles/MPU6050_platform.c}
-
+%inizio 
+% frammeto
 \subparagraph{MPU6050\_ImpostaDLPF.} 
 Il compito della procedura sotto analisi, è quello di configurare il \textit{Digital Low-Pass Filter} del dispositivo.\\
 Il \textit{Digital Low-Pass Filter} è un filtro digitale interno all'MPU6050 InvenSense, progettato per attenuare il rumore ad alta frequenza nei dati acquisiti da accelerometro e giroscopio.
@@ -873,7 +876,7 @@ Il metodo restituisce il \textit{Full Scale Range} attualmente impostato, del gi
 Nel seguito, la definizione.
 %codice ver 25
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=366, lastline=385, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_OttieniFullScaleRangeGiroscopio}"]{codefiles/MPU6050_platform.c}
-
+ % operatività pensata
 \subparagraph{MPU6050\_ImpostaFullScaleRangeAccelerometro.}
 Il fine di questa, è quello di configurare l'intervallo di misura o \textit{Full Scale Range} dell'accelerometro. La tabella (2.1) approfondisce in dettaglio i vari \textit{Full Scale Range} impostabili per l'accelerometro.\\
 A seguire, la definizione.
@@ -881,7 +884,7 @@ A seguire, la definizione.
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=387, lastline=417, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_ImpostaFullScaleRangeAccelerometro}"]{codefiles/MPU6050_platform.c}
 
 \subparagraph{MPU6050\_OttieniFullScaleRangeAccelerometro.}
-Analogalmente ad alcune precedenti funzioni, questa restituisce il \textit{Full Scale Range} attualmente impostato, dell'accelerometro.
+Analogamente ad alcune precedenti funzioni, questa restituisce il \textit{Full Scale Range} attualmente impostato, dell'accelerometro.
 Qui sotto, la sua definizione.
 %codice ver 27
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=419, lastline=436, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_OttieniFullScaleRangeAccelerometro}"]{codefiles/MPU6050_platform.c}
@@ -889,9 +892,9 @@ Qui sotto, la sua definizione.
 \subparagraph{MPU6050\_InizializzazioneDispositivo.}
 Il ruolo della procedura, è quello di configurare MPU6050 InvenSense secondo le impostazioni desiderate.\\
 In gergo tecnico, la funzione appena citata è una \textit{wrapper function}. La procedura, infatti, invoca tutte le altre funzioni della sezione, aggiungendo al suo record di chiamate anche \textit{MPU6050\_PlatformInit}.\\
-I parametri passatti alla funzione saranno i parametri delle invocazioni interne.\\
+I parametri passati alla funzione saranno i parametri delle invocazioni interne.\\
 Se solo una delle chiamate interne restituisce un valore diverso da \textit{HAL\_OK}, la funzione si blocca e non completa l'inizializzazione del dispositivo.
-Si è optato per l'eliminazione della procedura di gestione dell'errore. Nella presente casistica, di fatti, ogni proceduta invocata detiene al suo interno il sistema di gestione dell'errore, duqnue, al fine di evitare ridondanze è stata decisa l'omissione del sistema.
+Si è optato per l'eliminazione della procedura di gestione dell'errore. Nella presente casistica, di fatti, ogni procedura invocata detiene al suo interno il sistema di gestione dell'errore, dunque, al fine di evitare ridondanze è stata decisa l'omissione del sistema.
 \newpage
 %codice ver 28
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=438, lastline=467, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_OttieniFullScaleRangeAccelerometro}"]{codefiles/MPU6050_platform.c}
@@ -901,11 +904,11 @@ La qui descritta sezione del file conta un'unica funzione. La funzione presenta 
 \textit{MPU6050\_AspettaMisure} verifica la presenza o meno, di nuove misure, acquisite dall'accelerometro e dal gioscopio. A tal fine, il metodo sfrutta una caratteristica hardware dell'MPU6050 InvenSense.
 Il bit[0] del registro [58], denominato INT\_STATUS viene automaticamente impostato ad [1] quando una nuova "misura" è disponibile alla lettura.\\
 Il metodo dunque, utilizza il connubio tra un \textit{while loop} e un \textit{timer} per gestire la procedura di acquisizione.
-Il \textit{flow} del programma rimane nel \textit{while loop} finché non viene letto il valore "true" dal registro oppure finché la procedura non segna il timeout. Per la gestione di quest'ultima, viene utilizzato il timer di sistema SysTyckTimer accoppiato alla funzione \textit{HAL\_GetTick}.
+Il \textit{flow} del programma rimane nel \textit{while loop} finché non viene letto il valore "true" dal registro oppure finché la procedura non segna il timeout. Per la gestione di quest'ultima, viene utilizzato il timer di sistema SysTickTimer accoppiato alla funzione \textit{HAL\_GetTick}.
 Se il \textit{flow} è quello desiderato, la funzione restituisce \textit{"true"} e quindi il via libera alla lettura della misura altrimenti restituisce \textit{"false"}.
 La funzione è stata pensata per operare in connubio con una struttura condizionale.
 La procedura, inoltre, è stata concepita per evitare l'utilizzo di \textit{timer} nella sincronizzazione tra la velocità di esecuzione del \textit{main.c} e l'acquisizione della misura. In assenza di una corretta temporizzazione, verrebbe acquisita più volte la medesima misura, compromettendo l'efficacia del campionamento e dimunedo l'accuratezza di alcune informazioni ricavate manipolando le misure dirette.
-In seguito, il frammeto di codice esplicativo dell'operatività pensata per la funzione, e la definizione della funzione stessa.
+In seguito, il frammento di codice esplicativo dell'operatività prevista per la funzione, e la definizione della funzione stessa.
 %codice ver 29
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=859, lastline=861, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: Dimostrazione dell'uso di \textit{MPU6050\_AspettaMisure}"]{codefiles/MPU6050_platform.c}
 %\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=471, lastline=497, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_OttieniFullScaleRangeAccelerometro}"]{codefiles/MPU6050_platform.c}
@@ -913,14 +916,14 @@ In seguito, il frammeto di codice esplicativo dell'operatività pensata per la f
 \paragraph{Funzioni di lettura e manipolazione delle informazioni}
 La sezione ultima del \textit{file} contiene le funzioni di rilevanza maggiore al completamento del progetto.\\
 Le procedure qui sviluppate hanno il compito di estrapolare dai registri dell'MPU6050, le misure acquisite dall'accelerometro e dal giroscopio. L'informazione ottenuta verrà poi manipolata dalle medesime con il fine di dedurre misure derivate.
-
+%inizio
 \subparagraph{MPU6050\_LetturaDatoGrezzoAccelerometro\_\_TrasformazioneDati e\\ MPU6050\_LetturaDatoGrezzoGiroscopio.}
 Le procedure che intitolano il paragrafo, hanno il compito di estrapolare le misure acquisite dall'accelerometro e dal giroscopio.\\Condividono una struttura di sviluppo analoga.\\
 Come già scritto in precedenza, i registri che conservano l'informazione di misura dispongono di 8[bit] di memoria, nonostante l'informazione completa sia stata pensata per occupare 16[bit].\\
 La risultante di questa particolare configurazione, è l'assegnazione di due registri per la conservazione della misura acquisita lungo un unico asse cartesiano.\\
-Nel dettaglio sottostante di fatti è possibile notare come sia stata divisa in due registri la misura su un unico asse.
+Nel dettaglio sottostante difatti è possibile notare come sia stata divisa in due registri la misura su un unico asse.
 L' "H" nel nome del registro sta ad indicare che in quest'ultimo viene salvata la parte alta dell'informazione [bit8,bit15], mentre la "L" sta ad indicare che il dispositivo conserva in quel registro la parte bassa dell'informazione [bit0,bit7].\\
-Ogni asse cartesiano ha questo \textit{"bicromismo"}.
+Ogni asse cartesiano ha questo \textit{"bicromia"}.
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{
@@ -946,20 +949,20 @@ Ogni asse cartesiano ha questo \textit{"bicromismo"}.
     \label{tab: tabella}
 \end{table}
 Per l'acquisizione delle informazioni interessate, viene effettuata una lettura sequenziale di 6[byte], sfruttando l'adiacenza dei registri interni del dispositivo.
-Nello specifico, le procedure utilizzano un'unica invocazione di \textit{HAL\_I2C\_Mem\_Read}, comandando la lettura di 6[byte] partendo dal registro indicizzato con il valore in esadecimale più piccolo. L'adiacenza poc anzi citata, viene adottata per compiere un'unica operazione di lettura, aumentando l'efficienza del codice.\\
+Nello specifico, le procedure utilizzano un'unica invocazione di \textit{HAL\_I2C\_Mem\_Read}, comandando la lettura di 6[byte] partendo dal registro indicizzato con il valore in esadecimale più piccolo. L'adiacenza poc'anzi citata, viene adottata per compiere un'unica operazione di lettura, aumentando l'efficienza del codice.\\
 Le funzioni sono state sviluppate in modo che i 6[byte] di memoria letti dai registri, vengano salvati in un \textit{array} composto da sei celle, specializzate nel contenimento di dati \textit{uint8\_t}.
 Supponendo di effettuare l'operazione di lettura sequenziale dai registri contenenti le misure dell'accelerometro, la prima cella dell'\textit{array} conterrebbe la parte alta della misura dell'accelerazione percepita lungo l'asse delle ascisse, mentre la seconda, la parte bassa per lo stesso asse, e così via per i restanti.
 Si può dire, dunque, che avviene il trasferimento della rigorosa struttura dei registri, all'\textit{array} sovra citato.\\
-Per il completamento dell'informazione grezza, viene effettuata l'assegnazione di questa alle variabili della struttura di pilotaggio, mediante un'operazione di OR bit per bit con \textit{cast} finale (\textit{int16\_t}), con il fine di generare il dato completo a 16[bit].\\
+Per il completamento dell'informazione grezza, viene effettuata l'assegnazione di questa alle variabili della struttura di pilotaggio, mediante un'operazione OR bit per bit con \textit{cast} finale (\textit{int16\_t}), con il fine di generare il dato completo a 16[bit].\\
 Per ottenere la misura ultima, bisogna manipolare il segnale grezzo con una metodologia dipendente dal \textit{Full Scale Range} attualmente impostato. Viene, quindi, richiamata la procedura di restituzione del \textit{FSR} a seconda del componente interessato.\\
-Il costrutto \textit{switch-case} indirizzerà il \textit{flow} del programma alla parte di codice che gestisce la manipolazione della misura per quel determianto valore di \textit{FSR}, sia per il giroscopio che per l'accelerometro. Le singole sezioni del costrutto sono pensate per assegnare l'informazione ultima alle variabili specializzate della struttura di pilotaggio.
+Il costrutto \textit{switch-case} indirizzerà il \textit{flow} del programma alla parte di codice che gestisce la manipolazione della misura per quel determinato valore di \textit{FSR}, sia per il giroscopio che per l'accelerometro. Le singole sezioni del costrutto sono pensate per assegnare l'informazione ultima alle variabili specializzate della struttura di pilotaggio.
 L'assegnazione è, il risultato del rapporto tra il segnale grezzo e la sensibilità specifica di quel \textit{FSR}.\\
 Le funzioni intitolanti il paragrafo, nonostante l'analogia strutturale hanno alcune diversità legate alla deduzione dell'informazione derivata.
-
+%inizio
 \subparagraph{Analisi sulla manipolazione dei dati di\\MPU6050\_LetturaDatoGrezzoAccelerometro\_\_TrasformazioneDati.}
 La procedura in questione, interagisce con l'accelerometro.\\
 All'estrapolazione dell'informazione segue la sua manipolazione. Come detto in precedenza, il segnale grezzo, estratto dai registri del dispositivo, dovrà essere diviso per il valore di sensibilità, dipendente dal \textit{Full Scale Range} dell'accelerometro attualmente impostato.\\
-Il risultato di questa operazione, è il valore di accelerazione percepito lungo i tre assi, espresso in [g]. La funzione elabora ulteriormente questo dato per poter ottenere l'accelerazione espressa in [$\frac{m}{s^2}$]. L'elaborazione in questione è banale, di fatti viene solamente effettuata la trasformazione da [g] a [$\frac{m}{s^2}$], moltiplicando la prima informazione per [9,81].
+Il risultato di questa operazione, è il valore di accelerazione percepito lungo i tre assi, espresso in [g]. La funzione elabora ulteriormente questo dato per poter ottenere l'accelerazione espressa in [$\frac{m}{s^2}$]. L'elaborazione in questione è banale, difatti viene solamente effettuata la trasformazione da [g] a [$\frac{m}{s^2}$], moltiplicando la prima informazione per [9,81].
 Nel seguio, è stata riportata la definizione della funzione interessata.
 %codice ver 30
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=501, lastline=594, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_LetturaDatiAccelerometro\_\_TrasformazioneDati}"]{codefiles/MPU6050_platform.c}
@@ -979,7 +982,7 @@ La funzione intitolante è una \textit{helper function}, vale a dire che è stat
 La procedura ha il compito di estrapolare l'informazione della velocità angolare dal giroscopio. La metodologia di estrazione è stata descritta precedentemente. 
 La prima manipolazione dell'informazione corrisponde al rapporto tra il segnale grezzo acquisito dai registri e la sensibilità, dipendente sempre dal \textit{Full Scale Range}.\\
 L'MPU6050 InvenSense offre, inoltre, la possibilità di individuare il senso di rotazione.\\
-Nello specifico, quest'ultima informazione non viene identifica esprimendola attraverso \textit{segno}. Per meglio dire, il senso orario non è individuato mediante segno nevativo associato all'informazione della velocità angolare.\\
+Nello specifico, quest'ultima informazione non viene identificata esprimendola attraverso \textit{segno}. Per meglio dire, il senso orario non è individuato mediante segno negativo associato all'informazione della velocità angolare.\\
 Il sensore offre l'informazione della velocità di rotazione, occupando tutto l'intervallo d'escursione del \textit{Full Scale Range} attualmente impostato. In altre parole, supponendo la configurazione con \textit{FSR = $\pm250[\frac{gradi}{s}]$}, la misura della velocità angolare in uscita apparterrebbe all'intervallo [0,500].
 Questo poiché, il sensore, attribuisce ad una metà dell'intervallo di escursione, un senso di rotazione, e all'altra metà, la rimanente direzione. Tornando all'assunzione precedente, se nella misura si individuassero valori appartenenti a [0,250], allora questi esprimerebbero la velocità di rotazione in direzione antioraria. 
 Nel caso in cui si trovassero della misure appartenenti a [500,250] queste esprimerebbero la velocità di rotazione nella restante direzione.\\
@@ -988,7 +991,7 @@ La funzione è stata sviluppata per elaborare questa metodologia di espressione,
 A seguire, la sua definizione.
 %codice ver 31
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=710, lastline=851, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_LetturaDatoGrezzoGiroscopio}"]{codefiles/MPU6050_platform.c}
-
+%  primale
 \subparagraph{MPU6050\_LetturaDatiGiroscopio\_\_TrasformazioneDati}
 La procedura in questione, ha il compito di stimare la posizione angolare del dispositivo.\\
 La stima basa la sua deduzione sulla velocità angolare del dispositivo. 
@@ -998,15 +1001,15 @@ Per questa prima versione, si è optato per la formula di integrazione discreta 
 \begin{equation}
     \int_{a}^{b} f(t)\, dt \approx \frac{h}{2} \left( f(k_0) + 2 \sum_{i=1}^{n-1} f(k_i) + f(k_n) \right)
 \end{equation}
-in cui: \textit{k} simboleggi il tempo discreto, $h=\frac{b-a}{n}$ e $f(k_i)$ sono i valori discreti di velocità angolare.\\
-Con il fine di adattare la fomula al codice, è stata utilizzata la seguente :
+in cui: \textit{k} identifica il tempo discreto, $h=\frac{b-a}{n}$ e $f(k_i)$ sono i valori discreti di velocità angolare.\\
+Con il fine di adattare la formula al codice, è stata utilizzata la seguente :
 \begin{equation}
     \approx \frac{\delta t}{2} \left(f(t_i)+f(t_{i+1})\right)  \quad \delta t = t_{i+1} - t_i
 \end{equation} 
 
 facilemente ricavabile dalla forma compatta ponendo $n=1$.\\
 Considerando $\delta t$ pari al tempo di acquisizione dell'informazione da parte del giroscopio, possiamo determinare il valore della posizione angolare del dispositivo.\\
-In pseudo-codice.
+In pseudocodice.
 \begin{lstlisting}[language = Cpp]
     while(...){
         posizione_angolare_attuale = valore_integrale + (1/2)*deltat*( vel_ang_ist_prec + vel_ang_ist_att);
@@ -1018,8 +1021,8 @@ Avvengono le invocazioni delle funzioni \textit{MPU6050\_OttieniDivisoreFrequenz
 La deduzione della frequenza di campionamento del giroscopio, segue la formula citata nel patagrafo \textit{MPU6050\_ImpostaDivisoreFrequenzaCampionamento}. %magati mettici il numero alla formula così da tener traccia di queste
 Un costrutto condizionale distingue tra le due frequenze di lavoro "grezzo" del giroscopio, \textit{DLPF on} e \textit{DLPF off}, rispettivamente $1 [kHz]$ e $8 [kHz]$.
 Una volta determinata la frequenza di acquisizione propria del giroscopio, la procedura determina il $\delta t$, l'intervallo di tempo tra un'acquisizione e l'altra, calcolando l'inverso della frequenza di acquisizione del giroscopio.
-Seguento la formula del trapezio applicata al singolo intervallo, viene invocata la funzione \textit{MPU6050\_AspettaMisure} per gestire il \textit{timing} tra un'acquisizione e l'altra. Acquisendo così, il valore della velocità angolare nell'istante di tempo precedente, e quello nell'istante di tempo puntuale.\\
-L'intervallo di appartenenza scelto per la posizione angolare è [0,360][°]. Per la gestione dell'eccedenza rispetto a tale intervallo si è scelto uno sviuppo basato sul costrutto condizionale.
+Seguendo la formula del trapezio applicata al singolo intervallo, viene invocata la funzione \textit{MPU6050\_AspettaMisure} per gestire il \textit{timing} tra un'acquisizione e l'altra. Acquisendo così, il valore della velocità angolare nell'istante di tempo precedente, e quello nell'istante di tempo puntuale.\\
+L'intervallo di appartenenza scelto per la posizione angolare è [0,360][°]. Per la gestione dell'eccedenza rispetto a tale intervallo si è scelto uno sviluppo basato sul costrutto condizionale.
 A seguire il codice.
 %codice ver 32
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=596, lastline=708, caption="Estratto di codice C dal file \textit{MPU6050\_platform.c}: la funzione \textit{MPU6050\_LetturaDatoGrezzoGiroscopio}"]{codefiles/MPU6050_platform.c}
@@ -1030,17 +1033,17 @@ STMicroelectronics, produttore del VL53L1X, fornisce il \textit{firmware} uffici
 Con il fine di risparmiare tempo per il compimento della \textit{task}, è stata preferita l'implementazione del firmware ufficiale piuttosto che lo sviluppo autonomo.
 Il \textit{firmware} di STMicroelectronics è \textbf{multi piattaforma}, vale a dire che è stato concepito per operare, oltre che su STCubeIDE, anche su altri ambienti di sviluppo.
 In virtù di ciò, è necessario operare un'adattamento all'ambiente di sviluppo utilizzato.\\
-Gli sviluppatori del firmware hanno ridotto il lavoro necessario all'adattamento, difatti, per raggiungere tal fine è solamente necessario metter mano alla cartella \textit{platform}. Per lo scopo primale è risultata sufficiente la modifica di \textit{vl53l1\_platform.c}.\\
-Al fine di garantire la corretta operativià del \textit{firmware}, si è optato per un adattamento tramite funzioni HAL, del tipo descritte in precedenza.\\
-l'addozione delle strutture software HAL è consequenziale all'impiego di tipologie di dato, strutture, introdotte nei paragrafi precedenti.
-
+Gli sviluppatori del firmware hanno ridotto il lavoro necessario all'adattamento, difatti, per raggiungere tal fine è sufficiente metter mano alla cartella \textit{platform}. Per lo scopo primario è risultata sufficiente la modifica di \textit{vl53l1\_platform.c}.\\
+Al fine di garantire la corretta operatività del \textit{firmware}, si è optato per un adattamento tramite funzioni HAL, del tipo descritte in precedenza.\\
+l'adozione delle strutture software HAL è consequenziale all'impiego di tipologie di dato, strutture, introdotte nei paragrafi precedenti.
+ 
 \subsection{Il \textit{source file} di adattamento. \textit{vl53l1\_platform.c}}
 Le procedure, la cui definizione è a carico del consumatore finale, sono state individuate durante l'esecuzione del codice. Le segnalazioni di errore di STCubeIDE sono state utili alla localizzazione di tali indefinite funzioni.
 Lo studio del contesto delle procedure da definire, è stato la chiave del corretto adattamento.
 Anche in questo caso, con il fine di migliorare la leggibilità del codice, si è optato per la divisione del file in sezioni. Nel dettaglio, \textit{vl53l1\_platform.c} è stato diviso in due sezioni.
 La prima corrispondente al firmware ufficiale, la seconda legata alla definizione delle funzioni di adattamento.\\
-In questo scritto non veranno menzionati altri file al di fuori di \textit{vl53l1\_platform.c}, inoltre non verrano trattate procedure che non sono state sviluppate al fine dell'adattamento.
-La comunicazione I2C con il dispositivo è gestita dalla perferica I2C2 della NUCLEO-H745ZI-Q.\\
+In questo scritto non verranno menzionati altri file al di fuori di \textit{vl53l1\_platform.c}, inoltre non verranno discusse procedure che non sono state sviluppate al fine dell'adattamento.
+La comunicazione I2C con il dispositivo è gestita dalla periferica I2C2 della NUCLEO-H745ZI-Q.\\
 Al fine di verificare la corretta operatività delle funzioni implementate, come nel caso del modulo GY-86, si è optato per l'utilizzo di un terminale per la stampa video di informazioni. Il terminale in questione, è fornito dal software esterno \textit{PuTTy}, precedentemente menzionato.\\
 Per comunicare le informazioni esprimenti l'operatività delle implementazioni, \textit{PuTTy} utilizza il protocollo di comunicazione seriale UART. In analogia con la metodologia di gestione dell'MPU6050 InvenSense, per la comunicazione in questione è stata scelta la periferica di comunicazione USART3 della NUCLEO-H745ZIQ.
 Entrambe le periferiche di comunicazione vengono gestite dall'HAL, tramite le strutture \textit{I2C\_HandleTypeDef} e \textit{UART\_HandleTypeDef}.\\
@@ -1070,6 +1073,7 @@ La struttura utilizzata dal \textit{firmware} per la segnalazione dell'insorgenz
 \textit{VL53L1\_Error} è il tipo di dato utilizzato dal \textit{firmware} allo scopo. Di conseguenza tutte le funzioni di \textit{vl53l1\_platform.c} restituiscono il tipo di dato citato in precedenza.\\
 Questo sistema di gestione dell'errore, è stato utilizzato durante lo sviluppo, per la verifica del corretto funzionamento delle implementazioni.\\
 In alcune definizioni, è stata forzata la "collaborazione", tra la struttura di gestione delle eccezioni della libreria HAL e quella presente nel \textit{firmware} sotto analisi.
+%  poc anzi
 \begin{lstlisting}[language=Cpp, caption={Dettaglio sulla struttura di gestione delle eccezioni presente in \textit{vl53l1\_error\_codes.h}, da notare, il cast a dato VL53L1\_Error nelle direttive \textit{define}}]
     
     typedef int8_t VL53L1_Error;
@@ -1104,16 +1108,16 @@ A seguire, la descrizione delle procedure implementate con il fine di ottenere i
 
 
 \paragraph{RANGING\_SENSOR\_COMMS\_Init\_CCI}
-Nell'analisi della funzione\\\textit{VL53L1\_CommsInitialise}, il cui compito, è quello di inizializzare le perifiche di comunicazione in utilizzo, è stata individuata la prima procedura utile all'adattamento.\\
+Nell'analisi della funzione\\\textit{VL53L1\_CommsInitialise}, il cui compito, è quello di inizializzare le periferiche di comunicazione in utilizzo, è stata individuata la prima procedura utile all'adattamento.\\
 \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI} è invocata dalla precedente procedura, con lo scopo di ottenere la verifica della corretta operatività della periferica di comunicazione in uso.
 Per lo sviluppo della definizione della funzione è stata necessaria l'integrazione dell'HAL.\\
 La componente HAL utilizzata per l'adattamento è \textit{HAL\_I2C\_GetState}, già descritta nella sezione dedicata alla descrizione del \textit{firmware} di gestione dell'MPU6050.
 La funzione restituisce il valore, a sua volta, viene restituito da \textit{HAL\_I2C\_GetState}.\\
 La procedura invocatrice \textit{VL53L1\_CommsInitialise}, è stata modificata per adattarsi al valore di restituzione di \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}.\\
 Per ottenere la corretta operatività della funzione invocatrice è, dunque, necessaria la restituzione di \textit{HAL\_I2C\_STATE\_READY} da parte di \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}.
-Se dovesse verificarsi la situazione poc anzi descritta, \textit{VL53L1\_CommsInitialise} risulterebbe invocata con successo, altrimenti verrà gestita l'eccezione tramite restituzione di un parametro \textit{VL53L1\_Error}.
+Se dovesse verificarsi la situazione poc'anzi descritta, \textit{VL53L1\_CommsInitialise} risulterebbe invocata con successo, altrimenti verrà gestita l'eccezione tramite restituzione di un parametro \textit{VL53L1\_Error}.
 A seguire la definizione della funzione, e un breve frammento specificante il suo ruolo in \textit{VL53L1\_CommsInitialise}.
-%codice ver 33
+%codice ver 33 sviluppato un’adattamento utilizzante l
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=881, lastline=889, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}"]{codefiles/vl53l1_platform.c}
 
 \begin{lstlisting}[language=Cpp, caption={Dettaglio dell'implementazione di textit{RANGING\_SENSOR\_COMMS\_Init\_CCI} in \textit{VL53L1\_CommsInitialise}}]
@@ -1127,22 +1131,22 @@ A seguire la definizione della funzione, e un breve frammento specificante il su
 \end{lstlisting}
 
 \paragraph{RANGING\_SENSOR\_COMMS\_Get\_Error\_Text}
-La funzione intitolante appare nell'ambito contestuale di \textit{VL53L1\_CommsInitialise}. Il suo ruolo, è quello di restituire al \textit{main flow} il messaggio di errore associato a \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}.\\
-Al fine di stampare a video, sul terminale offerto da \textit{PuTTy}, il messaggio interessato, è stato sviluppato un'adattamento utilizzante la funzione HAL \textit{HAL\_UART\_Transmit}.\\
+La funzione intitolante appare nell'ambito contestuale di \textit{VL53L1\_CommsInitialise}. Il suo ruolo è quello di restituire al \textit{main flow} il messaggio di errore associato a \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}.\\
+Al fine di stampare a video, sul terminale offerto da \textit{PuTTy}, il messaggio interessato è stato sviluppato un'adattamento utilizzando la funzione HAL \textit{HAL\_UART\_Transmit}.\\
 La procedura \textit{RANGING\_SENSOR\_COMMS\_Get\_Error\_Text} non restituisce alcun parametro.
 A seguire la sua definizione.
-%codice ver 34
+%codice ver 34 In alcune definizioni, 
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=891, lastline=895, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Get\_Error\_Text}"]{codefiles/vl53l1_platform.c}
-
+%fine 
 \paragraph{RANGING\_SENSOR\_COMMS\_Fini\_CCI}
-Lo "stile" di locazione della funzione intitolante, è analogo a quello analizzato poc anzi in \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}.\\
+Lo "stile" di collocazione della funzione intitolante, è analogo a quello analizzato poc'anzi in \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}.\\
 La procedura è stata individuata in \textit{VL53L1\_CommsClose}, il cui compito è la chiusura della comunicazione con il dispositivo.\\
 \textit{RANGING\_SENSOR\_COMMS\_Fini\_CCI} è stata sviluppata al fine di deinizializzare la periferica di comunicazione in utilizzo, interrompendo lo scambio di informazioni.\\
 L'operatività della procedura, è nelle mani della funzione HAL \textit{HAL\_I2C\_DeInit}. Quest'ultima : disabilita la periferica utilizzata, ripristina i pin, cancella eventuali \textit{interrupt} attive e ripristina le configurazioni hardware della periferica I2C.\\
 \textit{HAL\_StatusTypeDef} è il valore restituito da \textit{HAL\_I2C\_DeInit} e, in questo caso, anche di \textit{RANGING\_SENSOR\_COMMS\_Fini\_CCI}.\\
 In analogia con la precedente implementazione, la funzione invocatrice è stata modificata per adattarsi all'implementazione.\\
 A seguire la definizione della funzione, e un breve frammento specificante il suo ruolo in \textit{VL53L1\_CommsClose}.
-%codice ver 35
+%codice ver 35  compito è quello si configurare
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=897, lastline=901, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Fini\_CCI}"]{codefiles/vl53l1_platform.c}
 \begin{lstlisting}[language=Cpp, caption={Dettaglio sull'invocazione di \textit{RANGING\_SENSOR\_COMMS\_Fini\_CCI} in \textit{VL53L1\_CommsClose}}]
     
@@ -1155,11 +1159,11 @@ A seguire la definizione della funzione, e un breve frammento specificante il su
 \end{lstlisting}
 
 \paragraph{RANGING\_SENSOR\_COMMS\_Write\_CCI}
-La procedura intitolante, è situata nel costesto della funzione \textbf{\textit{VL53L1\_WriteMulti}}.\\
+La procedura intitolante, è situata nel contesto della funzione \textbf{\textit{VL53L1\_WriteMulti}}.\\
 \textit{VL53L1\_WriteMulti} è centrale nel corretto esercizio del dispositivo. La funzione, difatti, scrive più [byte] consecutivi in un registro interno del sensore VL53L1X, partendo da uno specifico indirizzo.
 \textit{RANGING\_SENSOR\_COMMS\_Write\_CCI} è stata sviluppata al fine di adattare questa necessità alla piattaforma in utilizzo.\\
 Per l'adattamento, si è optato per uno sviluppo integrante la funzione HAL\\\textit{HAL\_I2C\_Master\_Transmit}. Analogo è il funzionamento di quest'ultima con\\\textit{HAL\_I2C\_Mem\_Write}, già analizzata in precedenza.
-La differenza tra le due è situata nell'oggetto inviante, difatti \textit{HAL\_I2C\_Master\_Transmit} invia al dispositivo solamente dati, mentre l'altra in aggiunta, anche l'indirizzo interno. \textit{HAL\_I2C\_Master\_Transmit}, dunque, è più utile all'invio diretto dei dati pittosto che alla scrittura di una memoria interna.
+La differenza tra le due è situata nell'oggetto inviante, difatti \textit{HAL\_I2C\_Master\_Transmit} invia al dispositivo solamente dati, mentre l'altra in aggiunta, anche l'indirizzo interno. \textit{HAL\_I2C\_Master\_Transmit}, dunque, è più utile all'invio diretto dei dati piuttosto che alla scrittura di una memoria interna.
 Tornando all'analisi di \textit{RANGING\_SENSOR\_COMMS\_Write\_CCI}, la funzione costruisce un buffer temporaneo di dimensioni pari alla somma del numero di dati da inviare e due [byte] aggiuntivi.\\
 Nei primi due [byte] del buffer viene codificato l'indice fornito in ingresso, rispettivamente con il [byte] più significativo e meno significativo.\\
 Successivamente, i dati da scrivere, puntati dall'argomento \textit{pData}, vengono copiati nel buffer a partire dalla terza posizione.\\
@@ -1196,9 +1200,9 @@ A seguire, la definizione e il frammento dell'implementazione.
     }
 
 \end{lstlisting}
-
-\paragraph{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Value}
-Il titolo presenta una procedura situata nella funzione \textit{VL53L1\_GpioSetMode}, il cui compito è quello si configurare la modalità operativa di uno dei pin GPIO del sensore VL53L1X.
+%stile di locazione 
+\paragraph{RANGING_SENSOR_COMMS_GPIO_Set_Mode}
+Il titolo presenta una procedura situata nella funzione \textit{VL53L1\_GpioSetMode}, il cui compito è quello di configurare la modalità operativa di uno dei pin GPIO del sensore VL53L1X.
 La funzione non utilizza procedure HAL per adempiere al compito, modifica direttamente la struttura HAL GPIO\_InitStruct.
 GPIO\_InitStruct è modificata in modo tale da configurare la modalità operativa dei pin GPIO utilizzati nel sensore VL53L1X.\\
 La funzione riceve come parametri l'identificatore del pin e la modalità di configurazione desiderata. In base al pin specificato, la funzione configura il relativo
@@ -1231,7 +1235,7 @@ La funzione è invocata in\\\textit{VL53L1\_GpioGetValue}, il cui compito è res
 La procedura intitolante, serve solo all'adattamento con la piattaforma.\\
 La definizione sfrutta la funzione HAL, \textit{HAL\_GPIO\_ReadPin}, che legge lo stato del pin passato come parametro.\\
 A seguire la sua definizione.
-%codice ver 40
+%codice ver 40 microcontorllore
 \lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=981, lastline=991, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Get\_Value}"]{codefiles/vl53l1_platform.c}
 
 \section{Descrizione del firmware di gestione del HMC5883L Honeywell}
@@ -1247,7 +1251,7 @@ A seguire la sua definizione.
 
 \section{CMSIS}
 Il CMSIS è uno \textit{standard} software sviluppato da ARM che
-fornisce un'interfaccia comune tra l'hardware del core Cortex-M, e i tool software di sviluppo, "Ogni tipo di microcontorllore ha componenti interni 
+fornisce un'interfaccia comune tra l'hardware del core Cortex-M, e i tool software di sviluppo, "Ogni tipo di microcontrollore ha componenti interni 
 diversi, ma tutti quelli con un core ARM Cortex-M hanno alcune parti in comune : il SysTick, NVIC ecc\\
 ARM ha creato il CMSIS, una specie di manuale standard e libreria di comandi che ti permette di comunicare direttamente con il cuore ARM del microcontrollore in modo uguale per tutti i modelli.
 
