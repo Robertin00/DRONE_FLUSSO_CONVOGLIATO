@@ -1074,7 +1074,7 @@ La struttura utilizzata dal \textit{firmware} per la segnalazione dell'insorgenz
 Questo sistema di gestione dell'errore, è stato utilizzato durante lo sviluppo, per la verifica del corretto funzionamento delle implementazioni.\\
 In alcune definizioni, è stata forzata la "collaborazione", tra la struttura di gestione delle eccezioni della libreria HAL e quella presente nel \textit{firmware} sotto analisi.
 %  poc anzi
-\begin{lstlisting}[language=Cpp, caption={Dettaglio sulla struttura di gestione delle eccezioni presente in \textit{vl53l1\_error\_codes.h}, da notare, il cast a dato VL53L1\_Error nelle direttive \textit{define}}]
+\begin{lstlisting}[language=Cpp, caption={Dettaglio sulla struttura di gestione delle eccezioni presente in \textit{vl53l1\_error\_codes.h} da notare, il cast a dato VL53L1\_Error nelle direttive \textit{define}}]
     
     typedef int8_t VL53L1_Error;
 
@@ -1118,7 +1118,7 @@ Per ottenere la corretta operatività della funzione invocatrice è, dunque, nec
 Se dovesse verificarsi la situazione poc'anzi descritta, \textit{VL53L1\_CommsInitialise} risulterebbe invocata con successo, altrimenti verrà gestita l'eccezione tramite restituzione di un parametro \textit{VL53L1\_Error}.
 A seguire la definizione della funzione, e un breve frammento specificante il suo ruolo in \textit{VL53L1\_CommsInitialise}.
 %codice ver 33 sviluppato un’adattamento utilizzante l
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=881, lastline=889, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=881, lastline=889, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}}]{codefiles/vl53l1_platform.c}
 
 \begin{lstlisting}[language=Cpp, caption={Dettaglio dell'implementazione di textit{RANGING\_SENSOR\_COMMS\_Init\_CCI} in \textit{VL53L1\_CommsInitialise}}]
     
@@ -1136,7 +1136,7 @@ Al fine di stampare a video, sul terminale offerto da \textit{PuTTy}, il messagg
 La procedura \textit{RANGING\_SENSOR\_COMMS\_Get\_Error\_Text} non restituisce alcun parametro.
 A seguire la sua definizione.
 %codice ver 34 In alcune definizioni, 
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=891, lastline=895, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Get\_Error\_Text}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=891, lastline=895, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Get\_Error\_Text}}]{codefiles/vl53l1_platform.c}
 %fine 
 \paragraph{RANGING\_SENSOR\_COMMS\_Fini\_CCI}
 Lo "stile" di collocazione della funzione intitolante, è analogo a quello analizzato poc'anzi in \textit{RANGING\_SENSOR\_COMMS\_Init\_CCI}.\\
@@ -1147,7 +1147,8 @@ L'operatività della procedura, è nelle mani della funzione HAL \textit{HAL\_I2
 In analogia con la precedente implementazione, la funzione invocatrice è stata modificata per adattarsi all'implementazione.\\
 A seguire la definizione della funzione, e un breve frammento specificante il suo ruolo in \textit{VL53L1\_CommsClose}.
 %codice ver 35  compito è quello si configurare
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=897, lastline=901, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Fini\_CCI}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=897, lastline=901, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Fini\_CCI}}]{codefiles/vl53l1_platform.c}
+
 \begin{lstlisting}[language=Cpp, caption={Dettaglio sull'invocazione di \textit{RANGING\_SENSOR\_COMMS\_Fini\_CCI} in \textit{VL53L1\_CommsClose}}]
     
     if(RANGING_SENSOR_COMMS_Fini_CCI() != HAL_OK){
@@ -1172,7 +1173,7 @@ Il ritorno di \textit{RANGING\_SENSOR\_COMMS\_Write\_CCI} è lo stesso di \texti
 Al fine di implementare \textit{RANGING\_SENSOR\_COMMS\_Write\_CCI} è stata sviluppata una modifica di \textit{VL53L1\_WriteMulti}.
 A seguire, la definizione della funzione.
 %codice ver 36
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=903, lastline=917, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Write\_CCI}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=903, lastline=917, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Write\_CCI}}]{codefiles/vl53l1_platform.c}
 \begin{lstlisting}[language=Cpp, caption={Dettaglio sull'implementazione di \textit{RANGING\_SENSOR\_COMMS\_Write\_CCI} in \textit{VL53L1\_WriteMulti} }]
     
     if(RANGING_SENSOR_COMMS_Write_CCI(pdev->i2c_slave_address, 0, index+position, pdata+position, data_size) != HAL_OK){
@@ -1190,7 +1191,7 @@ Al fine di adempiere al compito, è stata integrata la funzione HAL, \textit{HAL
 Anche in questo caso l'ambiente interno della funzione invocatrice è adattato all'implementazione.
 A seguire, la definizione e il frammento dell'implementazione.
 %codice ver 37
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=919, lastline=925, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Read\_CCI}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=919, lastline=925, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_Read\_CCI}}]{codefiles/vl53l1_platform.c}
 \begin{lstlisting}[language=Cpp, caption={Dettaglio sull'implementazione di \textit{RANGING\_SENSOR\_COMMS\_Read\_CCI} in \textit{VL53L1\_ReadMulti}}]
     
     if(RANGING_SENSOR_COMMS_Read_CCI(pdev->i2c_slave_address, 0, index+position, pData+position, data_size) != HAL_OK){
@@ -1212,7 +1213,9 @@ Se la configurazione ha successo, viene eseguita la funzione \textit{HAL\_GPIO\_
 Anche in questa sede è stata modificata la funzione invocatrice per la corretta implementazione.
 A seguire, la definizione della funzione e il frammento dell'implementazione.
 %codice ver 38
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=927, lastline=966, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Value}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=927, lastline=966, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Value}}]{codefiles/vl53l1_platform.c}
+
+
 \begin{lstlisting}[language=Cpp, caption={Dettaglio sull'implementazione di \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Value} in \textit{VL53L1\_GpioSetMode}}]
     
    if(RANGING_SENSOR_COMMS_GPIO_Set_Mode(pin, value) != HAL_OK){
@@ -1228,7 +1231,7 @@ La funzione è invocata in molte posizioni nel \textit{file}.\\
 Il suo compito è quello di impostare il valore desiderato sul pin specificato.
 A seguire la sua definizione.
 %codice ver 39
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=969, lastline=979, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Value}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=969, lastline=979, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Value}}]{codefiles/vl53l1_platform.c}
 
 \paragraph{RANGING\_SENSOR\_COMMS\_GPIO\_Get\_Value}
 La funzione è invocata in\\\textit{VL53L1\_GpioGetValue}, il cui compito è restituire il valore impostato sul pin richiesto.\\
@@ -1236,7 +1239,7 @@ La procedura intitolante, serve solo all'adattamento con la piattaforma.\\
 La definizione sfrutta la funzione HAL, \textit{HAL\_GPIO\_ReadPin}, che legge lo stato del pin passato come parametro.\\
 A seguire la sua definizione.
 %codice ver 40 microcontorllore
-\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=981, lastline=991, caption="Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Get\_Value}"]{codefiles/vl53l1_platform.c}
+\lstinputlisting[language=Cpp, inputencoding=utf8/latin1, firstline=981, lastline=991, caption={Estratto di codice C dal file \textit{vl53l1\_platform.c}: la funzione \textit{RANGING\_SENSOR\_COMMS\_GPIO\_Get\_Value}}]{codefiles/vl53l1_platform.c}
 
 \section{Descrizione del firmware di gestione del HMC5883L Honeywell}
 \section{Funzionamento complessivo}
