@@ -1,0 +1,18 @@
+\chapter{Introduzione}
+Il compito, preannunciato dal titolo di questo scritto, è stato assegnato con il fine di integrare un'unità di misura inerziale (IMU), dotata di accelerometro, giroscopio e magnetometro, e un sensore a tempo di volo (Time Of Flight-ToF) sul microcontrollore  NUCLEO-H745ZIQ di STMicroelectronics.\\
+La finalità ultima dell'integrazione dei dispositivi sulla scheda è parte di un più grande progetto: "Lo sviluppo di un firmware per il controllo efficiente di un \textit{Double Propeller Ducted-Fan}". Un drone a flusso convogliato.\\
+Dunque, tutto ciò che è stato realizzato per completare la task, è parte di un progetto ben più grande.\\
+Il modulo GY-86 è stato scelto come unità di misura inerziale per il progetto. Questo presenta due sensori provenienti da produttori differenti. 
+\begin{itemize}
+    \item Il primo, MPU6050 InvenSense, è un sensore MEMS(Micro-Electro-Mechanical Systems) che incorpora un accelerometro e giroscopio, ciascuno a tre assi. Dispone anche di un sensore di temperatura.\\
+    \item Il secondo, HMC5883L Honeywell, è un magnetometro a circuito integrato a tre assi compensato per la temperatura. 
+\end{itemize}
+Per ottenere misurazioni sulla distanza da terra, si è optato per il dispositivo di misura VL53L1X prodotto da ST il cui principio di funzionamento è basato sulla tecnologia \\Time-of-Flight.\\
+Al fine di soddisfare l'obiettivo cardine  è stato utilizzato STM32CubeIDE, l'ambiente di sviluppo integrato (IDE) ufficiale di STMicroelectronics per la programmazione dei microcontrollori STM32, tra cui rientra il modello  NUCLEO-H745ZI-Q. 
+Basato su Eclipse, STM32ubeIDE integra nativamente STM32CubeMX, un'interfaccia grafica di programmazione che consente la configurazione hardware dell'elaboratore.\\
+STM32CubeIDE consente la scrittura di codice in linguaggio C o in C++. Per il progetto è stato scelto il linguaggio di programmazione C.
+L'ambiente, inoltre, mette a disposizione del programmatore le librerie HAL, "Hardware Abstraction Layer", per facilitare lo sviluppo di firmware.\\
+Al fine di dimunire lo sforzo di programmazione e in vista di futuri miglioramenti del firmware dedicato, l'integrazione dell'MPU6050 InvenSense è avvenuta mediante la creazione di una libreria di funzioni dedicata, basata sull'Hardware Abstraction Layer. Necessità più che strategia, dal momento che l'azienda produttrice non fornisce alcun software ufficiale per l'implementazione del dispositivo.\\
+Diversa è stata l'integrazione del dispositivo di misura VL53L1X ST, dal momento che questo, dispone già di una libreria di funzioni dedicata alla corretta operatività del sensore, disponibile sul sito di STMicroelectronics e completa di documentazione. 
+L'unico impegno richiesto è stato quello di adattare il software alla piattaforma.
+INTRODUZIONE AL SENSORE HMC5883L HONEYWELL. 

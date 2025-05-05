@@ -1,0 +1,75 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{Introduzione}{1}{}%
+\contentsline {chapter}{\numberline {1}Introduzione}{2}{}%
+\contentsline {chapter}{\numberline {2}Hardware}{3}{}%
+\contentsline {section}{\numberline {2.1}STM32 NUCLEO-H745ZI-Q}{3}{}%
+\contentsline {section}{\numberline {2.2}Modulo GY-86. Unità di misura inerziale}{6}{}%
+\contentsline {section}{\numberline {2.3}MPU6050 InvenSense}{6}{}%
+\contentsline {subsection}{\numberline {2.3.1}Il principio di misura dell'accelerometro e del giroscopio}{7}{}%
+\contentsline {subsubsection}{Accelerometro}{7}{}%
+\contentsline {subsubsection}{Giroscopio}{7}{}%
+\contentsline {subsection}{\numberline {2.3.2}Accelerometro a tre assi}{7}{}%
+\contentsline {subsection}{\numberline {2.3.3}Giroscopio a tre assi}{8}{}%
+\contentsline {section}{\numberline {2.4}HMC5883L Honeywell}{9}{}%
+\contentsline {section}{\numberline {2.5}VL53L1X ST. Sensore Time-of-Flight per la misurazione a lunga distanza}{10}{}%
+\contentsline {subsection}{\numberline {2.5.1}Il principio di misura \textit {Time-of-Flight}, ToF}{10}{}%
+\contentsline {subsection}{\numberline {2.5.2}VL53L1X STMicroelectronics. Caratteristiche}{10}{}%
+\contentsline {paragraph}{Caratteristiche}{11}{}%
+\contentsline {section}{\numberline {2.6}Schema dei collegamenti}{12}{}%
+\contentsline {subsubsection}{Modulo GY-86}{12}{}%
+\contentsline {subsubsection}{Modulo iris11a 0J9776 Pololu}{12}{}%
+\contentsline {chapter}{\numberline {3}Software}{14}{}%
+\contentsline {section}{\numberline {3.1}Diagrammi di flusso}{14}{}%
+\contentsline {subsection}{\numberline {3.1.1}Diagramma di flusso del \textit {firmware} \\dell'MPU6050 InvenSense}{14}{}%
+\contentsline {subsection}{\numberline {3.1.2}Diagramma di flusso del \textit {firmware} del VL53L1X STMicroelectronics, STSW-IMG007}{16}{}%
+\contentsline {subsection}{\numberline {3.1.3}Diagramma di flusso del \textit {firmware} del HMC5883L Honeywell}{17}{}%
+\contentsline {section}{\numberline {3.2}Descrizione del firmware di gestione dell'MPU6050 InvenSense}{18}{}%
+\contentsline {subsection}{\numberline {3.2.1}\textit {Header files}}{18}{}%
+\contentsline {subsection}{\numberline {3.2.2}\textit {MPU6050\_register\_map.h}}{18}{}%
+\contentsline {subsection}{\numberline {3.2.3}\textit {MPU6050\_platform\_user\_data\_and\_defines.h}}{19}{}%
+\contentsline {paragraph}{Enumerazioni}{19}{}%
+\contentsline {paragraph}{Strutture dati per la gestione dell'informazione di misura}{21}{}%
+\contentsline {paragraph}{Strutture dati aggregate}{24}{}%
+\contentsline {paragraph}{Struttura dati per l'assistenza a funzioni}{25}{}%
+\contentsline {paragraph}{Struttura dati aggregata per il controllo dell'MPU6050 InvenSense}{26}{}%
+\contentsline {subsection}{\numberline {3.2.4}\textit {MPU6050\_platform.h}}{27}{}%
+\contentsline {subsection}{\numberline {3.2.5}MPU6050\_platform.c. Il \textit {source file} contenente il \textit {core code}.}{29}{}%
+\contentsline {paragraph}{Elementi strutturali riccorenti nelle procedure del file}{29}{}%
+\contentsline {paragraph}{Direttive di inclusione e variabili \textit {extern}}{32}{}%
+\contentsline {paragraph}{Funzione pseudo-contestuale di prima inizializzazione della struttura dati di pilotaggio. \textit {MPU6050\_PlatformInit}}{32}{}%
+\contentsline {paragraph}{Verifica della corretta operatività della comunicazione tramite protocollo I2C. \textit {MPU6050\_VerificaComunicazioni}}{34}{}%
+\contentsline {paragraph}{Funzioni configuratrici dell'MPU6050 InvenSense}{35}{}%
+\contentsline {subparagraph}{MPU6050\_ImpostaModFunzionamento}{36}{}%
+\contentsline {subparagraph}{MPU6050\_ImpostaDLPF.}{39}{}%
+\contentsline {subparagraph}{MPU6050\_OttieniDLPF.}{41}{}%
+\contentsline {subparagraph}{MPU6050\_ImpostaDivisoreFrequenzaCampionamento.}{41}{}%
+\contentsline {subparagraph}{MPU6050\_OttieniDivisoreFrequenzaCampionamento}{43}{}%
+\contentsline {subparagraph}{MPU6050\_ImpostaFullScaleRangeGiroscopio.}{43}{}%
+\contentsline {subparagraph}{MPU6050\_OttieniFullScaleRangeGiroscopio}{44}{}%
+\contentsline {subparagraph}{MPU6050\_ImpostaFullScaleRangeAccelerometro.}{45}{}%
+\contentsline {subparagraph}{MPU6050\_OttieniFullScaleRangeAccelerometro.}{46}{}%
+\contentsline {subparagraph}{MPU6050\_InizializzazioneDispositivo.}{47}{}%
+\contentsline {paragraph}{Funzione di \textit {Timing}. \textit {MPU6050\_AspettaMisure}}{48}{}%
+\contentsline {paragraph}{Funzioni di lettura e manipolazione delle informazioni}{49}{}%
+\contentsline {subparagraph}{MPU6050\_LetturaDatoGrezzoAccelerometro\_\_TrasformazioneDati e\\ MPU6050\_LetturaDatoGrezzoGiroscopio.}{49}{}%
+\contentsline {subparagraph}{Analisi sulla manipolazione dei dati di\\MPU6050\_LetturaDatoGrezzoAccelerometro\_\_TrasformazioneDati.}{50}{}%
+\contentsline {subparagraph}{Funzioni di lettura e manipolazione dell'informazione interagenti con il giroscopio}{54}{}%
+\contentsline {subparagraph}{MPU6050\_LetturaDatoGrezzoGiroscopio}{54}{}%
+\contentsline {subparagraph}{MPU6050\_LetturaDatiGiroscopio\_\_TrasformazioneDati}{60}{}%
+\contentsline {section}{\numberline {3.3}Descrizione del firmware di gestione del VL53L1X STMicroelectronics. STSW-IMG007 FULL API}{64}{}%
+\contentsline {subsection}{\numberline {3.3.1}Il \textit {source file} di adattamento. \textit {vl53l1\_platform.c}}{64}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_Init\_CCI}{66}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_Get\_Error\_Text}{67}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_Fini\_CCI}{67}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_Write\_CCI}{68}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_Read\_CCI}{69}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Mode}{70}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_GPIO\_Set\_Value}{71}{}%
+\contentsline {paragraph}{RANGING\_SENSOR\_COMMS\_GPIO\_Get\_Value}{71}{}%
+\contentsline {section}{\numberline {3.4}Descrizione del firmware di gestione del HMC5883L Honeywell}{72}{}%
+\contentsline {section}{\numberline {3.5}Funzionamento complessivo}{72}{}%
+\contentsline {chapter}{\numberline {4}Test e risultati}{73}{}%
+\contentsline {chapter}{\numberline {5}Appendice A}{74}{}%
+\contentsline {section}{\numberline {5.1}CMSIS}{74}{}%
+\contentsline {section}{\numberline {5.2}Piastre interdigitate, note anche come \textit {Finger capacitors}}{74}{}%

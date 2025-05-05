@@ -1,0 +1,209 @@
+\documentclass[11pt]{report}
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\usepackage[margin=1.2in]{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{verbatim}
+\usepackage{colorprofiles}
+\usepackage{listings}   %<- per inserire il codice
+\usepackage{listingsutf8}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{xcolor}
+%aggiunto manualemente da Robert : 
+\usepackage{varwidth}
+\usepackage{adjustbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{custom_green}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{custom_blue}{rgb}{  0.05, 0.05, 0.97}
+\definecolor{custom_brown}{rgb}{ 0.69, 0.38, 0.10}
+\definecolor{custom_purple}{rgb}{0.58, 0.00, 0.82}
+\definecolor{custom_orange}{rgb}{0.94, 0.59, 0.09}
+
+\lstdefinestyle{MATLABstyle}{   
+    commentstyle=\color{custom_green},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstdefinelanguage{Cpp}{
+      language=C,
+      backgroundcolor=\color{white},  
+      basicstyle=\footnotesize \ttfamily \color{black} \bfseries,   
+      breakatwhitespace=false,       
+      breaklines=true,               
+      captionpos=b,                   
+      commentstyle=\color{custom_green},   
+      deletekeywords={...},          
+      escapeinside={\%*}{*)},
+      keywordstyle=\color{custom_purple},
+      identifierstyle=\color{blue},
+      stringstyle=\color{blue},      
+      numbers=left,                 
+      numbersep=5pt,                  
+      numberstyle=\tiny\color{black}, 
+      rulecolor=\color{black},        
+      showspaces=false,               
+      showstringspaces=false,        
+      showtabs=false,                
+      stepnumber=1,                   
+      tabsize=5,                     
+      title=\lstname,                 
+    }
+
+\lstdefinelanguage{Python}{
+    keywords={from, import, def, return, as, in, len, if, elif, else, for, while},
+    breakatwhitespace=false,       
+    breaklines=true,   
+    morecomment=[l]{\#},
+    morestring=[b]",
+    commentstyle=\color{red},
+    keywordstyle=\color{custom_purple},
+    numberstyle=\tiny\color{black},
+    stringstyle=\color{custom_green},
+    basicstyle=\ttfamily\footnotesize,
+    captionpos=b,
+    showstringspaces=false,        
+    showtabs=false,                
+    numbers=left,                 
+    numbersep=5pt,                  
+    numberstyle=\tiny\color{black}, 
+    rulecolor=\color{black},                      
+    tabsize=5,                     
+    title=\lstname,    
+}
+
+\lstdefinelanguage{MATLABc}{
+    language=MATLAB,
+    backgroundcolor=\color{white},  
+    basicstyle=\footnotesize \ttfamily \color{black} \bfseries,   
+    breakatwhitespace=false,       
+    breaklines=true,               
+    captionpos=b,
+    morestring=[b]",
+    commentstyle=\color{custom_green},   
+    keywordstyle=\color{custom_blue},
+    morekeywords={clearvars},
+    deletekeywords={fprintf},
+    identifierstyle=\color{black},
+    stringstyle=\color{custom_purple},      
+    numbers=left,                 
+    numbersep=5pt,                  
+    numberstyle=\tiny\color{black}, 
+    rulecolor=\color{black},        
+    showspaces=false,               
+    showstringspaces=false,        
+    showtabs=false,                
+    stepnumber=1,                   
+    tabsize=5,                     
+    title=\lstname,                 
+}
+\lstdefinestyle{StileCmio}{
+    language=C,
+    backgroundcolor=\color{white},          % Sfondo bianco
+    basicstyle=\ttfamily\small\color{black}, % Testo nero e font monospaziato
+    keywordstyle=\color{cyan},               % Parole chiave in azzurro
+    commentstyle=\color{green},              % Commenti in verde
+    stringstyle=\color{orange},              % Stringhe in arancione
+    numberstyle=\tiny\color{gray},           % Numeri di riga piccoli e grigi
+    numbers=left,                            % Numeri di riga a sinistra
+    numbersep=5pt,                           % Distanza tra numeri di riga e codice
+    frame=single,                            % Bordo intorno al codice
+    breaklines=true,                         % A capo automatico
+    showstringspaces=false,                  % Non evidenziare gli spazi nelle stringhe
+    extendedchars=true,                      % Gestisce caratteri speciali
+    tabsize=4,                               % Impostazione tabulazione
+    captionpos=b,                            % Posizione della didascalia in basso
+    morekeywords={int, float, double, char}, % Parole chiave aggiuntive
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%% COPERTINA DEL DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+    \begin{center}
+    \LARGE {\scshape{Università Politecnica delle Marche}}\\[0.5cm]
+    \LARGE {\scshape{Ingegneria Informatica e dell'Automazione}}\\[0.7cm]
+    \linespread{1}
+    \huge {\bfseries Integrazione dei sensori MPU6050 InvenSense, VL53L1X ST e HMC5883L Honeywell su NUCLEO H745ZI-Q ST}\\
+    \huge {\bfseries per sviluppo del drone}\\
+    \vspace{0.3cm}
+    \huge {\bfseries "The Double Propeller Ducted-Fan"}\\[1cm]
+    \linespread{1}
+    \includegraphics[width=5cm]{images/logoUnivpm.jpg}\\[0.5cm]
+    \linespread{1.2}
+    \Large Corso di\\
+    \Large {\scshape{Laboratorio di Automazione}} \\[0.3cm]
+    \Large {Anno accademico 2024-2025 \\[0.8cm]}
+    {\Large Studenti:}
+    \hfill {\Large Professore:}\\
+    {\Large Robert Laurentiu Mincu}
+    \hfill
+    {\Large Andrea Bonci}\\
+    \raggedright{\Large Nome Cognome\\}
+    \raggedleft{\Large Dottorando:}\\
+    {\Large Nome Cognome\\[1cm]}
+    \centering{
+    \includegraphics[width=2cm]{images/dii_new.png}\\[0.3cm]
+    \large Dipartimento di Ingegneria dell'Informazione\\[0.3cm]
+    }
+    \end{center}
+    \end{titlepage}
+    
+    \pagenumbering{arabic}
+    \tableofcontents
+    \addcontentsline{toc}{chapter}{Introduzione}
+    \newpage
+    
+    \pagestyle{plain}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ %%%%%%%%%%%%%%%%% SEZIONE DEI CAPITOLI %%%%%%%%%%%%%%%%%
+
+ \include{introduzione_RDFC}
+ \include{hardware_RDFC}
+ \include{software_RDFC}
+ \include{test_e_risultati_RDFC}
+ \include{appendice_RDFC}
+
+ %%%%%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%%
+ \begin{thebibliography}{9}
+    \bibitem{Manuale1} STMicroelectronics, \emph{rm0433-stm32h742-stm32h743-753-and-stm32h750s REF MANUAL}, [2020].
+    \bibitem{Manuale2} Carmine Noviello, \emph{Mastering STM32}, seconda edizione, \emph{Leanpub}, [2022].
+    \bibitem{Manuale3} STMicroelectronics, \emph{UM2356-VL53L1X-User\_Manual\_rev1}, [2018].
+    \bibitem{Manuale4} InvenSense Inc, \emph{MPU-6000 and MPU-6050 Product Specification}, Revision 3.4, [2013]
+    \bibitem{Manulae5} InvenSense Inc, \emph{MPU-6000 and MPU-6050 Register Map and Descriptions}, Revision 4.3, [2013].
+    \bibitem{Manuale schematico1} STMicroelectronics, \emph{en.MB1363-H745ZIQ-D01\_Schematic NEW}, [2019].
+    \bibitem{Articolo1} Abrami Fabio, \emph{Studio e sviluppo di una piattaforma per il test di droni}, tesi di laurea, relatore: Andrea Bonci, anno accademico [2020-2021].
+
+\end{thebibliography}
+
+\end{document}
