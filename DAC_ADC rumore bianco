@@ -1,0 +1,48 @@
+Lettura dal filee e impostazione del DAC
+
+from machine import DAC, Pin
+import time
+
+# Inizializza DAC su GPIO26
+dac = DAC(Pin(26))
+title0 = M5Title(title="Rum_BianDAC", x=3, fgcolor=0xFFFFFF, bgcolor=0xff0000)
+wait(30)
+# Percorso corretto del file
+file_path = '/flash/rumore_bianco_dac_M5.txt'
+
+# Apri il file in sola lettura
+with open(file_path, 'r') as f:
+    for line in f:
+        valore_str = line.strip()  # Rimuove \n e spazi
+        if valore_str:
+            valore = int(valore_str)  # Converte in intero
+            dac.write(valore)         # Scrive sul DAC (0–255)
+            print("DAC →", valore)    # Debug seriale (opzionale)
+            time.sleep(0.1)   
+
+ADC
+
+adc = ADC(Pin(36))
+adc.width(ADC.WIDTH_12BIT)       # Risoluzione a 12 bit (0-4095)
+adc.atten(ADC.ATTN_11DB)         # Permette lettura da 0 a ~3.6V
+title0 = M5Title(title="Lettura", x=3, fgcolor=0xFFFFFF, bgcolor=0x0000FF)
+# Crea etichetta su schermo
+label0 = M5TextBox(50, 100, "ADC:", lcd.FONT_DejaVu24, 0xFFFFFF, rotate=0)
+
+# Loop principale
+while True:
+    # Scrive un valore qualsiasi sul DAC (es. per test: valore crescente)
+    for valore in range(0, 256, 10):
+        dac.write(valore)
+
+        # Legge il valore analogico con ADC
+        lettura = adc.read()  # Range da 0 a 4095
+
+        # Mostra su LCD
+        label0.setText("ADC: {}".format(lettura))
+
+        # Stampa seriale (opzionale)
+        print("DAC →", valore, " | ADC →", lettura)
+
+        # Aspetta un attimo prima di cambiare
+        time.sleep(0.1)
