@@ -229,7 +229,7 @@ int main(void)
 
  	 	 pid_servo_pitch_turner_and_turn_on(12, 0.1, 0.01, 0.01,pid_pars_servo_pitch);
 
- 	  	 motors_pid_turner_and_turn_on(7, 0, 0, 0.5, pid_pars_motor);
+ 	  	 motors_pid_turner_and_turn_on(6, 0, 0, 0.5, pid_pars_motor);
 
 
   /* USER CODE END 2 */
@@ -848,3 +848,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
