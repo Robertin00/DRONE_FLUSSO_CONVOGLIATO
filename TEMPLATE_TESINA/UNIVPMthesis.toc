@@ -1,0 +1,101 @@
+\babel@toc {english}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {0.1}STM32 NUCLEO-H745ZI-Q. La scheda di controllo}{1}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}STM32H745ZI-TQ6. Caratteristiche tecniche}{1}{subsection.0.1.1}%
+\contentsline {paragraph}{\nonumberline \large {Architettura \textit {dual-core}}}{1}{paragraph*.8}%
+\contentsline {paragraph}{\nonumberline \Large {Memoria}}{1}{paragraph*.10}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Flash}}{1}{paragraph*.12}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{SRAM}}{1}{paragraph*.14}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Cache L1}}{2}{paragraph*.16}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Flexible Memory Controller e Dual-mode Quad-SPI}}{2}{paragraph*.18}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Memory Protection Unit}}{2}{paragraph*.20}%
+\contentsline {paragraph}{\nonumberline \Large {Unità di elaborazione}}{2}{paragraph*.22}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Floating Point Unit}}{2}{paragraph*.24}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Digital Signal Processing}}{3}{paragraph*.26}%
+\contentsline {paragraph}{\nonumberline \Large {Convertitori}}{3}{paragraph*.28}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Convertitori Analogici-Digitali}}{3}{paragraph*.30}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Convertitori Digitali-Analogici}}{3}{paragraph*.32}%
+\contentsline {paragraph}{\nonumberline \Large {Timer}}{3}{paragraph*.34}%
+\contentsline {paragraph}{\nonumberline \Large {Periferiche di comunicazione}}{3}{paragraph*.36}%
+\contentsline {paragraph}{\nonumberline \Large {Eventi asincroni}}{3}{paragraph*.38}%
+\contentsline {subsection}{\numberline {0.1.2}Caratteristiche della scheda NUCLEO-H745ZI-Q}{4}{subsection.0.1.2}%
+\contentsline {paragraph}{\nonumberline ST-LINK/V3E}{4}{paragraph*.41}%
+\contentsline {paragraph}{\nonumberline Alimentazione}{4}{paragraph*.43}%
+\contentsline {paragraph}{\nonumberline Formato fisico}{5}{paragraph*.45}%
+\contentsline {section}{\numberline {0.2}TATTU LiPo. Batteria ricaricabile}{6}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}TATTU LiPo. Caratteristiche fisiche.}{6}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {0.2.2}TATTU LiPo. Caratteristiche tecniche e considerazione operative.}{6}{subsection.0.2.2}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{LiPo}}{6}{paragraph*.48}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Tensione}}{6}{paragraph*.50}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Capacità}}{7}{paragraph*.52}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Capacità di scarica}}{7}{paragraph*.54}%
+\contentsline {section}{\numberline {0.3}PowerSafe Twin ADV. MNR-electronics}{7}{section.0.3}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Modulo di potenza}}{8}{paragraph*.57}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Modulo di controllo}}{8}{paragraph*.59}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Modulo di allarme}}{8}{paragraph*.61}%
+\contentsline {subsection}{\numberline {0.3.1}PowerSafe Twin ADV. Caratteristiche fisiche e tecniche}{8}{subsection.0.3.1}%
+\contentsline {section}{\numberline {0.4}Turnigy AereoDrive SK3-3536 1400KV}{9}{section.0.4}%
+\contentsline {subsection}{\numberline {0.4.1}Turnigy AereoDrive SK3-3536 1400 KV.\spacefactor \@m {} Caratteristiche tecniche:}{10}{subsection.0.4.1}%
+\contentsline {section}{\numberline {0.5}Turnigy Plush 40A.\spacefactor \@m {} \textit {Electronic Speed Controller}}{11}{section.0.5}%
+\contentsline {subsection}{\numberline {0.5.1}Turnigy Plush 40A.\spacefactor \@m {} Caratteristiche fisiche:}{12}{subsection.0.5.1}%
+\contentsline {subsection}{\numberline {0.5.2}Turnigy Plush 40A. Programmazione}{12}{subsection.0.5.2}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Brake}}{13}{paragraph*.68}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Battery Type}}{13}{paragraph*.70}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Low Voltage Protection Mode (Cut-off Type)}}{13}{paragraph*.72}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Cut Off Voltage}}{14}{paragraph*.74}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Start Mode}}{14}{paragraph*.76}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Timing Mode}}{14}{paragraph*.78}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Music Li-Po Cells}}{15}{paragraph*.80}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Governor Mode}}{15}{paragraph*.82}%
+\contentsline {subsection}{\numberline {0.5.3}Turnigy Plush 40A. Risoluzione e controllo dei motori}{15}{subsection.0.5.3}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Attesa di un segnale di armamento valido}}{16}{paragraph*.85}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Esito positivo dell'operazione di armamento}}{16}{paragraph*.87}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Esito negativo dell'operazione di armamento}}{16}{paragraph*.89}%
+\contentsline {paragraph}{\nonumberline Risoluzione}{16}{paragraph*.91}%
+\contentsline {section}{\numberline {0.6}VL53L1X ST. Sensore Time-of-Flight per la misurazione a lunga distanza}{17}{section.0.6}%
+\contentsline {subsection}{\numberline {0.6.1}Il principio di misura di un sensore \textit {Time-of-flight,ToF}}{17}{subsection.0.6.1}%
+\contentsline {subsection}{\numberline {0.6.2}VL53L1X STMicroelectronics. Caratteristiche fisiche}{17}{subsection.0.6.2}%
+\contentsline {subsection}{\numberline {0.6.3}VL53L1X STMicroelectronics. Catatteristiche tecniche}{18}{subsection.0.6.3}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Alimentazione}}{18}{paragraph*.93}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Protocollo di comunicazione}}{18}{paragraph*.95}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{XSHUT e GPIO 1 (Interrupt)}}{18}{paragraph*.97}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Emettitore}}{18}{paragraph*.99}%
+\contentsline {paragraph}{\nonumberline \small \add@extra@listi {sml}{Field of View (FoV)}}{19}{paragraph*.101}%
+\contentsline {chapter}{\numberline {1}Sistema}{21}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Modello matematico}{21}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Controllo}{21}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Hardware}{22}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Componente1}{22}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Componente2}{22}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Schema dei collegamenti}{22}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Software}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Diagramma di flusso}{24}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Gestione singoli componenti}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Gestione componente1}{26}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Gestione componente2}{26}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Funzionamento complessivo}{26}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Test e risultati}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Test1}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Test2}{28}{section.4.2}%
+\contentsline {chapter}{Conclusioni e sviluppi futuri}{29}{section.4.2}%
+\contentsline {chapter}{Appendici}{29}{section*.107}%
+\contentsline {chapter}{\numberline {A}Appendice1}{30}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Il mio primo capitolo con \LaTeX }{31}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Introduzione}{31}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Organizzazione dei files}{31}{section.Alph2.2}%
+\contentsline {subsection}{\numberline {B.2.1}Opzioni della classe}{32}{subsection.Alph2.2.1}%
+\contentsline {subsection}{\numberline {B.2.2}Pacchetti di supporto}{32}{subsection.Alph2.2.2}%
+\contentsline {section}{\numberline {B.3}Brevissimi esempi sull'inserimento degli oggetti di testo}{32}{section.Alph2.3}%
+\contentsline {subsection}{\numberline {B.3.1}Equazioni}{32}{subsection.Alph2.3.1}%
+\contentsline {subsection}{\numberline {B.3.2}Tabelle}{33}{subsection.Alph2.3.2}%
+\contentsline {subsection}{\numberline {B.3.3}Figure}{33}{subsection.Alph2.3.3}%
+\contentsline {section}{\numberline {B.4}Inserimento della bibliografia}{33}{section.Alph2.4}%
+\contentsline {section}{\numberline {B.5}Esempio di codice in python}{34}{section.Alph2.5}%
+\contentsline {section}{\numberline {B.6}Esempio di codice in C}{34}{section.Alph2.6}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

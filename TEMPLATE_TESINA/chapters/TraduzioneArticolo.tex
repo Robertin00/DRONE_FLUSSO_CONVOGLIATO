@@ -1,0 +1,136 @@
+\chapter{Traduzione articolo professore}
+\section{Introduzione}
+Al giorno d’oggi, la nostra qualità della vita dipende sempre più dai sistemi infrastrutturali, i quali influenzano la società contemporanea fornendo ogni tipo di bene. Tuttavia, queste infrastrutture stanno invecchiando e, per evitare guasti o problemi più gravi, è necessario affrontare diverse problematiche nelle procedure di manutenzione.
+Purtroppo, l’elevato costo, unito alla difficoltà per gli operatori umani di raggiungere i luoghi di intervento (specialmente considerando gli aspetti legati alla sicurezza), costituiscono forti limiti all’applicazione reale. Per questa ragione, i ricercatori hanno esplorato nuove modalità per automatizzare le procedure di ispezione [1] e, attualmente, la maggior parte degli Unmanned Aerial Vehicles (UAV) proposti per supportare le ispezioni infrastrutturali sono droni [2], [3].
+
+Nonostante le soluzioni innovative, persistono ancora importanti limitazioni da superare: queste vanno dal miglioramento delle prestazioni dei sistemi robotici [4], [5] fino alle problematiche cooperative e di sicurezza [6], [7]. I limiti principali nei compiti di ispezione riguardano innanzitutto le eliche dei droni, poiché sono pericolose e inadatte alle ispezioni non distruttive a contatto. Inoltre, quando questi UAV vengono impiegati in compiti cooperativi con l’essere umano, è necessaria un’interazione sicura, che non può essere garantita dai droni convenzionali.
+
+Un’ulteriore sfida consiste nel controllo preciso di questi robot a base flottante: in molti casi è richiesta un’elevata precisione e, attualmente, per ottenere buona stabilità, si ricorre a soluzioni con più eliche, a discapito dei costi elevati.
+
+In questo lavoro si affrontano questi limiti presentando un’architettura alternativa di UAV denominata Double Propeller Ducted-Fan (DPDF), considerata vantaggiosa per le ispezioni sicure e l’interazione uomo-macchina.
+
+Il primo prototipo simile di Ducted-Fan è stato studiato per la prima volta nel 1997 [8], e successivamente in [9], [10], [11], [12]. In tali studi, l’architettura dell’UAV prevedeva una singola elica ed era utilizzata per analizzare rapide transizioni nelle manovre di volo.
+
+Il lavoro più recente presentato in [9] si compone di due elementi principali:
+
+una singola elica a passo fisso che genera la spinta principale,
+due livelli di superfici aerodinamiche attuate (flap), che, agendo con il flusso dell’elica principale, forniscono le componenti di forza e coppia necessarie per ottenere la piena controllabilità dell’assetto.
+L’architettura proposta in questo articolo può essere impiegata in diverse attività di ispezione infrastrutturale in condizioni di sicurezza, ed è in grado di interagire con esseri umani evitando collisioni pericolose. Inoltre, può essere dotata di sensori e funzionalità di intelligenza artificiale per migliorarne l’autonomia e l’evitamento degli ostacoli.
+Il DPDF è illustrato nella Figura 1: a differenza dell’approccio con due livelli di flap, esso utilizza due eliche controrotanti per contrastare la coppia di reazione generata dal momento giroscopico introdotto dall’elica. Questa soluzione consente anche di governare separatamente la dinamica dell’imbardata (yaw). Inoltre, con questa nuova configurazione, è necessario un solo livello di flap per controllare l’assetto e stabilizzare il volo.
+
+La letteratura sul tema dei Ducted-Fan si è evoluta in diverse direzioni, e solo un altro studio [13] presenta un’idea architetturale simile. Tuttavia, in [13], [14] non vengono forniti tutti i dettagli costruttivi e parametri, e soprattutto il modello dinamico proposto è differente da quello sviluppato nel presente lavoro. In particolare, [13] utilizza un modello semplificato assumendo che la velocità angolare di imbardata sia nulla, mentre in questo studio tale assunzione viene superata.
+
+È stata progettata una tecnica di controllo lineare che separa il controllo di posizione da quello dell’assetto, ottenendo prestazioni incoraggianti; al contrario, in letteratura per UAV simili le tecniche lineari non riescono a raggiungere gli stessi risultati [15].
+
+La validità dell’intero modello e dello schema di controllo è stata valutata testando la tecnica di controllo lineare sul modello non lineare, considerando disturbi del vento e rumori dei sensori in simulazione. Le simulazioni sono state eseguite nell’ambiente Matlab Simulink e i risultati incoraggianti rappresentano il primo passo verso lo sviluppo di un prototipo attualmente in costruzione da parte degli autori.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Modello del DPDF}
+In questa sezione vengono brevemente introdotti i parametri cinematici e le equazioni dinamiche proposte per il sistema. Sono stati considerati due sistemi di riferimento (Fig. 1):
+
+\begin{itemize}
+  \item \textbf{I} è il sistema di riferimento inerziale, associato alla Terra: l'asse $X_i$ punta verso Nord, $Y_i$ verso Est e $Z_i$ verso il centro della Terra. Il sistema di riferimento è rigidamente vincolato ad essa ed è definito come $\Sigma_i = \{O_i, \vec{i}_i, \vec{j}_i, \vec{k}_i\}$.
+  \item \textbf{B} è il sistema solidale al corpo (Body Frame), riferito al DPDF: l'asse $X_b$ punta in avanti, $Y_b$ verso destra e $Z_b$ verso il basso. Il centro del sistema è posto nel baricentro del DPDF, ed è definito come $\Sigma_b = \{O_b, \vec{i}_b, \vec{j}_b, \vec{k}_b\}$.
+\end{itemize}
+
+Nel testo, il vettore $x$ espresso nel sistema inerziale è indicato con $^i x$, mentre nel sistema solidale al corpo è indicato con $^b x$.
+
+Per ricavare un modello matematico, è stato utilizzato l’approccio di Newton-Eulero per il moto dei corpi rigidi. In particolare, il modello dinamico dell’UAV rispetto al sistema inerziale è descritto dalle seguenti equazioni del moto:
+
+\begin{equation}
+m \, \ddot{\vec{p}}^{\, i} = \mathbf{R}^{i}_{b} \, \vec{F}^b
+\end{equation}
+\begin{equation}
+\mathbf{I}_G^b \, \dot{\vec{\omega}} = -\mathbf{S}(\vec{\omega})^b \, \mathbf{I}_G^b \, \vec{\omega} + \vec{\tau}^b
+\end{equation}
+
+\noindent Dove:
+\begin{itemize}
+  \item $\vec{p} = (x, y, z)^T$ rappresenta la posizione del centro di massa,
+  \item $m$ è la massa totale del veicolo,
+  \item $\mathbf{R}^{i}_{b}$ è la matrice di rotazione dal sistema corpo al sistema inerziale (parametrizzata dagli angoli di rollio $\phi$, beccheggio $\theta$ e imbardata $\psi$),
+  \item $\vec{F}^b$ e $\vec{\tau}^b$ sono rispettivamente il vettore delle forze e delle coppie espresse nel sistema corpo.
+\end{itemize}
+
+La matrice antisimmetrica $\mathbf{S}(\vec{\omega})$ è costruita a partire dalla velocità angolare $\vec{\omega}$ come segue:
+
+\begin{equation}
+\mathbf{S}(\vec{\omega}) =
+\begin{bmatrix}
+0 & -\omega_z & \omega_y \\
+\omega_z & 0 & -\omega_x \\
+-\omega_y & \omega_x & 0
+\end{bmatrix}
+\end{equation}
+
+\subsection{Equazioni del moto}
+
+Le equazioni di cinematica sono espresse nel sistema inerziale (I), mentre quelle dinamiche nel sistema corpo (B). Le variabili $\dot{x}_G, \dot{y}_G, \dot{z}_G$ rappresentano le velocità lineari nel sistema I, mentre $\dot{u}, \dot{v}, \dot{w}$ rappresentano le accelerazioni lineari nel sistema B. Le derivate $\dot{\phi}, \dot{\theta}, \dot{\psi}$ sono le velocità angolari rispetto al sistema I, mentre $\dot{\omega}_x, \dot{\omega}_y, \dot{\omega}_z$ sono le accelerazioni angolari rispetto agli assi del sistema B.
+
+Tutti i parametri fisici usati nel modello sono riportati nella Tabella I. In particolare:
+\begin{itemize}
+  \item $k_N$: coefficiente della coppia resistente aerodinamica,
+  \item $k_T$: costante di spinta,
+  \item $k_\text{flap}$: parametro che raccoglie vari coefficienti legati ai flap (verrà spiegato in dettaglio nella sottosezione successiva).
+\end{itemize}
+
+Questi valori sono stati scelti in base al prototipo attualmente in costruzione.
+
+\paragraph{Equazioni cinematiche (sistema inerziale):}
+\begin{align}
+\dot{x}_G &= w(\sin\phi \sin\psi + \cos\phi \cos\psi \sin\theta) - v(\cos\phi \sin\psi - \cos\psi \sin\phi \sin\theta) + u\cos\psi \cos\theta \\
+\dot{y}_G &= v(\cos\phi \cos\psi + \sin\phi \sin\psi \sin\theta) - w(\cos\psi \sin\phi - \cos\phi \sin\psi \sin\theta) + u\cos\theta \sin\psi \\
+\dot{z}_G &= w\cos\phi \cos\theta - u\sin\theta + v\cos\theta \sin\phi
+\end{align}
+
+\paragraph{Equazioni dinamiche (sistema corpo):}
+\begin{align}
+\dot{u} &= \omega_z v - \omega_y w - g \sin\theta \\
+\dot{v} &= -\omega_z u + \omega_x w + g \cos\theta \sin\phi \\
+\dot{w} &= \omega_y u - \omega_x v - \frac{T}{m} + g \cos\theta \cos\phi
+\end{align}
+
+\begin{align}
+\dot{\omega}_x &= \frac{1}{I_{xx}}(\omega_z \omega_y - k_{\text{flap}} b T) \\
+\dot{\omega}_y &= \frac{1}{I_{yy}}(\omega_x \omega_z (I_{zz} - I_{xx}) + k_{\text{flap}} a T) \\
+\dot{\omega}_z &= \frac{1}{I_{zz}}(\omega_x \omega_y (I_{xx} - I_{yy}) + \frac{k_N}{k_T} c)
+\end{align}
+
+\begin{align}
+\dot{\phi} &= \omega_x + \omega_y \sin\phi \tan\theta + \omega_z \cos\phi \tan\theta \\
+\dot{\theta} &= \omega_y \cos\phi - \omega_z \sin\phi \\
+\dot{\psi} &= \omega_y \frac{\sin\phi}{\cos\theta} + \omega_z \frac{\cos\phi}{\cos\theta}
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Disturbi}
+
+Durante le simulazioni, sono stati considerati i disturbi comuni che si manifestano nelle condizioni reali di volo. Per ottenere un buon controllo del velivolo, è essenziale misurare l’assetto dell’UAV rispetto a un sistema di riferimento inerziale. Questa misurazione richiede sensori in grado di rilevare l’orientamento del veicolo—tra i quali l’IMU (Unità di Misura Inerziale), ampiamente utilizzata in diversi ambiti, dai droni alla locomozione umana \cite{16}, fino ai sistemi di sicurezza attiva nei veicoli \cite{17,18}. Come tutti i sensori, anche l’IMU è soggetta a disturbi.
+
+%\paragraph{1 Disturbi dell’IMU:} i ben noti svantaggi di questo sensore includono il rumore sulle misure grezze e l’**errore di integrazione** che si accumula quando il sistema di guida integra continuamente le accelerazioni nel tempo per calcolare velocità e posizione. Tali errori sono introdotti nel sistema durante le simulazioni. In dettaglio:
+%\begin{itemize}
+ % \item Si è considerata una densità spettrale di potenza (PSD) pari a $400 \mu g/\( \sqrt{\mathrm{Hz}} \)$ sulle variabili misurate $(\(\ddot{x}, \ddot{y}, \ddot{z}\))$, che vengono integrate due volte nel loop di retroazione per ottenere le posizioni $(x, y, z)$.
+  %\item Analogamente, per simulare il rumore dei giroscopi, si è utilizzato l’RMS del rumore di 0,05\°/s (dalla scheda tecnica), convertito in PSD seguendo la formula \( \mathrm{PSD} = \mathrm{RMS}^2 \, T_c \), dove \( T_c \) è il tempo di campionamento. I rumori dei giroscopi agiscono sulle misure \(\dot{\omega}_x, \dot{\omega}_y, \dot{\omega}_z\).
+%\end{itemize}
+
+Un approccio valido per filtrare tali rumori è stato esplorato in \cite{16} e potrebbe essere implementato e testato in futuri sviluppi.
+
+\paragraph{2 Disturbi del vento:} un’ulteriore fonte di disturbo per i velivoli è rappresentata dall’effetto del vento. Per modellare tali disturbi, comunemente si considerano vari approcci a seconda della superficie colpita. Poiché le eliche del DPDF sono protette dalla struttura esterna, si può assumere che il vento impatti principalmente su quest’ultima. Inoltre, la modellazione del vento risulta più semplice in quanto le forze e le coppie agiscono sulla struttura e non direttamente sulle eliche.
+
+Seguendo l’approccio proposto in \cite{19}, dove il vento è considerato quasi costante, in questo lavoro si è adottata una simulazione in cui i disturbi del vento sono una funzione variabile nel tempo anziché costante, al fine di meglio emulare le condizioni reali ( \( v_x(t), v_y(t) \) ). Tali effetti introducono disturbi nelle velocità, mentre gli effetti sull’assetto sono trascurabili—dato il design con eliche ducted.
+
+Alla luce di ciò, il modello può essere riscritto includendo tutti i disturbi additivi considerati:
+\[
+\dot{\mathbf{x}}_s = A \mathbf{x}_s + B u(t) + \mathbf{d}
+\]
+dove il vettore dei disturbi è:
+\[
+\mathbf{d} = \bigl( v_x,\, v_y,\, 0,\, \dot{d}_u,\, \dot{d}_v,\, \dot{d}_w,\, \dot{d}_{\omega_x},\, \dot{d}_{\omega_y},\, \dot{d}_{\omega_z},\, 0,\, 0,\, 0 \bigr)^T
+\]
+

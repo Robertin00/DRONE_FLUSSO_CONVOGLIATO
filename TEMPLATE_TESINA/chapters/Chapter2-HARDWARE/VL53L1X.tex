@@ -1,0 +1,60 @@
+\section{VL53L1X ST. Sensore Time-of-Flight per la misurazione a lunga distanza}
+Al fine di ottenere il comportamento desiderato del \textbf{D.P.D.F}, è necessario conoscere la distanza da terra mentre quest'ultimo è in volo.
+Bisogna, dunque, includere un sensore apposito.\\
+Il \textbf{VL53L1X di STMicroelectronics} è pienamente coerente con i requisiti precedentemente espressi. Tuttavia, non si è optato per l'integrazione
+diretta del sensore della casa STMicroelectronics, si è preferito aquistare il modulo \textbf{IRIS11A0J9776} prodotto da \textbf{Pololu}. La \textit{breakout board} di Pololu, contenente
+il sensore VL53L1X è stata scelta per semplificare la fase di configurazione elettronica del dispositivo.\\
+Per comprendere il suo principio di misura, è opportuno dedicare un'intera sezione alla sua descrizione.
+
+\subsection{Il principio di misura di un sensore \textit{Time-of-flight,ToF}}
+La modalità di misura conosciuta come \textit{Time-of-Flight} si basa sulla determinazione del tempo impiegato da un segnale, generalmente un impulso luminoso nella banda dell'infrarosso, per compiere un viaggio
+di andata e ritorno tra un emettitore ed un bersaglio riflettente. In particolare, per il dispositivo in analisi, la sorgente di emissione luminosa è costituita da un laser a cavità verticale (VCSEL), che emette 
+brevi impulsi di luce modulata. Il segnale emesso si propaga nell'ambiente fino ad incontrare un oggetto. Parte della radiazione viene riflessa e raccolta da un rilevatore sensibile alla luce, generalmente un \textit{SPAD array} o
+\textit{"Single-Photon Avalanche Diode"}. Questo rilevatore è in grado di registrare fino all'arrivo di singoli fotoni, consentendo una misura estremamente sensibile del tempo di volo.
+Una volta noto l'intervallo temporale tra l'istante di emissione dell'impulso e quello di ricezione del suo \textit{"eco"}, il calcolo della distanza si ottiene applicando la relazione:
+\begin{equation}
+    d=\frac{c\cdot \Delta{t}}{2}
+\end{equation}
+dove $d$ è la distanza dell'oggetto dalla superficie, $c$ è la velocità della luce nel vuoto e $\Delta{t}$ è il tempo di volo misurato. Il fattore 2 al denominatore tiene conto che il segnale percorre il tragitto due volte, andata e ritorno.
+I "ToF" moderni possono utilizzare tecniche avanzate di correlazione temporale o modulazione di fase per migliorare la precisione e la resistenza al rumore ambientale.\\
+Nel caso in esame, il VL53L1X utilizza la tecnologia base ToF o dToF, \textit{"Direct Time-of-Flight"}.
+
+\subsection{VL53L1X STMicroelectronics. Caratteristiche fisiche}
+A seguire, un breve elenco delle principali caratteristiche fisiche:
+\begin{itemize}
+    \item dimensioni del chip: $4.90\times 1.25\times 1.56$ [mm].
+    \item dimensioni del modulo: $17.50\times 12\times 2.56$ [mm].
+    \item massa del chip: 30 [mg].
+    \item massa del modulo: 0.5 [g] (senza i \textit{pin header}).
+\end{itemize}
+
+\subsection{VL53L1X STMicroelectronics. Catatteristiche tecniche}
+\paragraph{\small{Alimentazione}}\mbox{}\\
+Il sensore presenta un unico ingresso di alimentazione il cui nome è $V_{DD}$. L'intervallo di tensione di alimentazione è: \textbf{$[2.6\div 3.5]$ [V]}
+
+\paragraph{\small{Protocollo di comunicazione}}\mbox{}\\
+Il dispositvo è stato sviluppato per comunicare con il microcontrollore utilizzando esclusivamente il protocollo di comunicazione $I^2C$. Il sensore dispone della capacità di comunicare in \textit{Fast Mode}, scambiando byte ad una frequenza di 400 [kHz].\\
+Il sensore presenta 
+\paragraph{\small{XSHUT e GPIO 1 (Interrupt)}}\mbox{}\\
+Il VL53L1X dispone di un ingresso denominato \textbf{XSHUT}, che consente di spegnere o riavviare il dispositivo a livello \textit{hardware}, indipendentemente dall'\textit{Host}.
+Portando l'ingresso al livello logico basso, il sensore entra in modalità di \textit{shutdown}, interrompendo le misurazioni e riducendo il consumo di corrente. Al contrario, appliccando
+un livello di tensione alto, il sensore viene inizializzato e reso operativo.\\
+Oltre che l'ingresso \textbf{XSHUT}, il sensore dispone di un'\textbf{uscita} denominata \textbf{GPIO1}, spesso indicata anche come \textbf{INT (interrupt)}, la cui funzione principale è segnalare al microcontrollore 
+eventi o stati del sensore.\\
+Nel presente progetto, il pin XSHUT è stato utilizzato esclusivamente per il \textit{reset} forzato del sensore, mentre il GPIO1 è stato impiegato per segnalare la disponibilità della misura,
+semplificando il firmware, riducendo il cairico computazionale e consentendo la gestione della temporizzazione, aspetti che verrano approfonditi nella dedicata sezione nel capitolo \textit{Software}.
+
+\paragraph{\small{Emettitore}}\mbox{}\\
+Il \textit{VL53L1X} monta un emettitore \textbf{laser ad infrarossi di \textit{classe uno}}. Quest'ultimo fa riferimento alla classificazione di sicurezza stabilita dalla norma internazionale \textbf{IEC 60825-1}.
+La classificazione ha il dovere di descrivere quanto un emissione laser possa essere pericolosa per l'interazione umana (occhi, pelle ecc). La normativa organizza gli emettitori in \textit{classi}, dove 
+ogni classe rappresenta un livello crescente di rischio. Per un Laser di \textit{classe uno}, come quello emesso dal dispositivo, le condizoni operative normali, sono considerate sicure per occhi e pelle.
+
+\paragraph{\small{Field of View  (FoV)}}\mbox{}\\
+Il \textit{Field of View} è l'angolo massimo entro il quale il dispositivo rileva un oggetto. Per quanto riguarda l'emettitore in esame, il \textbf{FoV} è all'incirca di \textbf{$27\degree$}.\\
+A seguire, un'immagine esplicativa del \textit{FoV}:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapters/Chapter2-HARDWARE/Figures/cone.jpg}
+    \caption{Field of View del VL53L1X}
+    \label{fig:Hardware drone}
+\end{figure}

@@ -1,0 +1,208 @@
+\documentclass[a4print,italian,lof,lot,oneside]{univpmthesis}
+\errorcontextlines=9
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Metadata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thfaculty{Facolt\`{a} di Ingegneria}
+\thcourse{Corso di Laurea in Ingegneria Informatica e dell'Automazione}
+\thtitle{Sviluppo e porting di firmware per drone di tipo Ducted Fan}
+\thsubtitle{Sottotitolo della Tesi}
+\thauthor{Robert Laurentiu Mincu}
+\thadvisor{Andrea Bonci}
+\thcoadvisor{Prof.~Nome Correlatore 1}{Prof.~Nome Correlatore 2}{}
+
+\ayear{2024-2025}
+
+\thesisdedication{La dedico a Giada, Alina e Paolo}
+\thlocation{Ancona}
+\thtime{Dal 1/2/2025 al 1/10/2025} % data scrittura
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath,amsfonts,amssymb,bm} %<- scrittura equazioni
+\usepackage{graphicx} 	%<- immagini
+\usepackage{epstopdf} 	%<- conversione immagini .eps
+\usepackage{subfig} 	%<- sottofigure
+\usepackage{footnote}	%<- note a piè pagina
+\usepackage{tabularx,booktabs,multicol,multirow} %<- tabelle
+\usepackage{mathrsfs}
+\usepackage{caption}	%<- didascalie
+\usepackage{microtype}
+\usepackage{gensymb,siunitx}	%<- simboli ed unità di misura
+\usepackage{hyperref}   %<- link
+\usepackage{glossaries}
+\usepackage{verbatim}
+\usepackage{xcolor}
+\usepackage[a-1b]{pdfx} %<- generazione pdf-A
+\usepackage{listings}   %<- per inserire il codice
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\eqname}{Eq.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{custom_green}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{custom_blue}{rgb}{  0.05, 0.05, 0.97}
+\definecolor{custom_brown}{rgb}{ 0.69, 0.38, 0.10}
+\definecolor{custom_purple}{rgb}{0.58, 0.00, 0.82}
+\definecolor{custom_orange}{rgb}{0.94, 0.59, 0.09}
+
+\lstdefinelanguage{Cpp}{
+    language=C++,
+    backgroundcolor=\color{white},
+    basicstyle=\footnotesize\ttfamily\color{black},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]{"},
+    commentstyle=\color{custom_green},
+    morekeywords={int, char, do, while, for, strtok, strtof, NULL, free, const, float},
+    sensitive=false,
+    keywordstyle=\color{custom_purple},
+    stringstyle=\color{blue},
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{black},
+    rulecolor=\color{black},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stepnumber=1,
+    tabsize=4,
+    title=\lstname
+}
+
+\lstdefinelanguage{Python}{
+    keywords={from, import, def, return, as, in, len, if, elif, else, for, while, self},
+    breakatwhitespace=false,       
+    breaklines=true,   
+    morecomment=[l]{\#},
+    morestring=[b]",
+    commentstyle=\color{red},
+    keywordstyle=\color{custom_purple},
+    numberstyle=\tiny\color{black},
+    stringstyle=\color{custom_green},
+    basicstyle=\ttfamily\footnotesize,
+    captionpos=b,
+    showstringspaces=false,        
+    showtabs=false,                
+    numbers=left,                 
+    numbersep=5pt,                  
+    numberstyle=\tiny\color{black}, 
+    rulecolor=\color{black},                      
+    tabsize=5,                     
+    title=\lstname,    
+}
+
+\lstdefinelanguage{MATLABc}{
+    language=MATLAB,
+    backgroundcolor=\color{white},  
+    basicstyle=\footnotesize \ttfamily \color{black} \bfseries,   
+    breakatwhitespace=false,       
+    breaklines=true,               
+    captionpos=b,
+    morestring=[b]",
+    commentstyle=\color{custom_green},   
+    keywordstyle=\color{custom_blue},
+    morekeywords={clearvars},
+    deletekeywords={fprintf},
+    identifierstyle=\color{black},
+    stringstyle=\color{custom_purple},      
+    numbers=left,                 
+    numbersep=5pt,                  
+    numberstyle=\tiny\color{black}, 
+    rulecolor=\color{black},        
+    showspaces=false,               
+    showstringspaces=false,        
+    showtabs=false,                
+    stepnumber=1,                   
+    tabsize=5,                     
+    title=\lstname,                 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figure},labelsep=colon,textfont={it}}
+\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Table},labelsep=colon,textfont={it}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front matter contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\maketitle
+
+\begin{thesisacknowledge}[italian]
+    Grazie a Tizio e Caio
+\end{thesisacknowledge}
+
+\begin{thesisabstract}[english]
+    The \texttt{univpmthesis} class produces a template for the Bachelor and Master thesis manuscripts for students at UNIVPM. The class allows to write your manuscript using either italian or english; so, if you are an international student, feel free to use it!
+\end{thesisabstract}
+
+\begin{thesisabstract}[italian]
+    
+\end{thesisabstract}
+
+\thesistoc
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   Main matter contents  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter  
+
+%\input{chapters/chapter1-TUTORIAL/chapter1.tex}
+% 1) Chapter2 tutorial
+
+%\input{chapters/Chapter2-HARDWARE/chapter2-TUTORIAL.tex}
+
+% 2) HARDWARE: SCHEDA DI SVILUPPO
+
+\input{chapters/Chapter2-HARDWARE/NUCLEOH745ZIQ.TEX}
+
+% 3) HARDWARE: ALIMENTAZIONE
+
+\input{chapters/Chapter2-HARDWARE/TATTU_LiPo_e_MNR_electronics_PowerSafeModule.tex}
+% 4) HARDWARE: MOTORI 
+
+\input{chapters/Chapter2-HARDWARE/Turnigy_AereoDrive_SK3-3536_1400kv.tex}
+
+% 5) HARDWARE: ESC
+
+\input{chapters/Chapter2-HARDWARE/Turnigy Plush-40A ESC.tex}
+
+% 6) HARDWARE: ELICHE
+
+%\input{chapters/Chapter2-HARDWARE/GEMFAN_GF_9060.tex}
+% 7) HARDWARE: SERVOMOTORI
+
+% 8) HARDWARE: SENSORE IMU
+%\input{chapters/Chapter2-HARDWARE/BNO-055_BoshSensortec.tex}
+% 9) HARDWARE: SENSORE ALTEZZA
+\input{chapters/Chapter2-HARDWARE/VL53L1X.tex}
+%%\input{chapters/Appendice e Approfondimenti/Appendice.tex}
+\input{chapters/Chapter2-HARDWARE/chapter2-TUTORIAL.tex}
+\input{chapters/chapter1-TUTORIAL/chapter1.tex}
+%\input{chapters/TraduzioneArticolo.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   Back matter contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%\bibliographystyle{IEEEbib}
+%\bibliography{IEEEabrv,bibliografia}
+
+\bibliographystyle{unsrt}
+\bibliography{frontbackmatters/bibliography.bib}
+
+\end{document}

@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: UNIVPMthesis.aux
+The style file: unsrt.bst
+Database file #1: frontbackmatters/bibliography.bib
+Warning--I didn't find a database entry for "Relazione1"
+Warning--I didn't find a database entry for "DCdriver"
+Warning--I didn't find a database entry for "Mises1928"
+Warning--I didn't find a database entry for "Bridgman1952"
+You've used 1 entry,
+            1791 wiz_defined-function locations,
+            462 strings with 3822 characters,
+and the built_in function-call counts, 232 in all, are:
+= -- 20
+> -- 4
+< -- 0
++ -- 2
+- -- 1
+* -- 18
+:= -- 42
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 9
+empty$ -- 25
+format.name$ -- 1
+if$ -- 49
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 1
+pop$ -- 1
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 3
+stack$ -- 0
+substring$ -- 21
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 2
+width$ -- 2
+write$ -- 13
+(There were 4 warnings)

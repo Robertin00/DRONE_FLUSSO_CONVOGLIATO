@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TO DO LIST SPIEGAZIONE DEL BOSH SENSORTEC 
+% Presentazione del sensore nell'ambito del progetto 
+% Presentazione del sensore generale  [OK]
+% Principio di misura del sensore: accelerometro, giroscopio e magnetometro [OK]
+% Dati tecnici: Dimensioni, peso, alimentaizione, collegamenti, comunicazione 
+% Modalità operative del sensore spingendo sulla sensor fusion 
+
+\section{BNO-055 Bosh Sensortec. Unità di misura inerziale e magnetometro}
+\textcolor{red}{a cosa serve l'imu in questo progetto?}\\
+Il \textbf{BNO-055} è un sensore di orientamento assoluto a 9 assi sviluppato da \textbf{Bosh Sensortec}.
+Il dispositivo è un \textit{System in Package}\textcolor{blue}{[A]} che integra un accelerometro triassiale a 14 bit, un giroscopio triassiale a 16 bit, un sensore geomagnetico triassiale e un
+microcontrollore Cortex $M0^+$ a 32 bit incaricato nell'eseguire il \textit{software di sensor fusion} integrato.\\
+Il \textit{software}, poc'anzi citato, combina i dati provenienti da accelerometro, giroscopio e magnetometro, fornendo: \textbf{Quaternioni, Angoli di Eulero come pitch, roll e yaw e Vettori di orientamento lineari e gravitazionali}.
+Nel presente progetto, il \textit{chip} BNO-055 è stato acquistato con montaggio su \textit{scheda di breakout} incluso, dunque nel paragrafo sottostante sono stae aggiunte sia le dimensioni/peso del modulo che le dimensioni/peso del chip.
+
+\subsection{BNO-055 BoshSensortec. Catatteristiche e archiettura}
+A seguire una rappresentazione schematica del \textit{System in package BNO-055 Bosh Sensortec}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png}
+    \caption{\textcolor{black}{Architettura di sistema}}
+    \label{fig:etichetta}
+\end{figure}
+
+
+
+\paragraph{\small{Parametri fisici}}
+\begin{itemize}
+    \item dimensioni del modulo: $20\times24\times2$ mm.
+    \item dimensioni del chip: $3.8\times5.2\times1.1$ mm.
+    \item massa del modulo: 3 g.
+    \item massa del chip: $\approx 150 mg$.
+\end{itemize}
+
+\paragraph{\small{Alimentazione}}\mbox{}\\
+Il sensore ha due distinti ingressi di alimentazione:
+\begin{itemize}
+    \item $V_{DD}$ è il principale \textit{pin} di alimentazione per i sensori interni.
+    \item $V_{DDIO}$ è l'ingresso distinto di alimentazione del \textit{$\mu C$} e delle interfacce digitali.
+\end{itemize}
+Al fine di ottenere una corretta alimentazione per il \textit{System in package} è necessario che l'ingresso $V_{DD}$ sia sotto tensione consigliata prima di alimentare anche l'ingresso $V_{DDIO}$.\\
+Il BNO-055 supporta tre differenti modalità di alimentazione: \textit{Normal mode}, \textit{Low power mode} and \textit{Suspend mode}. Per lo sviluppo è stata scelta la modalità \textit{Normal mode}.\\
+\small{\textit{Per approdondire le altre modalità, consultare il datasheet: \textcolor{red}{[Riferimento]}}}
+
+\paragraph{\small{Protocolli di comunicazione disponibili}}
+\begin{itemize}
+    \item $I^2C$.
+    \item UART.
+    \item SPI.
+\end{itemize}
+%Anche se lo scrivi sopra nella parte (a cosa serve l'imu a questo progetto rammenta)
+\textbf{\textit{\small{Si rammenta che nel presente progetto è stato utilizzato il protoccolo di comunicazione $I^2C$}}}
+
+\subsection{Principio di misura dell'accelerometro, giroscopio e magnetometro}
+\paragraph{Accelerometro}\mbox{}\\
+L'accelerometro integrato nel BNO-055 Bosh Sensortec è di tipo capacitivo M.E.M.S, \textit{Micro-Eletro-Mechanical System}. Il dispositivo consente la misura dell'accelerazione lungo i tre assi cartesiani.\\
+Il principio di funzionamento si basa sulla rilevazione delle variazioni di capacità tra microstrutture mobili e fisse realizzate su un substrato di silicio.\\
+L'elemento sensibile di ciascun asse è costituito da una massa sospesa, \textit{proof mass}, vincolata da microtravi elastiche ad una cornice ancorata al substrato. In condizioni di quiete, la massa è in equilibrio e la capacità tra le piastre interdigitate\textcolor{blue}{[A]} rimangono simmetriche.\\
+Quando il dispositivo è sottoposto ad un'accelerazione lungo uno degli assi sensibili, la massa inerziale si sposta in direzione opposta a quella dell'accelerazione, generando una variazione differenziale delle capacità tra le piastre.\\
+La variazione di capacità viene rilevata da un circuito integrato, che la converte in un segnale elettrico, proporzionale alla velocità applicata.\\
+Il segnale analogico prodotto, viene successivamente digitalizzato da un convertirore analogico digitale integrato nel chip.
+
+\paragraph{Giroscopio}\mbox{}\\
+Il giroscopio integrato nel dispositivo fa parte della categoria M.E.M.S di tipo vibrante, \textit{vibrating structure gyroscope}, e consente la misura della velocità angolare lungo i tre assi cartesiani.\\
+Il principio di funzionamento si basa sull'effetto Coriolis, che si manifesta quando una massa in moto oscillatorio subisce una rotazione rispetto ad un sistema di riferimento inerziale.
+All'interno del sensore, ciascun asse dispone di una o più masse vibranti, le quali vengono mantenute in oscillazione a frequenza costante, mediante un circuito di attuazione elettrostatica. Quando il dispositivo ruota attorno ad uno degli assi
+la massa subisce una forza di Coriolis data da:
+\begin{equation}
+    \vec{F_c}=2m(\vec{v}\times \vec{\omega }) 
+\end{equation}
+dove $m$ è la massa oscillante, $\vec{v}$ è la velocità della massa nella sua traiettoria vibrante, $\vec{\omega}$ è la velocità angolare del corpo.\\
+Questa forza induce uno spostamento trasversale rispetto alla direzione di vibrazione, che viene rilevato attraverso variazioni di capacità tra elettrodi fissi e mobili, similmente a quanto avviene nell'accelerometro.\\
+Tali variazioni, proporzionali alla velocità angolare, vengono convertite in un segnale elettrico mediante un circuito di lettura differenziale e successivamente digitalizzate tramite un convertitore analogico digitale integrato.
+
+\paragraph{Magnetometro}\mbox{}\\
+Il sensore integra inoltre un \textbf{magnetometro ad effetto Hall}, sfruttante il fenomeno fisico della tensione di Hall per misurare l'orientamento del dispositivo rispetto al campo magnetico terrestre.\\
+Nella sua forma più semplice, un elemento di Hall è una sottilissima lamina di materiale conduttore o semiconduttore attraversata da una corrente continua controllata. Se su questa lamina agisce un campo magnetico con componente perpendicolare alla direzione della corrente,
+i portatori di carica vengono deviati lateralmente della \textbf{forza di Lorentz}:
+\begin{equation}
+    F = q(\vec{v}\times\vec{B})
+\end{equation}
+con $\vec{v}$ vettore velocità della carica e $\vec{B}$ vettore campo magnetico. Questa deviazione procude un accumulo di carica ai bordi opposti della lamina, e, in regime stazionario, un campo elettrico trasversale 
+che equilibria la forza magnetica. Il risultato è una differenza di potenziale trasversale, la \textbf{tensione di Hall}: $V_H$ che risulta proporzionale alla componente di campo magnetico normale alla superficie del 
+sensore e alla corrente che lo attraversa. Per un elmento \textit{Hall} omogeneo abbiamo:
+\begin{equation}
+    V_H = \frac{I\vec{B_{\perp}}}{nqs}
+\end{equation}
+dove $\vec{B_{\perp}}$ è la componente del campo perpendicolare al piano della lamina, $n$ la densità di portatori, $q$ il valore di carica elementare e $s$ lo spessore del \textit{film} attivo.
+Nel magnetometro ogni elemento di Hall è disposto in modo da avere la propria normale allineata con uno degli assi cartesiani del sistema di riferimento del sensore. Quando il campo magnetico terrestre
+attraversa il dispositivo, ciascun elemento rileva la proiezione del vettore $\vec{B}$ lungo il proprio asse, trasformandola in una tensione di Hall proporzionale.\\
+Dopo un'opportuna amplificazione della tensione di Hall percepita e una conversione analogico-digitale si ottiene un tripletto di valori numerici che rappresentano le tre componenti cartesiane del campo magnetico locale.\\
+Il vettore tridimensionale ottenuto viene ricostruito e poi confrontato con il valore atteso del campo geomagnetico.\\
+Attraverso il \textit{sensor fusion}, il magnetometro fornisce quindi il riferimento assoluto per l'\textit{azimut}, vale a dire, la direzione del Nord magnetico rispetto al sistema di riferimento solidale del sensore.
+
+\subsection{Acceletometro, giroscopio e magnetometro}
+L'accelerometro, il giroscopio e il magnetometro sono tutti prodotti da Bosh Sensortec.
+
+\paragraph{\small{Accelerometro}}
+\paragraph{\small{Giroscopio}}
+\paragraph{\small{Magnetometro}}
+
+\paragraph{Modalità operative}\mbox{}\\
+Il dispositivo di misura fornisce una grande varietà di segnali di \textit{output}, che possono essere scelti selezziando l'appropiata modalità operativa.\\
+Le modalità operative vengono classificate in base all'attivazione o meno del \textit{software di sensor fusion}, nello specifico distinguiamo tra le \textit{Non-Fusion modes} e le \textit{Fusion modes}.
+
+\paragraph{Non-Fusion Modes}
+\begin{itemize}
+    \item \textbf{ACCONLY}: il dispositivo fornisce solamente dati grezzi di provenienti dall'accelerometro.
+\end{itemize}
+\textcolor{red}{CONTINUARE DA QUI}
+
+

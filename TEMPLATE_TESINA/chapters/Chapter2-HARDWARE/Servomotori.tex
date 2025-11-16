@@ -1,0 +1,68 @@
+\section{Hitec HS-82MG Gear micro servo}
+Servomotore analogico
+
+\paragraph{Caratteristiche tecniche:}\mbox{}\\
+\begin{itemize}
+    \item Intervallo di tensione operativa: $4.8 - 6.0$ [V].
+    \item Intevallo di temperatura operativa: $-20 - 60$[C°].
+    \item Dimensioni in [mm]: 29.8 x 12.0 x 29.6. 
+    \item Direzione di rotazione: senso antiorario fino a 1500 $\mu s$, da 1500$\mu s$ a 1900$\mu s$ senso orario. % DA MIGLIORARE L'ESPOSIZIONE 
+    \item Vita utile di rotazione: 20.000 cicle sotto carico di $0.8 kg\cdot cm$ sotto carico. Il valore è garantito al minimo, vale a dire che in condizioni normali, potrebbe durare anche molto di più.
+    \item Resistenza degli ingranaggi: 11$[kg\cdot cm]$ garantito al minimo.
+    \item Tipo di potenziometro: a doppio cursore / accoppiamento diretto.
+    \item Peso: 19.9 [g].
+\end{itemize}
+
+%%%%%%%%%%%%%%% DA RIMUOVERE O DA MODIFICARE IN CASO %%%%%%%%%%%%%%%
+\section{Approfondimenti}
+
+\paragraph{Controllo}\mbox{}\\
+Il controllo del servo avviene tramite un segnale PWM, la frequenza di questo è arbitraria ma manteniamoci sui 50 Hz con un'ampizza del segnale di 3.3 [V].\\
+Dal datasheet estraiamo l'informazione del duty cycle. Al fine di posizionare il servomotore a 90° bisogma riservare un impulso di 1.5 ms, vale a dire un duty cycle del 7.5\%.\\
+Dalla navigazione internet deduciamo la sua \textit{sensibilità}: variaizone di $0.103°$ per ogni microsecondo di variazione del PWM. Per ogni variazione di grado il segnale PWM deve variare il suo impulso di $9.7087*10^{-6}$ secondi e quindi 9,7 microsecondi.\\
+In generlae per ottenere una variazione di 40° è necessario variare il segnale PWM di 400 microsecondi.
+
+\paragraph{Velocità di rotazione}\mbox{}\\
+ a $4.8V è 500° al sec \,\,\,  6.0V è 600° al sec \implies 8.7266 rad/s \,\,\, 10.4720 rad/s$.
+
+\paragraph{Coppia di stallo}\mbox{}\\
+è la massima coppia che il servomotore può generare quando il suo albero è bloccato e non si muove, vale a dire che se viene applicata una coppia maggiore a quella di stallo nel mentre che il servo è in posizione ferma allora si sposta. La coppia nel nostro caso viene misurata in funzione della distanza dal perno, kg*cm, vale a dire che se la coppia di stallo è 3.0kg x 1cm allora per 2 cm è 1.5kg.\\
+Usare il servo al limite della sua \textit{Stall torque} è sconsigliato: può portare a surriscaldamento, può aumentare l'usura dell'ingranaggio, può bruciare il motore o il driver interno.\\
+Esempio: supponiamo di inviare un segnale PWM specifico per posizionare il servomotore a 30°, il servo si posizione, se appliccassi una forza equivalente a una coppia di 3.1 kg a 1 cm dal perno il servo non riuscirebbe a contrastarla: va in stallo(cerca di ruotare ma la coppia applicata è troppo grande e impedisce la rotazione) oppure comincia a cedere.
+
+\paragraph{Coppia di stasi}\mbox{}\\
+La coppia di stasi rappresenta la coppia massima che il servomotore può mantenere in posizione statica, cioè senza muoversi, mentre oppone resistenza a una forza esterna.
+Riprendendo l'esemio del paragrafo precedente, se il servomotore è stato programmato in quell'istante di tempo per posizionarsi a 30° e a questo viene applicata una forza leggera, il servo riesce a resistere e non si muove, questo è quello che vogliamo.
+    
+\paragraph{Corrente a vuoto}\mbox{}\\
+La corrente a vuoto è la corrente minima che il servomotore consuma per essere pronto a ricevere comandi.\\
+Nello specifico è la corrente elettrica assorbita dal servo quando è alimentato e non copie alcun lavoro: non ruota, non applica coppia, non è sotto carico e non riceve comandi di movimento attivi.
+
+\paragraph{Corrente di operatività}\mbox{}\\
+La corrente di operatività è la corrente assorbita dal servomotore mentre è in movimento, quindi mentre ruota per raggiungere una posizione o contrastare un carico dinamico.
+
+\paragraph{Corrente di stallo}\mbox{}\\
+La corrente di stallo è la massima corrente che il servomotore (o un motore) assorbe quando è alimentato ma bloccato meccanicamente, ovvero non riesce a muoversi nonostante stia cercando di farlo.\\
+(Il motore riceve il comando di rotazione ma è bloccato da un carico esterno troppo elevato, il motore dunque non gira ma continua a consumare corrente).\\
+\textbf{GESTIRE LO STALLO DEL SERVOMOTORE}.
+
+\paragraph{Zona morta}\mbox{}\\
+La zona morta è la zona neutra in microsecondi di un segnale PWM attorno al valore centrale attorno al quale il servo non reagisce.\\
+Il servomotore in questione ha una Dead Band Width di 5 microsecondi, sto inviando un PWM a 1500 microsecondi, se questo cambia a 1496 il servo non si muove, ma se dovesse cambiare a 1490 il servomotre si muove.
+
+\paragraph{Corsa operativa}\mbox{}\\
+La corsa operativa indica l'intervallo angolare (in gradi) che il servomotore copre normalmenete in risposta al segnale PWM standard.
+
+\paragraph{Resistenza degli ingranaggi}\mbox{}\\
+La \textit{Gear Strenght} è il carico massimo sopportabile dagli ingranaggi prima della deformazione o della rottura.
+
+\paragraph{Motor type: Cored Metal Brush}\mbox{}\\
+Motore con avvolgimento a nucleo e spazzole metalliche. Il motore ha un rotore con nucleo di ferro. Vengono utilizzate spazzole di metallo per commutare la corrente nel collettore.\\
+Questo provoca usura meccanica nel tempo e possibile generazione di scintille. Il disturbo è conosciuto come \textit{EMI disturbance}. \textbf{Potrebbero causare tensioni di disturbo per i sensori MEMS a bordo e anche le linee di comunicazione}.
+
+\paragraph{Come funzione il sermotore: potenziometro}\mbox{}\\
+Nei servomotori di tipo analogico, la misurazione della posizione angolare dell'albero di uscita è affidata a un potenziometro integrato.\\
+La dicitura nel \textit{datasheet} descrive sia la struttura meccanica del potenziometro, sia le modalità di accoppiamento con l'albero di uscita del servo.\\
+Il riferimento \textit{2 slider} indica che il potenziometro è progettato con due elmenti di contatto mobili, che scorrono simultaneamente su una o più piste resistive. Questa configurazione ha lo scopo di: migliorare la stabilità elettrica del segnale di feedback, riducendo il rumore di misura, fornire maggiore precisione o ridondanza rispetto ad un potenziometro a cursore singolo e offire maggiore affidabilità nel tempo.\\
+\textit{Direct drive} indica che il potenziometro è collegato direttamente all'albero motore del servo, senza alcuna interposizione di riduttori o ingranaggi. Questo tipo di accoppiamento diretto comporta numerosi vantaggi funzionali: assenza di giochi metallici tra albero e sensore, risposta immediata al segnale e semplicità costruttiva.
+
