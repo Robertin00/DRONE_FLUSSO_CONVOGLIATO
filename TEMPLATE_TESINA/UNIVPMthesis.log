@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.21)  16 NOV 2025 22:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.21)  22 NOV 2025 00:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1350,10 +1350,46 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Label `fig:etichetta' multiply defined.
 
 
+LaTeX Warning: Label `fig:etichetta' multiply defined.
+
+
 LaTeX Warning: Label `fig:Hardware drone' multiply defined.
 
 
 LaTeX Warning: Label `fig:Hardware drone' multiply defined.
+
+
+LaTeX Warning: Label `fig:etichetta' multiply defined.
+
+
+LaTeX Warning: Label `fig:etichetta' multiply defined.
+
+
+LaTeX Warning: Label `fig:etichetta' multiply defined.
+
+
+LaTeX Warning: Label `fig:Hardware drone' multiply defined.
+
+
+LaTeX Warning: Label `fig:Hardware drone' multiply defined.
+
+
+LaTeX Warning: Label `fig:Hardware drone' multiply defined.
+
+
+LaTeX Warning: Label `fig:Hardware drone' multiply defined.
+
+
+LaTeX Warning: Label `fig:Hardware drone' multiply defined.
+
+
+LaTeX Warning: Label `fig:etichetta' multiply defined.
+
+
+LaTeX Warning: Label `fig:etichetta' multiply defined.
+
+
+LaTeX Warning: Label `fig:etichetta' multiply defined.
 
 
 LaTeX Warning: Label `fig:Hardware drone' multiply defined.
@@ -1642,41 +1678,41 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 153.
  (./UNIVPMthesis.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 10.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 10.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 9.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 10.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 9.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 10.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 9.
+(Font)              <10.95> on input line 10.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 9.
+(Font)              <8> on input line 10.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 9.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
+(Font)              <6> on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 9.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -1686,13 +1722,15 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
-])
+]
+
+[9])
 \tf@toc=\write5
 \openout5 = `UNIVPMthesis.toc'.
 
 
 
-[9]
+[10]
 Package tocbasic Info: character protrusion at lof deactivated on input line 153.
  (./UNIVPMthesis.lof)
 \tf@lof=\write6
@@ -1700,7 +1738,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 153
 
 
 
-[10
+[11
 
 
 
@@ -1713,95 +1751,134 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 153
 
 
 
-[11
+[12
 
 
 
 
 ] (./chapters/Chapter2-HARDWARE/NUCLEOH745ZIQ.TEX
-Underfull \hbox (badness 10000) in paragraph at lines 3--7
+chapter 1.
 
+Overfull \hbox (3.79521pt too wide) in paragraph at lines 7--14
+\T1/lmr/m/n/10.95 (-20) A se-gui-re, una de-scri-zio-ne det-ta-glia-ta del-le \T1/lmr/m/it/10.95 (-20) fea-tu-res \T1/lmr/m/n/10.95 (-20) del mi-cro-con-trol-lo-re STM32H745ZI-
  []
 
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 13.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 19.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 21.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [1
 
+
+
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 [2]
-<chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png, id=236, 2192.19pt x 1858.945pt>
-File: chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png Graphic file (type png)
-<use chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png>
-Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png  used on input line 86.
-(pdftex.def)             Requested size: 199.16928pt x 168.88628pt.
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
+
+ []
+
 
 
 [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+<chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png, id=328, 2192.19pt x 1858.945pt>
+File: chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png  used on input line 110.
+(pdftex.def)             Requested size: 199.16928pt x 168.88628pt.
 
-[4 <./chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png>]
-<chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png, id=265, 1003.75pt x 1759.57375pt>
+
+[4{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 146--149
+
+ []
+
+<chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png, id=339, 225.84375pt x 177.66376pt>
+File: chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png  used on input line 152.
+(pdftex.def)             Requested size: 239.00557pt x 188.02989pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--160
+
+ []
+
+<chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png, id=341, 1003.75pt x 1759.57375pt>
 File: chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png Graphic file (type png)
 <use chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png>
-Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png  used on input line 125.
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png  used on input line 164.
 (pdftex.def)             Requested size: 239.00557pt x 418.97707pt.
 ) (./chapters/Chapter2-HARDWARE/TATTU_LiPo_e_MNR_electronics_PowerSafeModule.tex
 
-[5 <./chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png>]
+[5]
 
-[6{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<chapters/Chapter2-HARDWARE/Figures/T.png, id=284, 401.5pt x 240.9pt>
+[6 <./chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png>]
+
+[7 <./chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png>]
+
+[8]
+<chapters/Chapter2-HARDWARE/Figures/T.png, id=375, 401.5pt x 240.9pt>
 File: chapters/Chapter2-HARDWARE/Figures/T.png Graphic file (type png)
 <use chapters/Chapter2-HARDWARE/Figures/T.png>
 Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/T.png  used on input line 54.
 (pdftex.def)             Requested size: 239.00557pt x 143.40527pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[7]
-<chapters/Chapter2-HARDWARE/Figures/Schema collegamenti PowerSafeTwinADVMNRele.png, id=296, 676.5275pt x 320.19624pt>
+[9 <./chapters/Chapter2-HARDWARE/Figures/T.png>]
+<chapters/Chapter2-HARDWARE/Figures/Schema collegamenti PowerSafeTwinADVMNRele.png, id=384, 676.5275pt x 320.19624pt>
 File: chapters/Chapter2-HARDWARE/Figures/Schema collegamenti PowerSafeTwinADVMNRele.png Graphic file (type png)
 <use chapters/Chapter2-HARDWARE/Figures/Schema collegamenti PowerSafeTwinADVMNRele.png>
 Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/Schema collegamenti PowerSafeTwinADVMNRele.png  used on input line 80.
 (pdftex.def)             Requested size: 398.33858pt x 188.53793pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[8 <./chapters/Chapter2-HARDWARE/Figures/T.png>]
-<chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png, id=309, 940.51375pt x 394.47375pt>
+<chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png, id=385, 940.51375pt x 394.47375pt>
 File: chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png Graphic file (type png)
 <use chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png>
 Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png  used on input line 95.
 (pdftex.def)             Requested size: 239.00557pt x 100.24336pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./chapters/Chapter2-HARDWARE/scheda_di_distribuzione_alimentazione.tex
+
+[10 <./chapters/Chapter2-HARDWARE/Figures/Schema collegamenti PowerSafeTwinADVMNRele.png>]
+<chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png, id=395, 896.50636pt x 613.99637pt>
+File: chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png  used on input line 15.
+(pdftex.def)             Requested size: 199.16928pt x 136.40062pt.
+
+
+[11 <./chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png> <./chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png>]
+<chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg, id=404, 271.0125pt x 180.675pt>
+File: chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg Graphic file (type jpg)
+<use chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg  used on input line 36.
+(pdftex.def)             Requested size: 239.00557pt x 159.34184pt.
+<chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg, id=405, 2569.6pt x 1384.17125pt>
+File: chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg Graphic file (type jpg)
+<use chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg  used on input line 47.
+(pdftex.def)             Requested size: 239.00557pt x 128.73082pt.
 ) (./chapters/Chapter2-HARDWARE/Turnigy_AereoDrive_SK3-3536_1400kv.tex
 
-[9 <./chapters/Chapter2-HARDWARE/Figures/Schema collegamenti PowerSafeTwinADVMNRele.png> <./chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png>]
+[12 <./chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\spacefactor' on input line 9.
+(hyperref)                removing `\spacefactor' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@m' on input line 9.
+(hyperref)                removing `\@m' on input line 13.
 
 
 
-[10]
-<chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg, id=321, 425.33907pt x 311.66437pt>
+[13 <./chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg>]
+<chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg, id=417, 425.33907pt x 311.66437pt>
 File: chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg Graphic file (type jpg)
 <use chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg>
-Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg  used on input line 34.
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg  used on input line 39.
 (pdftex.def)             Requested size: 199.16928pt x 145.94012pt.
 ) (./chapters/Chapter2-HARDWARE/Turnigy Plush-40A ESC.tex
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <14.4> not available
@@ -1817,7 +1894,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[11 <./chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg>]
+[14 <./chapters/Chapter2-HARDWARE/Figures/TurnigyAereoDriveSK3-3536_1400KV.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\spacefactor' on input line 15.
@@ -1826,70 +1903,218 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@m' on input line 15.
 
-<chapters/Chapter2-HARDWARE/Figures/TurnigyPlush40A.jpg, id=326, 425.33907pt x 311.66437pt>
+<chapters/Chapter2-HARDWARE/Figures/TurnigyPlush40A.jpg, id=424, 425.33907pt x 311.66437pt>
 File: chapters/Chapter2-HARDWARE/Figures/TurnigyPlush40A.jpg Graphic file (type jpg)
 <use chapters/Chapter2-HARDWARE/Figures/TurnigyPlush40A.jpg>
 Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/TurnigyPlush40A.jpg  used on input line 27.
 (pdftex.def)             Requested size: 239.00557pt x 175.13005pt.
-<chapters/Chapter2-HARDWARE/Figures/SchemaCollegamentiProgrammazioneEsc.png, id=327, 565.11125pt x 247.92625pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<chapters/Chapter2-HARDWARE/Figures/SchemaCollegamentiProgrammazioneEsc.png, id=425, 565.11125pt x 247.92625pt>
 File: chapters/Chapter2-HARDWARE/Figures/SchemaCollegamentiProgrammazioneEsc.png Graphic file (type png)
 <use chapters/Chapter2-HARDWARE/Figures/SchemaCollegamentiProgrammazioneEsc.png>
 Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/SchemaCollegamentiProgrammazioneEsc.png  used on input line 42.
 (pdftex.def)             Requested size: 239.00557pt x 104.85466pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
+[15]
 
+[16 <./chapters/Chapter2-HARDWARE/Figures/TurnigyPlush40A.jpg> <./chapters/Chapter2-HARDWARE/Figures/SchemaCollegamentiProgrammazioneEsc.png>]
 
-[12 <./chapters/Chapter2-HARDWARE/Figures/TurnigyPlush40A.jpg>]
-
-[13 <./chapters/Chapter2-HARDWARE/Figures/SchemaCollegamentiProgrammazioneEsc.png>]
-
-[14]
-<chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg, id=354, 602.25pt x 602.25pt>
+[17]
+<chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg, id=449, 602.25pt x 602.25pt>
 File: chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg Graphic file (type jpg)
 <use chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg>
 Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg  used on input line 95.
 (pdftex.def)             Requested size: 239.00557pt x 239.00267pt.
 
 
-[15 <./chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg>]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 116--122
 
  []
 
-) (./chapters/Chapter2-HARDWARE/VL53L1X.tex
 
-[16]
 
-[17]
-<chapters/Chapter2-HARDWARE/Figures/cone.jpg, id=382, 1670.24pt x 722.7pt>
+[19 <./chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg>]) (./chapters/Chapter2-HARDWARE/GEMFAN_GF_9060.tex
+
+[20]) (./chapters/Chapter2-HARDWARE/Servomotori.tex
+
+[21]
+<chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg, id=483, 1003.75pt x 1003.75pt>
+File: chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg Graphic file (type jpg)
+<use chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg  used on input line 22.
+(pdftex.def)             Requested size: 159.333pt x 159.33205pt.
+
+
+[22 <./chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg>]
+<chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg, id=494, 903.375pt x 1032.85875pt>
+File: chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg Graphic file (type jpg)
+<use chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg  used on input line 52.
+(pdftex.def)             Requested size: 239.00557pt x 273.26498pt.
+
+
+[23 <./chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg>]
+<chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png, id=505, 207.77625pt x 42.1575pt>
+File: chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png  used on input line 72.
+(pdftex.def)             Requested size: 278.83578pt x 56.58208pt.
+) (./chapters/Chapter2-HARDWARE/BNO-055_BoshSensortec.tex
+
+[24 <./chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png>]
+Underfull \hbox (badness 10000) in paragraph at lines 27--34
+
+ []
+
+<chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg, id=515, 192.72pt x 155.3805pt>
+File: chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg Graphic file (type jpg)
+<use chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg  used on input line 41.
+(pdftex.def)             Requested size: 159.333pt x 128.46075pt.
+
+
+[25]
+
+[26 <./chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg>]
+
+[27]
+
+[28]
+<chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png, id=550, 632.3625pt x 597.23125pt>
+File: chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png  used on input line 134.
+(pdftex.def)             Requested size: 159.333pt x 150.4739pt.
+
+
+[29]
+<chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png, id=559, 727.71875pt x 203.76125pt>
+File: chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png  used on input line 154.
+(pdftex.def)             Requested size: 398.33858pt x 111.53735pt.
+
+
+[30 <./chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png>]) (./chapters/Chapter2-HARDWARE/VL53L1X.tex
+
+[31 <./chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png>]
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 9.
+
+
+[32]
+<chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg, id=580, 289.08pt x 230.5413pt>
+File: chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg Graphic file (type jpg)
+<use chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg  used on input line 51.
+(pdftex.def)             Requested size: 179.25113pt x 142.95172pt.
+<chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png, id=581, 695.59875pt x 530.98375pt>
+File: chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png  used on input line 58.
+(pdftex.def)             Requested size: 179.25113pt x 136.82909pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
+
+ []
+
+
+
+[33 <./chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg> <./chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png>]
+<chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png, id=593, 373.395pt x 231.86626pt>
+File: chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png  used on input line 71.
+(pdftex.def)             Requested size: 239.00557pt x 148.41512pt.
+<chapters/Chapter2-HARDWARE/Figures/cone.jpg, id=594, 1670.24pt x 722.7pt>
 File: chapters/Chapter2-HARDWARE/Figures/cone.jpg Graphic file (type jpg)
 <use chapters/Chapter2-HARDWARE/Figures/cone.jpg>
-Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/cone.jpg  used on input line 57.
-(pdftex.def)             Requested size: 358.50227pt x 155.11281pt.
-) (./chapters/Chapter2-HARDWARE/chapter2-TUTORIAL.tex
-
-[18]
-
-[19 <./chapters/Chapter2-HARDWARE/Figures/cone.jpg>]
-
-[20]
-chapter 1.
-
-LaTeX Warning: Citation `Relazione1' on page 21 undefined on input line 29.
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/cone.jpg  used on input line 81.
+(pdftex.def)             Requested size: 278.83578pt x 120.64084pt.
 
 
+[34 <./chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png> <./chapters/Chapter2-HARDWARE/Figures/cone.jpg>]
+<chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png, id=606, 691.58376pt x 499.8675pt>
+File: chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png Graphic file (type png)
+<use chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png>
+Package pdftex.def Info: chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png  used on input line 128.
+(pdftex.def)             Requested size: 278.83578pt x 201.53757pt.
+)
 
-[21
+[35] (./chapters/chapter3-SOFTWARE/introduzione_software.tex
+
+[36 <./chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png>]
+chapter 2.
+) (./chapters/chapter3-SOFTWARE/Vl53l1X_software.tex
+
+[37
+
+
+] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+
+[38]
+
+[39] (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c)
+
+[40] (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c)
+Overfull \hbox (19.27576pt too wide) in paragraph at lines 116--125
+\T1/lmr/m/n/10.95 (-20) su-ra del-la co-mu-ni-ca-zio-ne con il di-spo-si-ti-vo. ''RAN-GING_SENSOR_COMMS_Fini_CCI''
+ []
+
+
+
+[41] (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c)
+Overfull \hbox (0.24347pt too wide) in paragraph at lines 136--147
+\T1/lmr/m/n/10.95 (-20) La pro-ce-du-ra in-ti-to-lan-te, è si-tua-ta nel con-te-sto del-la fun-zio-ne \T1/lmr/bx/n/10.95 (-20) VL53L1_WriteMulti\T1/lmr/m/n/10.95 (-20) . 
+ []
+
+
+Overfull \hbox (79.72702pt too wide) in paragraph at lines 136--147
+\T1/lmr/m/n/10.95 (-20) Per l'a-dat-ta-men-to, si è op-ta-to per uno svi-lup-po in-te-gran-te la fun-zio-ne \T1/lmr/bx/n/10.95 (-20) HAl_I2C_Master_Transmit\T1/lmr/m/n/10.95 (-20) .
+ []
+
+
+
+[42] (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c) (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+
+[43]) (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+
+[44])
+
+[45] (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c) (./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c)) (./chapters/Chapter2-HARDWARE/chapter2-TUTORIAL.tex
+
+[46]
+
+[47]
+chapter 3.
+
+LaTeX Warning: Citation `Relazione1' on page 48 undefined on input line 29.
+
+
+
+[48
 
 
 ]
-chapter 2.
+chapter 4.
 
-LaTeX Warning: Citation `DCdriver' on page 22 undefined on input line 36.
+LaTeX Warning: Citation `DCdriver' on page 49 undefined on input line 36.
 
-<chapters/chapter2-HARDWARE/Figures/Schema.JPG, id=412, 488.82625pt x 333.245pt>
+<chapters/chapter2-HARDWARE/Figures/Schema.JPG, id=881, 488.82625pt x 333.245pt>
 File: chapters/chapter2-HARDWARE/Figures/Schema.JPG Graphic file (type jpg)
 <use chapters/chapter2-HARDWARE/Figures/Schema.JPG>
 Package pdftex.def Info: chapters/chapter2-HARDWARE/Figures/Schema.JPG  used on input line 44.
@@ -1899,14 +2124,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[22
+[49
 
 
 ]
 
-[23 <./chapters/chapter2-HARDWARE/Figures/Schema.JPG>]
-chapter 3.
-<chapters/chapter2-HARDWARE/Figures/diagramma.JPG, id=422, 332.24126pt x 367.87437pt>
+[50 <./chapters/chapter2-HARDWARE/Figures/Schema.JPG>]
+chapter 5.
+<chapters/chapter2-HARDWARE/Figures/diagramma.JPG, id=892, 332.24126pt x 367.87437pt>
 File: chapters/chapter2-HARDWARE/Figures/diagramma.JPG Graphic file (type jpg)
 <use chapters/chapter2-HARDWARE/Figures/diagramma.JPG>
 Package pdftex.def Info: chapters/chapter2-HARDWARE/Figures/diagramma.JPG  used on input line 57.
@@ -1918,41 +2143,41 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 
-[24
+[51
 
 
 ] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 
-[25 <./chapters/chapter2-HARDWARE/Figures/diagramma.JPG>]
+[52 <./chapters/chapter2-HARDWARE/Figures/diagramma.JPG>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 87.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 101.
 
 
-[26]
-chapter 4.
-<chapters/chapter2-HARDWARE/Figures/grafico.JPG, id=469, 549.55313pt x 297.61188pt>
+[53]
+chapter 6.
+<chapters/chapter2-HARDWARE/Figures/grafico.JPG, id=937, 549.55313pt x 297.61188pt>
 File: chapters/chapter2-HARDWARE/Figures/grafico.JPG Graphic file (type jpg)
 <use chapters/chapter2-HARDWARE/Figures/grafico.JPG>
 Package pdftex.def Info: chapters/chapter2-HARDWARE/Figures/grafico.JPG  used on input line 117.
 (pdftex.def)             Requested size: 318.67207pt x 172.5832pt.
 
 
-[27
+[54
 
 
  <./chapters/chapter2-HARDWARE/Figures/grafico.JPG>]
 
-[28]
+[55]
 
-[29]
+[56]
 chapter A.
 ) (./chapters/chapter1-TUTORIAL/chapter1.tex
 
-[30
+[57
 
 
 ]
@@ -1965,42 +2190,36 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 2.
 
 
-[31
+[58
 
 
 ]
 
-[32]
+[59]
 
-LaTeX Warning: Reference `fig:Figura' on page 33 undefined on input line 73.
-
-
-LaTeX Warning: Reference `fig:sf1' on page 33 undefined on input line 73.
+LaTeX Warning: Reference `fig:Figura' on page 60 undefined on input line 73.
 
 
-LaTeX Warning: Reference `fig:sf2' on page 33 undefined on input line 73.
+LaTeX Warning: Reference `fig:sf1' on page 60 undefined on input line 73.
 
 
-LaTeX Warning: Citation `Mises1928' on page 33 undefined on input line 100.
+LaTeX Warning: Reference `fig:sf2' on page 60 undefined on input line 73.
 
 
-LaTeX Warning: Citation `Bridgman1952' on page 33 undefined on input line 100.
+LaTeX Warning: Citation `Mises1928' on page 60 undefined on input line 100.
+
+
+LaTeX Warning: Citation `Bridgman1952' on page 60 undefined on input line 100.
 
 
 
-[33] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-) (./Code/Codice.cpp
+[60] (./Code/Codice.cpp
 
-[34]))
+[61]))
 
-[35] (./UNIVPMthesis.bbl)
+[62] (./UNIVPMthesis.bbl)
 
-[36
+[63
 
 
 
@@ -2021,17 +2240,17 @@ Package rerunfilecheck Info: File `UNIVPMthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37065 strings out of 473190
- 717570 string characters out of 5715800
- 1452857 words of memory out of 5000000
- 59132 multiletter control sequences out of 15000+600000
- 719969 words of font info for 305 fonts, out of 8000000 for 9000
+ 37839 strings out of 473190
+ 736889 string characters out of 5715800
+ 1581493 words of memory out of 5000000
+ 59502 multiletter control sequences out of 15000+600000
+ 724190 words of font info for 331 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,12n,127p,11007b,4567s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on UNIVPMthesis.pdf (47 pages, 13444905 bytes).
+ 122i,12n,127p,11007b,4464s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on UNIVPMthesis.pdf (75 pages, 16681661 bytes).
 PDF statistics:
- 905 PDF objects out of 1000 (max. 8388607)
- 286 named destinations out of 1000 (max. 500000)
- 90659 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1512 PDF objects out of 1728 (max. 8388607)
+ 599 named destinations out of 1000 (max. 500000)
+ 90921 words of extra memory for PDF output out of 106986 (max. 10000000)
 

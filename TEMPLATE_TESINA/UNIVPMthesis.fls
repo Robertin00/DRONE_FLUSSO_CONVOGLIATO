@@ -454,8 +454,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
-OUTPUT UNIVPMthesis.toc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmro10.tfm
+OUTPUT UNIVPMthesis.toc
 INPUT ./UNIVPMthesis.lof
 INPUT ./UNIVPMthesis.lof
 INPUT UNIVPMthesis.lof
@@ -468,7 +468,6 @@ INPUT ./chapters/Chapter2-HARDWARE/NUCLEOH745ZIQ.TEX
 INPUT ./chapters/Chapter2-HARDWARE/NUCLEOH745ZIQ.TEX
 INPUT chapters/Chapter2-HARDWARE/NUCLEOH745ZIQ.TEX
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbo10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
@@ -476,6 +475,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png
@@ -483,9 +484,12 @@ INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG2-STM32H745ZI-TQ6.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT ./chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/NUCLELO_DettaglioJumpers.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png
@@ -494,7 +498,6 @@ INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG1-FotoDaSopraScheda.png
 INPUT ./chapters/Chapter2-HARDWARE/TATTU_LiPo_e_MNR_electronics_PowerSafeModule.tex
 INPUT ./chapters/Chapter2-HARDWARE/TATTU_LiPo_e_MNR_electronics_PowerSafeModule.tex
 INPUT chapters/Chapter2-HARDWARE/TATTU_LiPo_e_MNR_electronics_PowerSafeModule.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT ./chapters/Chapter2-HARDWARE/Figures/T.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/T.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/T.png
@@ -510,6 +513,24 @@ INPUT ./chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/POWERSAFWMOD.png
+INPUT ./chapters/Chapter2-HARDWARE/scheda_di_distribuzione_alimentazione.tex
+INPUT ./chapters/Chapter2-HARDWARE/scheda_di_distribuzione_alimentazione.tex
+INPUT chapters/Chapter2-HARDWARE/scheda_di_distribuzione_alimentazione.tex
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_di_tensione_foto_tecnica.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Convertitore_Tensione_foto_reale.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PowerDistributionBoardQuad.jpg
 INPUT ./chapters/Chapter2-HARDWARE/Turnigy_AereoDrive_SK3-3536_1400kv.tex
 INPUT ./chapters/Chapter2-HARDWARE/Turnigy_AereoDrive_SK3-3536_1400kv.tex
 INPUT chapters/Chapter2-HARDWARE/Turnigy_AereoDrive_SK3-3536_1400kv.tex
@@ -538,14 +559,116 @@ INPUT ./chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg
 INPUT ./chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg
 INPUT ./chapters/Chapter2-HARDWARE/Figures/TurnigyProgrammingCard.jpg
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm
+INPUT ./chapters/Chapter2-HARDWARE/GEMFAN_GF_9060.tex
+INPUT ./chapters/Chapter2-HARDWARE/GEMFAN_GF_9060.tex
+INPUT chapters/Chapter2-HARDWARE/GEMFAN_GF_9060.tex
+INPUT ./chapters/Chapter2-HARDWARE/Servomotori.tex
+INPUT ./chapters/Chapter2-HARDWARE/Servomotori.tex
+INPUT chapters/Chapter2-HARDWARE/Servomotori.tex
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82 MG_caratteristiche fisiche.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/HS-82MG_foto.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Collegamenti elettrici .png
+INPUT ./chapters/Chapter2-HARDWARE/BNO-055_BoshSensortec.tex
+INPUT ./chapters/Chapter2-HARDWARE/BNO-055_BoshSensortec.tex
+INPUT chapters/Chapter2-HARDWARE/BNO-055_BoshSensortec.tex
+INPUT ./chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/sensors_BNO055_STEMMA_pinouts_top.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/IMG3-Architettura BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Frequenza di aggiornamento del BNO-055.png
 INPUT ./chapters/Chapter2-HARDWARE/VL53L1X.tex
 INPUT ./chapters/Chapter2-HARDWARE/VL53L1X.tex
 INPUT chapters/Chapter2-HARDWARE/VL53L1X.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbo10.tfm
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinConfigurationModuloPololu.jpg
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/PinCongifVL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Emetittore_VL53L1X.png
 INPUT ./chapters/Chapter2-HARDWARE/Figures/cone.jpg
 INPUT ./chapters/Chapter2-HARDWARE/Figures/cone.jpg
 INPUT ./chapters/Chapter2-HARDWARE/Figures/cone.jpg
 INPUT ./chapters/Chapter2-HARDWARE/Figures/cone.jpg
 INPUT ./chapters/Chapter2-HARDWARE/Figures/cone.jpg
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri9.tfm
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png
+INPUT ./chapters/Chapter2-HARDWARE/Figures/Esperimento TimingBudget.png
+INPUT ./chapters/chapter3-SOFTWARE/introduzione_software.tex
+INPUT ./chapters/chapter3-SOFTWARE/introduzione_software.tex
+INPUT chapters/chapter3-SOFTWARE/introduzione_software.tex
+INPUT ./chapters/chapter3-SOFTWARE/Vl53l1X_software.tex
+INPUT ./chapters/chapter3-SOFTWARE/Vl53l1X_software.tex
+INPUT chapters/chapter3-SOFTWARE/Vl53l1X_software.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt9.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT ./chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
+INPUT chapters/chapter3-SOFTWARE/codeFiles/vl53l1_platform.c
 INPUT ./chapters/Chapter2-HARDWARE/chapter2-TUTORIAL.tex
 INPUT ./chapters/Chapter2-HARDWARE/chapter2-TUTORIAL.tex
 INPUT chapters/Chapter2-HARDWARE/chapter2-TUTORIAL.tex
@@ -565,9 +688,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt9.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT ./chapters/chapter2-HARDWARE/Figures/grafico.JPG
 INPUT ./chapters/chapter2-HARDWARE/Figures/grafico.JPG
@@ -607,15 +728,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmro8.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT ./Code/Codice.cpp
 INPUT ./Code/Codice.cpp
 INPUT Code/Codice.cpp
@@ -640,6 +752,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri8.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri9.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb
