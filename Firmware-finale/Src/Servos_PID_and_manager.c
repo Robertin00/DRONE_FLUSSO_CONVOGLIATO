@@ -86,7 +86,7 @@ uint16_t pid_servo(pid_pars pid_pars_pointer, int16_t ref, int16_t angle_value){
 
 /*------------------------------------- CLOCKWISE SECTION -------------------------------------*/
 
-		if(angle_value >= 0){
+		if(angle_value <= 0){
 
 			int16_t e = ref-(-angle_value);
 
@@ -122,7 +122,7 @@ uint16_t pid_servo(pid_pars pid_pars_pointer, int16_t ref, int16_t angle_value){
 
 /*------------------------------------- COUNTERCLOCKWISE SECTION -------------------------------------*/
 
-		if(angle_value < 0){
+		if(angle_value > 0){
 
 			int16_t e_2 = ref-angle_value;
 
@@ -173,6 +173,7 @@ void servos_turn_off(void){
 	HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_5);
 
 }
+
 
 
 
